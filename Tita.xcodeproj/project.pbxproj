@@ -75,6 +75,38 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		AA3837AD275E59AF005C0323 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AA3837AE275E59C6005C0323 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AA3837AF275E59D2005C0323 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C06F3284275E557C00F4A97E /* LoginViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AA3837B0275E59DE005C0323 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C06F3267275E4F1500F4A97E /* AppDelegate.swift */,
+				C06F3269275E4F1500F4A97E /* SceneDelegate.swift */,
+				C06F3272275E4F1500F4A97E /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		C06F325B275E4F1500F4A97E = {
 			isa = PBXGroup;
 			children = (
@@ -98,11 +130,11 @@
 			children = (
 				AA3837AA275E593D005C0323 /* Extension */,
 				C06F327B275E529A00F4A97E /* Fonts */,
-				C06F3267275E4F1500F4A97E /* AppDelegate.swift */,
-				C06F3269275E4F1500F4A97E /* SceneDelegate.swift */,
-				C06F3284275E557C00F4A97E /* LoginViewController.swift */,
+				AA3837AE275E59C6005C0323 /* Models */,
+				AA3837AD275E59AF005C0323 /* Views */,
+				AA3837AF275E59D2005C0323 /* Controllers */,
+				AA3837B0275E59DE005C0323 /* Resources */,
 				C06F3270275E4F1500F4A97E /* Assets.xcassets */,
-				C06F3272275E4F1500F4A97E /* LaunchScreen.storyboard */,
 				C06F3275275E4F1500F4A97E /* Info.plist */,
 			);
 			path = Tita;
