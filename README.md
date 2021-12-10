@@ -13,7 +13,7 @@
 - [DELETE]: 기능 삭제
 
 2. 이미지 네이밍 규칙 🙊
-- Tita_IMAGENAME
+- Tita-IMAGENAME
 
 3. git flow 사용 🙊
 ```
