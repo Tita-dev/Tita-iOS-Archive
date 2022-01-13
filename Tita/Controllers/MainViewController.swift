@@ -12,6 +12,7 @@ import Then
 class MainViewController: UIViewController {
     
     //MARK: - Properties
+    private let topView = MainTopView()
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -30,20 +31,23 @@ class MainViewController: UIViewController {
     }
     
     // MARK: - Add View
-    
     private func addView(){
-        
+        [topView].forEach { view.addSubview($0) }
     }
     
     // MARK: - Corner Radius
-    
     private func cornerRadius(){
         
     }
     
     // MARK: - Location
-    
     private func location(){
+        topView.snp.makeConstraints { make in
+            make.height.equalToSuperview().dividedBy(29)
+            make.width.equalToSuperview()
+            make.top.equalToSuperview()
+            make.centerX.equalToSuperview()
+        }
         
     }
     
