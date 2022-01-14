@@ -20,6 +20,10 @@ class MainTopView: UIView {
     let bellButton = UIButton().then {
         $0.setImage(UIImage(named: "Tita-Bell"), for: .normal)
     }
+    
+    let profileButton = UIButton().then {
+        $0.setImage(UIImage(named: "Tita-Profile"), for: .normal)
+    }
 
 
 // MARK: - LifeCycles
@@ -45,7 +49,7 @@ class MainTopView: UIView {
         
     // MARK: - addView
     private func addView(){
-        [headLabel, bellButton].forEach { addSubview($0) }
+        [headLabel, bellButton, profileButton].forEach { addSubview($0) }
     }
             
     // MARK: - location
@@ -59,7 +63,13 @@ class MainTopView: UIView {
             make.width.equalTo(viewBounds.width/15.63)
             make.height.equalTo(viewBounds.height/33.83)
             make.centerY.equalTo(headLabel)
-            make.left.equalTo(headLabel.snp.right).offset(viewBounds.width/12.1)
+            make.right.equalTo(profileButton.snp.left).offset(viewBounds.width/(-46.88))
+        }
+        
+        profileButton.snp.makeConstraints { make in
+            make.width.height.equalTo(bellButton)
+            make.centerY.equalTo(bellButton)
+            make.right.equalTo(viewBounds.width/(-26.79))
         }
     }
 }
