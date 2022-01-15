@@ -43,21 +43,33 @@ class WhereGoCollectionViewCell: UICollectionViewCell {
         
     // MARK: - location
     private func location() {
+        self.backgroundColor = .white
+        self.layer.applySketchShadow(color: .rgb(red: 0, green: 0, blue: 0), alpha: 0.25, x: 2, y: 2, blur: 4, spread: 0)
+        self.layer.cornerRadius = viewBounds.width/12.5
+        
         iconImg.snp.makeConstraints { make in
-            make.width.height.equalTo(viewBounds.height/3.25)
-            make.top.equalTo(viewBounds.height/8.13)
-            make.left.equalTo(viewBounds.width/14.44)
+            make.width.equalTo(viewBounds.width/9.38)
+            make.height.equalTo(viewBounds.height/20.3)
+            make.top.equalTo(viewBounds.height/50.75)
+            make.left.equalTo(viewBounds.width/41.67)
         }
         
         title.snp.makeConstraints { make in
             make.left.equalTo(iconImg)
-            make.top.equalTo(iconImg.snp.bottom).offset(viewBounds.height/10)
+            make.top.equalTo(iconImg.snp.bottom).offset(viewBounds.height/62.46)
         }
         
         subTitle.snp.makeConstraints { make in
             make.left.equalTo(title)
-            make.top.equalTo(title.snp.bottom).offset(viewBounds.height/43.33)
+            make.top.equalTo(title.snp.bottom).offset(viewBounds.height/270.67)
         }
+    }
+    
+    // MARK: - dataSetting
+    func dataSetting(Image: String, titleText: String, subTitleText: String) {
+        iconImg.image = UIImage(named: Image)
+        title.text = titleText
+        subTitle.text = subTitleText
     }
 }
 
