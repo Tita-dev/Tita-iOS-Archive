@@ -14,7 +14,7 @@ class WhereGoCollectionViewCell: UICollectionViewCell {
     static let identifier = "\(WhereGoCollectionViewCell.self)"
     private let viewBounds = UIScreen.main.bounds
     
-    let iconImg = UIImage()
+    let iconImg = UIImageView()
     
     //MARK: - lifeCycle
     override init(frame: CGRect) {
@@ -30,7 +30,7 @@ class WhereGoCollectionViewCell: UICollectionViewCell {
     
     // MARK: - addView
     private func addView() {
-        [].forEach { self.addSubview($0) }
+        [iconImg].forEach { self.addSubview($0) }
     }
         
     // MARK: - location
