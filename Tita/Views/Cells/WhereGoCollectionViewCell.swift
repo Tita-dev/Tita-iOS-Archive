@@ -14,7 +14,7 @@ class WhereGoCollectionViewCell: UICollectionViewCell {
     static let identifier = "\(WhereGoCollectionViewCell.self)"
     private let viewBounds = UIScreen.main.bounds
     
-    
+    let iconImg = UIImage()
     
     //MARK: - lifeCycle
     override init(frame: CGRect) {
