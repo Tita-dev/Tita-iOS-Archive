@@ -16,6 +16,14 @@ class WhereGoCollectionViewCell: UICollectionViewCell {
     
     let iconImg = UIImageView()
     
+    let title = UILabel().then {
+        $0.dynamicFont(fontSize: 12, currentFontName: "AppleSDGothicNeo")
+    }
+    
+    let subTitle = UILabel().then {
+        $0.dynamicFont(fontSize: 7, currentFontName: "AppleSDGothicNeo")
+    }
+    
     //MARK: - lifeCycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,12 +38,26 @@ class WhereGoCollectionViewCell: UICollectionViewCell {
     
     // MARK: - addView
     private func addView() {
-        [iconImg].forEach { self.addSubview($0) }
+        [iconImg, title, subTitle].forEach { self.addSubview($0) }
     }
         
     // MARK: - location
     private func location() {
+        iconImg.snp.makeConstraints { make in
+            make.width.height.equalTo(viewBounds.height/3.25)
+            make.top.equalTo(viewBounds.height/8.13)
+            make.left.equalTo(viewBounds.width/14.44)
+        }
         
+        title.snp.makeConstraints { make in
+            make.left.equalTo(iconImg)
+            make.top.equalTo(iconImg.snp.bottom).offset(viewBounds.height/10)
+        }
+        
+        subTitle.snp.makeConstraints { make in
+            make.left.equalTo(title)
+            make.top.equalTo(title.snp.bottom).offset(viewBounds.height/43.33)
+        }
     }
 }
 

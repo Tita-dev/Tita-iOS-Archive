@@ -14,6 +14,8 @@ class MainViewController: UIViewController {
     //MARK: - Properties
     private let topView = MainTopView()
     
+    
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
