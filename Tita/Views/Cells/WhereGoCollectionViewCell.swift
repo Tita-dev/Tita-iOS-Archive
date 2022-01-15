@@ -11,7 +11,10 @@ import Then
 
 class WhereGoCollectionViewCell: UICollectionViewCell {
     //MARK: - property
-
+    static let identifier = "\(WhereGoCollectionViewCell.self)"
+    private let viewBounds = UIScreen.main.bounds
+    
+    
     
     //MARK: - lifeCycle
     override init(frame: CGRect) {
@@ -27,7 +30,7 @@ class WhereGoCollectionViewCell: UICollectionViewCell {
     
     // MARK: - addView
     private func addView() {
-        
+        [].forEach { self.addSubview($0) }
     }
         
     // MARK: - location
