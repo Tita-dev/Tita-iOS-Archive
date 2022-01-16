@@ -12,6 +12,8 @@
 		C00F5A7D27904747002B34DF /* MainTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F5A7C27904747002B34DF /* MainTopView.swift */; };
 		C0525E5E2792B6E2004FD735 /* WhereGoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0525E5D2792B6E2004FD735 /* WhereGoCollectionViewCell.swift */; };
 		C0525E622793E99F004FD735 /* MainPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0525E612793E99F004FD735 /* MainPostTableViewCell.swift */; };
+		C0525E6427947431004FD735 /* EmptyPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0525E6327947431004FD735 /* EmptyPostView.swift */; };
+		C059093F2794E0A1002C9056 /* NoticeLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C059093E2794E0A1002C9056 /* NoticeLabelView.swift */; };
 		C06F3268275E4F1500F4A97E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06F3267275E4F1500F4A97E /* AppDelegate.swift */; };
 		C06F326A275E4F1500F4A97E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06F3269275E4F1500F4A97E /* SceneDelegate.swift */; };
 		C06F3271275E4F1500F4A97E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C06F3270275E4F1500F4A97E /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 		C00F5A7C27904747002B34DF /* MainTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTopView.swift; path = Tita/MainTopView.swift; sourceTree = SOURCE_ROOT; };
 		C0525E5D2792B6E2004FD735 /* WhereGoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WhereGoCollectionViewCell.swift; path = Tita/Views/Cells/WhereGoCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		C0525E612793E99F004FD735 /* MainPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainPostTableViewCell.swift; path = Tita/Views/MainPostTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		C0525E6327947431004FD735 /* EmptyPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPostView.swift; sourceTree = "<group>"; };
+		C059093E2794E0A1002C9056 /* NoticeLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeLabelView.swift; sourceTree = "<group>"; };
 		C06F3264275E4F1500F4A97E /* Tita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06F3267275E4F1500F4A97E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C06F3269275E4F1500F4A97E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 			children = (
 				C0525E5C2792B459004FD735 /* Cells */,
 				C00F5A7C27904747002B34DF /* MainTopView.swift */,
+				C0525E6327947431004FD735 /* EmptyPostView.swift */,
+				C059093E2794E0A1002C9056 /* NoticeLabelView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -295,9 +301,11 @@
 				C0525E5E2792B6E2004FD735 /* WhereGoCollectionViewCell.swift in Sources */,
 				C06F326A275E4F1500F4A97E /* SceneDelegate.swift in Sources */,
 				C0525E622793E99F004FD735 /* MainPostTableViewCell.swift in Sources */,
+				C059093F2794E0A1002C9056 /* NoticeLabelView.swift in Sources */,
 				C00F5A7D27904747002B34DF /* MainTopView.swift in Sources */,
 				AA3837AC275E5960005C0323 /* Extension.swift in Sources */,
 				C0DBC1E7278C4E0900E310D8 /* MainViewController.swift in Sources */,
+				C0525E6427947431004FD735 /* EmptyPostView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

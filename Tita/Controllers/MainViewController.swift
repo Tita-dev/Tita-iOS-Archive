@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Properties
     private let collectionViewImgList = ["Tita-Cafeteria", "Tita-Edit", "Tita-Globe", "Tita-Pin"]
@@ -32,6 +32,17 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         $0.showsHorizontalScrollIndicator = false
     }
     
+    private let noticeLabel = UILabel().then {
+        $0.text = "주요 공지글"
+        $0.dynamicFont(fontSize: 20, currentFontName: "AppleSDGothicNeo-Bold")
+    }
+    
+    private let noticePostTableView = UITableView()
+    
+    private let noticePost = EmptyPostView().then {
+        $0.noticeText.text = "아직 주요 공지글이 없어요!"
+    }
+
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,11 +58,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cornerRadius()
         location()
         collectionViewSetting()
+        NoticeTableViewSetting()
     }
     
     // MARK: - Add View
     private func addView(){
-        [topView, whereGoLabel, whereGoCollectionView].forEach { view.addSubview($0) }
+        [topView, whereGoLabel, whereGoCollectionView, noticeLabel, noticePostTableView].forEach { view.addSubview($0) }
     }
     
     //MARK: - collectionViewSetting
@@ -69,6 +81,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = whereGoCollectionView.dequeueReusableCell(withReuseIdentifier: "WhereGoCollectionViewCell", for: indexPath) as! WhereGoCollectionViewCell
         cell.dataSetting(Image: collectionViewImgList[indexPath.row], titleText: collectionViewTitleList[indexPath.row], subTitleText: collectionViewSubTitleList[indexPath.row])
+
         return cell
     }
     
@@ -76,6 +89,30 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         return CGSize(width: view.frame.width/2.88, height: view.frame.height/6.25)
     }
+    
+    //MARK: - TableViewSetting
+    private func NoticeTableViewSetting(){
+        noticePostTableView.dataSource = self
+        noticePostTableView.delegate = self
+        noticePostTableView.register(MainPostTableViewCell.self, forCellReuseIdentifier: MainPostTableViewCell.identifier)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: MainPostTableViewCell.identifier) as! MainPostTableViewCell
+        
+        cell.selectionStyle = .none
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.view.frame.height/12.4
+    }
+    
+
     
     // MARK: - Corner Radius
     private func cornerRadius(){
@@ -103,6 +140,26 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             make.top.equalToSuperview().offset(self.view.frame.height/5.93)
             make.right.equalToSuperview()
         }
+        
+        noticeLabel.snp.makeConstraints { make in
+            make.top.equalTo(whereGoCollectionView.snp.bottom).offset(self.view.frame.height/33.83)
+            make.left.equalTo(whereGoLabel)
+        }
+        
+        noticePostTableView.snp.makeConstraints { make in
+            make.height.equalToSuperview().dividedBy(5.64)
+            make.width.equalToSuperview()
+            make.top.equalTo(whereGoCollectionView.snp.bottom).offset(self.view.frame.height/12.3)
+            make.centerX.equalToSuperview()
+        }
+
+
+//        noticePost.snp.makeConstraints { make in
+//            make.height.equalToSuperview().dividedBy(5.14)
+//            make.width.equalToSuperview().dividedBy(1.09)
+//            make.top.equalTo(noticeLabel.snp.bottom).offset(self.view.frame.height/101.5)
+//            make.centerX.equalToSuperview()
+//        }
         
     }
     

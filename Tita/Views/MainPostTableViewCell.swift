@@ -21,9 +21,10 @@ class MainPostTableViewCell: UITableViewCell {
     }
     
     let text = UILabel().then {
-        $0.text = "체육대회 당일 오후 우천으로 인한 일정 변동이 있습니다. 모든 학생들은 확인해주시기 바랍니다./n또한, 첨부한 사진에 오타가 있습니다. 농구 경기의 경우 60분이니 확인 부탁드립니다."
-        $0.dynamicFont(fontSize: 7, currentFontName: "AppleSDGothicNeo-Light")
         $0.numberOfLines = 0
+        $0.text = "체육대회 당일 오후 우천으로 인한 일정 변동이 있습니다. 모든 학생들은 확인해주시기 바랍니다.\n또한, 첨부한 사진에 오타가 있습니다. 농구 경기의 경우 60분이니 확인 부탁드립니다."
+        $0.dynamicFont(fontSize: 7, currentFontName: "AppleSDGothicNeo-Light")
+        
     }
     
     let writer = UILabel().then {
@@ -53,6 +54,7 @@ class MainPostTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: viewBounds.width/26.79, bottom: viewBounds.height/58, right: viewBounds.width/26.79))
     }
     
     // MARK: - addView
@@ -82,6 +84,8 @@ class MainPostTableViewCell: UITableViewCell {
         icon.snp.makeConstraints { make in
             make.top.equalTo(writer.snp.bottom).offset(viewBounds.height/162.4)
             make.right.equalTo(writer)
+            make.height.equalTo(viewBounds.height/33.83)
+            make.width.equalTo(viewBounds.width/15)
         }
         
     }
