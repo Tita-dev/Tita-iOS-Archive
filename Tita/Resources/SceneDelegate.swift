@@ -22,7 +22,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             navigationController.navigationBar.isHidden = true
             window?.rootViewController = navigationController
             window?.makeKeyAndVisible()
-        }
+     
+//        //MARK: - font 적용 확인
+//        for fontFamily in UIFont.familyNames {
+//          for fontName in UIFont.fontNames(forFamilyName: fontFamily){
+//            print(fontName)
+//          }
+//        }
+    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

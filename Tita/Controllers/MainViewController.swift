@@ -18,6 +18,11 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     private let topView = MainTopView()
     
+    private let whereGoLabel = UILabel().then {
+        $0.text = "어디로 갈까요?"
+        $0.dynamicFont(fontSize: 20, currentFontName: "AppleSDGothicNeo-Bold")
+    }
+    
     private let whereGoCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = UIScreen.main.bounds.width/43
@@ -41,11 +46,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         addView()
         cornerRadius()
         location()
+        collectionViewSetting()
     }
     
     // MARK: - Add View
     private func addView(){
-        [topView, whereGoCollectionView].forEach { view.addSubview($0) }
+        [topView, whereGoLabel, whereGoCollectionView].forEach { view.addSubview($0) }
     }
     
     //MARK: - collectionViewSetting
@@ -54,7 +60,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         whereGoCollectionView.dataSource = self
         whereGoCollectionView.delegate = self
         whereGoCollectionView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 20)
-        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
@@ -79,14 +85,20 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: - Location
     private func location(){
         topView.snp.makeConstraints { make in
-            make.height.equalToSuperview().dividedBy(29)
+            make.height.equalToSuperview().dividedBy(11.28)
             make.width.equalToSuperview()
             make.top.equalToSuperview()
             make.centerX.equalToSuperview()
         }
         
+        whereGoLabel.snp.makeConstraints { make in
+            make.top.equalTo(topView.snp.bottom).offset(self.view.frame.height/35.3)
+            make.left.equalToSuperview().offset(self.view.frame.width/26.79)
+            
+        }
+        
         whereGoCollectionView.snp.makeConstraints { make in
-            make.height.equalToSuperview().dividedBy(6.25)
+            make.height.equalToSuperview().dividedBy(6.01)
             make.width.equalToSuperview().dividedBy(1.04)
             make.top.equalToSuperview().offset(self.view.frame.height/5.93)
             make.right.equalToSuperview()

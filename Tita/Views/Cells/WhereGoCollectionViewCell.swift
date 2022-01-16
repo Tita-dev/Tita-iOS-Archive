@@ -17,11 +17,11 @@ class WhereGoCollectionViewCell: UICollectionViewCell {
     let iconImg = UIImageView()
     
     let title = UILabel().then {
-        $0.dynamicFont(fontSize: 12, currentFontName: "AppleSDGothicNeo")
+        $0.dynamicFont(fontSize: 12, currentFontName: "AppleSDGothicNeo-Regular")
     }
     
     let subTitle = UILabel().then {
-        $0.dynamicFont(fontSize: 7, currentFontName: "AppleSDGothicNeo")
+        $0.dynamicFont(fontSize: 7, currentFontName: "AppleSDGothicNeo-Light")
     }
     
     //MARK: - lifeCycle
