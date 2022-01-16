@@ -98,7 +98,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         
         whereGoCollectionView.snp.makeConstraints { make in
-            make.height.equalToSuperview().dividedBy(6.01)
+            make.height.equalToSuperview().dividedBy(6)
             make.width.equalToSuperview().dividedBy(1.04)
             make.top.equalToSuperview().offset(self.view.frame.height/5.93)
             make.right.equalToSuperview()

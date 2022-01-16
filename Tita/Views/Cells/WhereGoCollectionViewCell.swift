@@ -28,6 +28,10 @@ class WhereGoCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        self.backgroundColor = .white
+        self.layer.applySketchShadow(color: .rgb(red: 0, green: 0, blue: 0), alpha: 0.25, x: 2, y: 2, blur: 4, spread: 0)
+        self.layer.cornerRadius = viewBounds.width/12.5
+        
         addView()
         location()
     }
@@ -43,10 +47,6 @@ class WhereGoCollectionViewCell: UICollectionViewCell {
         
     // MARK: - location
     private func location() {
-        self.backgroundColor = .white
-        self.layer.applySketchShadow(color: .rgb(red: 0, green: 0, blue: 0), alpha: 0.25, x: 2, y: 2, blur: 4, spread: 0)
-        self.layer.cornerRadius = viewBounds.width/12.5
-        
         iconImg.snp.makeConstraints { make in
             make.width.equalTo(viewBounds.width/9.38)
             make.height.equalTo(viewBounds.height/20.3)
