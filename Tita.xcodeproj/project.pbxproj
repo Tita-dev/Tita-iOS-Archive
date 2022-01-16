@@ -11,7 +11,6 @@
 		B482FBB2A4C005038D809087 /* Pods_Tita.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251ABCF5232EE1ED1774C54C /* Pods_Tita.framework */; };
 		C00F5A7D27904747002B34DF /* MainTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F5A7C27904747002B34DF /* MainTopView.swift */; };
 		C0525E5E2792B6E2004FD735 /* WhereGoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0525E5D2792B6E2004FD735 /* WhereGoCollectionViewCell.swift */; };
-		C0525E60279355FD004FD735 /* MainPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0525E5F279355FD004FD735 /* MainPostView.swift */; };
 		C06F3268275E4F1500F4A97E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06F3267275E4F1500F4A97E /* AppDelegate.swift */; };
 		C06F326A275E4F1500F4A97E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06F3269275E4F1500F4A97E /* SceneDelegate.swift */; };
 		C06F3271275E4F1500F4A97E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C06F3270275E4F1500F4A97E /* Assets.xcassets */; };
@@ -30,7 +29,6 @@
 		AA3837AB275E5960005C0323 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		C00F5A7C27904747002B34DF /* MainTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTopView.swift; path = Tita/MainTopView.swift; sourceTree = SOURCE_ROOT; };
 		C0525E5D2792B6E2004FD735 /* WhereGoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WhereGoCollectionViewCell.swift; path = Tita/Views/Cells/WhereGoCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
-		C0525E5F279355FD004FD735 /* MainPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPostView.swift; sourceTree = "<group>"; };
 		C06F3264275E4F1500F4A97E /* Tita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06F3267275E4F1500F4A97E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C06F3269275E4F1500F4A97E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 			children = (
 				C0525E5C2792B459004FD735 /* Cells */,
 				C00F5A7C27904747002B34DF /* MainTopView.swift */,
-				C0525E5F279355FD004FD735 /* MainPostView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,7 +290,6 @@
 				C06F3285275E557C00F4A97E /* LoginViewController.swift in Sources */,
 				C06F3268275E4F1500F4A97E /* AppDelegate.swift in Sources */,
 				C0525E5E2792B6E2004FD735 /* WhereGoCollectionViewCell.swift in Sources */,
-				C0525E60279355FD004FD735 /* MainPostView.swift in Sources */,
 				C06F326A275E4F1500F4A97E /* SceneDelegate.swift in Sources */,
 				C00F5A7D27904747002B34DF /* MainTopView.swift in Sources */,
 				AA3837AC275E5960005C0323 /* Extension.swift in Sources */,
