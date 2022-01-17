@@ -16,6 +16,10 @@ class LoginViewController: UIViewController {
         $0.image = UIImage(named: "Tita-LoginBack")
     }
     
+    private let logo = UIImageView().then {
+        $0.image = UIImage(named: "Tita-Logo")
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +39,7 @@ class LoginViewController: UIViewController {
     // MARK: - Add View
     
     private func addView(){
-        [background].forEach{ view.addSubview($0) }
+        [background, logo].forEach{ view.addSubview($0) }
     }
     
     // MARK: - Corner Radius
@@ -49,6 +53,13 @@ class LoginViewController: UIViewController {
     private func location(){
         background.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        
+        logo.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(self.view.frame.height/7)
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview().dividedBy(3.46)
+            make.height.equalToSuperview().dividedBy(20.12)
         }
     }
     
