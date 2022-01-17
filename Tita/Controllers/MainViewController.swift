@@ -11,7 +11,7 @@ import Then
 
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
     
-    //MARK: - Properties
+    //MARK: - List
     private let collectionViewImgList = ["Tita-Cafeteria", "Tita-Edit", "Tita-Globe", "Tita-Pin"]
     private let collectionViewTitleList = ["오늘의 급식", "게시글 쓰러가기", "자유게시판", "공지게시판"]
     private let collectionViewSubTitleList = ["제일 중요한 급식을 보러가요", "당신의 이야기를 학생들과 공유해요", "다양한 이야기를 자유롭게 나눠요", "학교의 다양한 공지를 만나봐요"]
@@ -21,6 +21,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     private let tableViewWriterList = ["취뽀하자", "익명", "익명"]
     private let tableViewIconList = ["Tita-Globe", "Tita-Pin", "Tita-Globe"]
     
+    //MARK: - Properties
     private let topView = MainTopView()
     
     private let whereGoLabel = UILabel().then {
