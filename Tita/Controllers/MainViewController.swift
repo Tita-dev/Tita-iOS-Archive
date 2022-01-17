@@ -81,7 +81,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     private func configureUI(){
         view.backgroundColor = .white
         addView()
-        cornerRadius()
         location()
         collectionViewSetting()
         NoticeTableViewSetting()
@@ -149,12 +148,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.view.frame.height/12.4
-    }
-    
-    
-    // MARK: - Corner Radius
-    private func cornerRadius(){
-        
     }
     
     // MARK: - Location
