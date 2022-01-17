@@ -15,6 +15,12 @@ class MainPostTableViewCell: UITableViewCell {
     static let identifier = "\(MainPostTableViewCell.self)"
     private let viewBounds = UIScreen.main.bounds
     
+    private let backView = UIView().then {
+        $0.backgroundColor = .white
+        $0.layer.applySketchShadow(color: .rgb(red: 0, green: 0, blue: 0), alpha: 0.25, x: 2, y: 2, blur: 4, spread: 0)
+        $0.layer.cornerRadius = UIScreen.main.bounds.width/37.5
+    }
+    
     let title = UILabel().then {
         $0.text = "체육대회 공지사항"
         $0.dynamicFont(fontSize: 12, currentFontName: "AppleSDGothicNeo-Regular")
@@ -40,10 +46,6 @@ class MainPostTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.backgroundColor = .white
-        self.layer.applySketchShadow(color: .rgb(red: 0, green: 0, blue: 0), alpha: 0.25, x: 2, y: 2, blur: 4, spread: 0)
-        self.layer.cornerRadius = viewBounds.width/37.5
-        
         addView()
         location()
     }
@@ -54,19 +56,24 @@ class MainPostTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: viewBounds.width/26.79, bottom: viewBounds.height/58, right: viewBounds.width/26.79))
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: viewBounds.height/58, right: 0))
     }
     
     // MARK: - addView
     private func addView() {
-        [title, text, writer, icon].forEach { contentView.addSubview($0) }
+        [backView, title, text, writer, icon].forEach { contentView.addSubview($0) }
     }
         
     // MARK: - location
     private func location() {
+        backView.snp.makeConstraints { make in
+            make.width.equalTo(viewBounds.width/1.09)
+            make.height.equalTo(viewBounds.height/12.49)
+            make.center.equalToSuperview()
+        }
         title.snp.makeConstraints { make in
-            make.top.equalTo(viewBounds.height/50)
-            make.left.equalTo(viewBounds.width/20.83)
+            make.top.equalTo(backView).offset(viewBounds.height/50)
+            make.left.equalTo(backView).offset(viewBounds.width/20.83)
         }
         
         text.snp.makeConstraints { make in
@@ -78,7 +85,7 @@ class MainPostTableViewCell: UITableViewCell {
         
         writer.snp.makeConstraints { make in
             make.centerY.equalTo(title)
-            make.right.equalTo(viewBounds.width/(-34.09))
+            make.right.equalTo(backView).offset(viewBounds.width/(-34.09))
         }
         
         icon.snp.makeConstraints { make in

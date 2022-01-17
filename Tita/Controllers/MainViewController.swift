@@ -45,14 +45,20 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         $0.button.addTarget(self, action: #selector(tapNoticeMoreButton(_:)), for: .touchUpInside)
     }
     
+    private let noticePostTableView = UITableView().then {
+        $0.showsVerticalScrollIndicator = false
+        $0.separatorStyle = .none
+    }
+    
     private let bestLabel = NoticeLabelView().then {
         $0.label.text = "BEST 게시글"
         $0.button.addTarget(self, action: #selector(tapBestMoreButton(_:)), for: .touchUpInside)
     }
-    
-    private let noticePostTableView = UITableView()
-    
-    private let bestPostTableView = UITableView()
+
+    private let bestPostTableView = UITableView().then {
+        $0.showsVerticalScrollIndicator = false
+        $0.separatorStyle = .none
+    }
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -147,7 +153,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.view.frame.height/12.4
+        return self.view.frame.height/10.28
     }
     
     // MARK: - Location
@@ -180,7 +186,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         
         noticePostTableView.snp.makeConstraints { make in
-            make.height.equalToSuperview().dividedBy(5.64)
+            make.height.equalToSuperview().dividedBy(5.4)
             make.width.equalToSuperview()
             make.top.equalTo(noticeLabel.snp.bottom).offset(self.view.frame.height/50.75)
             make.centerX.equalToSuperview()
@@ -193,7 +199,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         
         bestPostTableView.snp.makeConstraints { make in
-            make.height.equalToSuperview().dividedBy(3.64)
+            make.height.equalToSuperview().dividedBy(3.6)
             make.width.equalTo(noticePostTableView)
             make.top.equalTo(bestLabel.snp.bottom).offset(self.view.frame.height/50.75)
             make.centerX.equalToSuperview()
