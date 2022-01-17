@@ -10,7 +10,16 @@ import UIKit
 class NoticeLabelView: UIView {
     private let viewBounds = UIScreen.main.bounds
 
+    let label = UILabel().then {
+        $0.text = "주요 공지글"
+        $0.dynamicFont(fontSize: 20, currentFontName: "AppleSDGothicNeo-Bold")
+    }
     
+    let button = UIButton().then {
+        $0.setTitle("더보기", for: .normal)
+        $0.setTitleColor(UIColor.rgb(red: 152, green: 152, blue: 152), for: .normal)
+        $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Regular")
+    }
 // MARK: - LifeCycles
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,11 +43,19 @@ class NoticeLabelView: UIView {
         
     // MARK: - addView
     private func addView(){
-        [].forEach { addSubview($0) }
+        [label, button].forEach { addSubview($0) }
     }
             
     // MARK: - location
     private func location(){
-
+        label.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.left.equalTo(viewBounds.width/26.79)
+        }
+        
+        button.snp.makeConstraints { make in
+            make.bottom.equalToSuperview()
+            make.right.equalTo(viewBounds.width/(-17.86))
+        }
     }
 }

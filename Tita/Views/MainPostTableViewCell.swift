@@ -87,6 +87,13 @@ class MainPostTableViewCell: UITableViewCell {
             make.height.equalTo(viewBounds.height/33.83)
             make.width.equalTo(viewBounds.width/15)
         }
-        
+    }
+    
+    //MARK: - DataSetting
+    func dataSetting(postTitle: String, postText: String, postWriter: String, postIcon: String){
+        title.text = postTitle
+        text.text = postText
+        writer.text = postWriter
+        icon.image = UIImage(named: postIcon)
     }
 }

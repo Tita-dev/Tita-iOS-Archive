@@ -16,6 +16,11 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     private let collectionViewTitleList = ["오늘의 급식", "게시글 쓰러가기", "자유게시판", "공지게시판"]
     private let collectionViewSubTitleList = ["제일 중요한 급식을 보러가요", "당신의 이야기를 학생들과 공유해요", "다양한 이야기를 자유롭게 나눠요", "학교의 다양한 공지를 만나봐요"]
     
+    private let tableViewTitleList = ["2022년 새해 소원", "12월 30일 급식 공지사항", "TITA 1학년 FE를 모집합니다"]
+    private let tableViewTextList = ["다들 뭐야?? 나는 일단 취업하기랑 코로나 없어져서 여행가기....", "급식 파업으로 인해 목요일 점심 급식이 제공되지 않습니다. 이점 유의하여 주시기 바랍니다.\n급식 파업으로 인해 목요일 점심 급식이 제공되지 않습니다. 이점 유의하여 주시기 바랍니다.", "고교 익명 커뮤니티 서비스 TITA의 1학년 FE를 모집합니다. 관심이 있는 학생은 디스코드 #3128로 연락주시기 바랍니다. 자세한 사항은 하단의 노션 링크를 참고하여 주시기..."]
+    private let tableViewWriterList = ["취뽀하자", "익명", "익명"]
+    private let tableViewIconList = ["Tita-Globe", "Tita-Pin", "Tita-Globe"]
+    
     private let topView = MainTopView()
     
     private let whereGoLabel = UILabel().then {
@@ -32,16 +37,15 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         $0.showsHorizontalScrollIndicator = false
     }
     
-    private let noticeLabel = UILabel().then {
-        $0.text = "주요 공지글"
-        $0.dynamicFont(fontSize: 20, currentFontName: "AppleSDGothicNeo-Bold")
+    private let noticeLabel = NoticeLabelView()
+    
+    private let bestLabel = NoticeLabelView().then {
+        $0.label.text = "BEST 게시글"
     }
     
     private let noticePostTableView = UITableView()
     
-    private let noticePost = EmptyPostView().then {
-        $0.noticeText.text = "아직 주요 공지글이 없어요!"
-    }
+    private let bestPostTableView = UITableView()
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -63,7 +67,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     // MARK: - Add View
     private func addView(){
-        [topView, whereGoLabel, whereGoCollectionView, noticeLabel, noticePostTableView].forEach { view.addSubview($0) }
+        [topView, whereGoLabel, whereGoCollectionView, noticeLabel, noticePostTableView, bestLabel, bestPostTableView].forEach { view.addSubview($0) }
     }
     
     //MARK: - collectionViewSetting
@@ -95,16 +99,29 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         noticePostTableView.dataSource = self
         noticePostTableView.delegate = self
         noticePostTableView.register(MainPostTableViewCell.self, forCellReuseIdentifier: MainPostTableViewCell.identifier)
+        
+        bestPostTableView.dataSource = self
+        bestPostTableView.delegate = self
+        bestPostTableView.register(MainPostTableViewCell.self, forCellReuseIdentifier: MainPostTableViewCell.identifier)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        if tableView == noticePostTableView {
+            return 2
+        }
+        if tableView == bestPostTableView {
+            return 3
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainPostTableViewCell.identifier) as! MainPostTableViewCell
-        
         cell.selectionStyle = .none
+        
+        if tableView == bestPostTableView {
+            cell.dataSetting(postTitle: tableViewTitleList[indexPath.row], postText: tableViewTextList[indexPath.row], postWriter: tableViewWriterList[indexPath.row], postIcon: tableViewIconList[indexPath.row])
+        }
         return cell
     }
     
@@ -112,7 +129,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return self.view.frame.height/12.4
     }
     
-
     
     // MARK: - Corner Radius
     private func cornerRadius(){
@@ -142,14 +158,29 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         
         noticeLabel.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalToSuperview().dividedBy(29)
             make.top.equalTo(whereGoCollectionView.snp.bottom).offset(self.view.frame.height/33.83)
-            make.left.equalTo(whereGoLabel)
+            make.centerX.equalToSuperview()
         }
         
         noticePostTableView.snp.makeConstraints { make in
             make.height.equalToSuperview().dividedBy(5.64)
             make.width.equalToSuperview()
-            make.top.equalTo(whereGoCollectionView.snp.bottom).offset(self.view.frame.height/12.3)
+            make.top.equalTo(noticeLabel.snp.bottom).offset(self.view.frame.height/50.75)
+            make.centerX.equalToSuperview()
+        }
+        
+        bestLabel.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalTo(noticeLabel)
+            make.top.equalTo(noticeLabel.snp.bottom).offset(self.view.frame.height/4.34)
+        }
+        
+        bestPostTableView.snp.makeConstraints { make in
+            make.height.equalToSuperview().dividedBy(3.64)
+            make.width.equalTo(noticePostTableView)
+            make.top.equalTo(bestLabel.snp.bottom).offset(self.view.frame.height/50.75)
             make.centerX.equalToSuperview()
         }
 
