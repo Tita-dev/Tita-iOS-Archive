@@ -20,6 +20,13 @@ class LoginViewController: UIViewController {
         $0.image = UIImage(named: "Tita-Logo")
     }
     
+    private let welcomeLabel = UILabel().then {
+        $0.text = "어서오세요\nTimeTable입니다"
+        $0.numberOfLines = 0
+        $0.textAlignment = .center
+        $0.textColor = .black
+        $0.dynamicFont(fontSize: 20, currentFontName: "NotoSans-Bold")
+    }
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +46,7 @@ class LoginViewController: UIViewController {
     // MARK: - Add View
     
     private func addView(){
-        [background, logo].forEach{ view.addSubview($0) }
+        [background, logo, welcomeLabel].forEach{ view.addSubview($0) }
     }
     
     // MARK: - Corner Radius
@@ -60,6 +67,11 @@ class LoginViewController: UIViewController {
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().dividedBy(3.46)
             make.height.equalToSuperview().dividedBy(20.12)
+        }
+        
+        welcomeLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(logo.snp.bottom).offset(self.view.frame.height/29.37)
         }
     }
     
