@@ -22,7 +22,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     private let tableViewIconList = ["Tita-Globe", "Tita-Pin", "Tita-Globe"]
     
     //MARK: - Properties
-    private let topView = MainTopView()
+    private let topView = MainTopView().then {
+        $0.bellButton.addTarget(self, action: #selector(tapBellButton(_:)), for: .touchUpInside)
+        $0.profileButton.addTarget(self, action: #selector(tapProfileButton(_:)), for: .touchUpInside)
+    }
     
     private let whereGoLabel = UILabel().then {
         $0.text = "어디로 갈까요?"
@@ -38,10 +41,13 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         $0.showsHorizontalScrollIndicator = false
     }
     
-    private let noticeLabel = NoticeLabelView()
+    private let noticeLabel = NoticeLabelView().then {
+        $0.button.addTarget(self, action: #selector(tapNoticeMoreButton(_:)), for: .touchUpInside)
+    }
     
     private let bestLabel = NoticeLabelView().then {
         $0.label.text = "BEST 게시글"
+        $0.button.addTarget(self, action: #selector(tapBestMoreButton(_:)), for: .touchUpInside)
     }
     
     private let noticePostTableView = UITableView()
@@ -55,6 +61,21 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     //MARK: - Selectors
+    @objc func tapBellButton(_ sender: UIButton) {
+        print("Tap Bell Button")
+    }
+    
+    @objc func tapProfileButton(_ sender: UIButton) {
+        print("Tap Profile Button")
+    }
+    
+    @objc func tapNoticeMoreButton(_ sender: UIButton) {
+        print("Tap Notice MoreButton")
+    }
+    
+    @objc func tapBestMoreButton(_ sender: UIButton) {
+        print("Tap Best MoreButton")
+    }
     
     //MARK: - Helpers
     private func configureUI(){
@@ -184,15 +205,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             make.top.equalTo(bestLabel.snp.bottom).offset(self.view.frame.height/50.75)
             make.centerX.equalToSuperview()
         }
-
-
-//        noticePost.snp.makeConstraints { make in
-//            make.height.equalToSuperview().dividedBy(5.14)
-//            make.width.equalToSuperview().dividedBy(1.09)
-//            make.top.equalTo(noticeLabel.snp.bottom).offset(self.view.frame.height/101.5)
-//            make.centerX.equalToSuperview()
-//        }
-        
     }
     
 }
