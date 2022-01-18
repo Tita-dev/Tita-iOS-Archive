@@ -47,6 +47,7 @@ class LoginViewController: UIViewController {
         $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Light")
         $0.setTitleColor(.black, for: .normal)
         $0.backgroundColor = .white
+        $0.addTarget(self, action: #selector(onTapSignUp(sender:)), for: .touchUpInside)
     }
     
     private let forgotIdButton = UIButton().then {
@@ -76,6 +77,10 @@ class LoginViewController: UIViewController {
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
+    @objc private func onTapSignUp(sender:UIButton){
+        print("SignUP")
+    }
+
 
     
     
