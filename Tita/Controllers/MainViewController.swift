@@ -99,7 +99,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     //MARK: - collectionViewSetting
     private func collectionViewSetting() {
-        menuCollectionView.register(WhereGoCollectionViewCell.self, forCellWithReuseIdentifier:WhereGoCollectionViewCell.identifier)
+        menuCollectionView.register(MenuCollectionViewCell.self, forCellWithReuseIdentifier:MenuCollectionViewCell.identifier)
         menuCollectionView.dataSource = self
         menuCollectionView.delegate = self
         menuCollectionView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 20)
@@ -110,7 +110,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = menuCollectionView.dequeueReusableCell(withReuseIdentifier: "WhereGoCollectionViewCell", for: indexPath) as! WhereGoCollectionViewCell
+        let cell = menuCollectionView.dequeueReusableCell(withReuseIdentifier: "MenuCollectionViewCell", for: indexPath) as! MenuCollectionViewCell
         cell.dataSetting(Image: collectionViewImgList[indexPath.row], titleText: collectionViewTitleList[indexPath.row], subTitleText: collectionViewSubTitleList[indexPath.row])
 
         return cell

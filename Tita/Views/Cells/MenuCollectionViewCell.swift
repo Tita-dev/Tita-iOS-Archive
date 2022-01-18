@@ -9,9 +9,9 @@ import UIKit
 import SnapKit
 import Then
 
-class WhereGoCollectionViewCell: UICollectionViewCell {
+class MenuCollectionViewCell: UICollectionViewCell {
     //MARK: - property
-    static let identifier = "\(WhereGoCollectionViewCell.self)"
+    static let identifier = "\(MenuCollectionViewCell.self)"
     private let viewBounds = UIScreen.main.bounds
     
     let iconImg = UIImageView()
