@@ -27,12 +27,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         $0.profileButton.addTarget(self, action: #selector(tapProfileButton(_:)), for: .touchUpInside)
     }
     
-    private let whereGoLabel = UILabel().then {
+    private let menuLabel = UILabel().then {
         $0.text = "어디로 갈까요?"
         $0.dynamicFont(fontSize: 20, currentFontName: "AppleSDGothicNeo-Bold")
     }
     
-    private let whereGoCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+    private let menuCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = UIScreen.main.bounds.width/43
         layout.scrollDirection = .horizontal
@@ -94,15 +94,15 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     // MARK: - Add View
     private func addView(){
-        [topView, whereGoLabel, whereGoCollectionView, noticeLabel, noticePostTableView, bestLabel, bestPostTableView].forEach { view.addSubview($0) }
+        [topView, menuLabel, menuCollectionView, noticeLabel, noticePostTableView, bestLabel, bestPostTableView].forEach { view.addSubview($0) }
     }
     
     //MARK: - collectionViewSetting
     private func collectionViewSetting() {
-        whereGoCollectionView.register(WhereGoCollectionViewCell.self, forCellWithReuseIdentifier:WhereGoCollectionViewCell.identifier)
-        whereGoCollectionView.dataSource = self
-        whereGoCollectionView.delegate = self
-        whereGoCollectionView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 20)
+        menuCollectionView.register(WhereGoCollectionViewCell.self, forCellWithReuseIdentifier:WhereGoCollectionViewCell.identifier)
+        menuCollectionView.dataSource = self
+        menuCollectionView.delegate = self
+        menuCollectionView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 20)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -110,7 +110,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = whereGoCollectionView.dequeueReusableCell(withReuseIdentifier: "WhereGoCollectionViewCell", for: indexPath) as! WhereGoCollectionViewCell
+        let cell = menuCollectionView.dequeueReusableCell(withReuseIdentifier: "WhereGoCollectionViewCell", for: indexPath) as! WhereGoCollectionViewCell
         cell.dataSetting(Image: collectionViewImgList[indexPath.row], titleText: collectionViewTitleList[indexPath.row], subTitleText: collectionViewSubTitleList[indexPath.row])
 
         return cell
@@ -165,13 +165,13 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             make.centerX.equalToSuperview()
         }
         
-        whereGoLabel.snp.makeConstraints { make in
+        menuLabel.snp.makeConstraints { make in
             make.top.equalTo(topView.snp.bottom).offset(self.view.frame.height/35.3)
             make.left.equalToSuperview().offset(self.view.frame.width/26.79)
             
         }
         
-        whereGoCollectionView.snp.makeConstraints { make in
+        menuCollectionView.snp.makeConstraints { make in
             make.height.equalToSuperview().dividedBy(6)
             make.width.equalToSuperview().dividedBy(1.04)
             make.top.equalToSuperview().offset(self.view.frame.height/5.93)
@@ -181,7 +181,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         noticeLabel.snp.makeConstraints { make in
             make.width.equalToSuperview()
             make.height.equalToSuperview().dividedBy(29)
-            make.top.equalTo(whereGoCollectionView.snp.bottom).offset(self.view.frame.height/33.83)
+            make.top.equalTo(menuCollectionView.snp.bottom).offset(self.view.frame.height/33.83)
             make.centerX.equalToSuperview()
         }
         
