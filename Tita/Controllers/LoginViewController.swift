@@ -47,6 +47,13 @@ class LoginViewController: UIViewController {
         $0.setTitleColor(.black, for: .normal)
         $0.backgroundColor = .white
     }
+    
+    private let forgotIdButton = UIButton().then {
+        $0.setTitle("아이디를 잊으셨나요?", for: .normal)
+        $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Light")
+        $0.setTitleColor(.black, for: .normal)
+        $0.backgroundColor = .white
+    }
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +73,7 @@ class LoginViewController: UIViewController {
     // MARK: - Add View
     
     private func addView(){
-        [background, logo, welcomeLabel, idTextField, pwTextField, loginButton, signUpButton].forEach{ view.addSubview($0) }
+        [background, logo, welcomeLabel, idTextField, pwTextField, loginButton, signUpButton, forgotIdButton].forEach{ view.addSubview($0) }
     }
     
     // MARK: - Corner Radius
@@ -119,7 +126,14 @@ class LoginViewController: UIViewController {
             make.centerX.equalToSuperview()
             make.top.equalTo(loginButton.snp.bottom).offset(self.view.frame.height/29)
             make.width.equalToSuperview().dividedBy(6)
-            make.height.equalToSuperview().dividedBy(61)
+            make.height.equalToSuperview().dividedBy(60)
+        }
+        
+        forgotIdButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(signUpButton.snp.bottom).offset(self.view.frame.height/8.20)
+            make.width.equalToSuperview().dividedBy(4)
+            make.height.equalToSuperview().dividedBy(60)
         }
     }
     
