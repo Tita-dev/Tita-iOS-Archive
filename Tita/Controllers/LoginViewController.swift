@@ -55,6 +55,7 @@ class LoginViewController: UIViewController {
         $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Light")
         $0.setTitleColor(.black, for: .normal)
         $0.backgroundColor = .white
+        $0.addTarget(self, action: #selector(onTapForgotId(sender:)), for: .touchUpInside)
     }
     
     private let forgotPwButton = UIButton().then {
@@ -81,9 +82,11 @@ class LoginViewController: UIViewController {
         print("SignUP")
     }
 
+    @objc private func onTapForgotId(sender:UIButton){
+        print("ForgotId")
+    }
 
-    
-    
+
     //MARK: - Helpers
     private func configureUI(){
         view.backgroundColor = .white
