@@ -28,6 +28,14 @@ class LoginViewController: UIViewController {
         $0.textColor = .black
         $0.dynamicFont(fontSize: 20, currentFontName: "AppleSDGothicNeo-Bold")
     }
+    
+    private let idTextField = LoginTextField().then {
+        $0.dataSetting(placeholderText: "아이디")
+    }
+    
+    private let pwTextField = LoginTextField().then {
+        $0.dataSetting(placeholderText: "비밀번호")
+    }
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +55,7 @@ class LoginViewController: UIViewController {
     // MARK: - Add View
     
     private func addView(){
-        [background, logo, welcomeLabel].forEach{ view.addSubview($0) }
+        [background, logo, welcomeLabel, idTextField, pwTextField].forEach{ view.addSubview($0) }
     }
     
     // MARK: - Corner Radius
@@ -73,6 +81,20 @@ class LoginViewController: UIViewController {
         welcomeLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(logo.snp.bottom).offset(self.view.frame.height/29.37)
+        }
+        
+        idTextField.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(welcomeLabel.snp.bottom).offset(self.view.frame.height/18.45)
+            make.width.equalToSuperview().dividedBy(1.43)
+            make.height.equalToSuperview().dividedBy(19.33)
+        }
+        
+        pwTextField.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(idTextField.snp.bottom).offset(self.view.frame.height/19.33)
+            make.width.equalToSuperview().dividedBy(1.43)
+            make.height.equalToSuperview().dividedBy(19.33)
         }
     }
     
