@@ -36,6 +36,10 @@ class LoginViewController: UIViewController {
     private let pwTextField = LoginTextField().then {
         $0.dataSetting(placeholderText: "비밀번호")
     }
+    
+    private let loginButton = LoginButton().then {
+        $0.dataSetting(title: "로그인")
+    }
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +59,7 @@ class LoginViewController: UIViewController {
     // MARK: - Add View
     
     private func addView(){
-        [background, logo, welcomeLabel, idTextField, pwTextField].forEach{ view.addSubview($0) }
+        [background, logo, welcomeLabel, idTextField, pwTextField, loginButton].forEach{ view.addSubview($0) }
     }
     
     // MARK: - Corner Radius
@@ -95,6 +99,13 @@ class LoginViewController: UIViewController {
             make.top.equalTo(idTextField.snp.bottom).offset(self.view.frame.height/19.33)
             make.width.equalToSuperview().dividedBy(1.43)
             make.height.equalToSuperview().dividedBy(19.33)
+        }
+        
+        loginButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(pwTextField.snp.bottom).offset(self.view.frame.height/15.62)
+            make.width.equalToSuperview().dividedBy(3.18)
+            make.height.equalToSuperview().dividedBy(20.3)
         }
     }
     
