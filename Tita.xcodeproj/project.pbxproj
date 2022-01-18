@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA3837AC275E5960005C0323 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3837AB275E5960005C0323 /* Extension.swift */; };
+		AAB6A95C2796B57B00DE26C6 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB6A95B2796B57B00DE26C6 /* LoginTextField.swift */; };
 		B482FBB2A4C005038D809087 /* Pods_Tita.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251ABCF5232EE1ED1774C54C /* Pods_Tita.framework */; };
 		C06F3268275E4F1500F4A97E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06F3267275E4F1500F4A97E /* AppDelegate.swift */; };
 		C06F326A275E4F1500F4A97E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06F3269275E4F1500F4A97E /* SceneDelegate.swift */; };
@@ -24,6 +25,7 @@
 		113E1EBF524BAD834CEFC395 /* Pods-Tita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tita.debug.xcconfig"; path = "Target Support Files/Pods-Tita/Pods-Tita.debug.xcconfig"; sourceTree = "<group>"; };
 		251ABCF5232EE1ED1774C54C /* Pods_Tita.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tita.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3837AB275E5960005C0323 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		AAB6A95B2796B57B00DE26C6 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		C06F3264275E4F1500F4A97E /* Tita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06F3267275E4F1500F4A97E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C06F3269275E4F1500F4A97E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		AA3837AD275E59AF005C0323 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AAB6A95B2796B57B00DE26C6 /* LoginTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				C06F3268275E4F1500F4A97E /* AppDelegate.swift in Sources */,
 				C06F326A275E4F1500F4A97E /* SceneDelegate.swift in Sources */,
 				AA3837AC275E5960005C0323 /* Extension.swift in Sources */,
+				AAB6A95C2796B57B00DE26C6 /* LoginTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
