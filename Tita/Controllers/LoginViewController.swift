@@ -39,6 +39,7 @@ class LoginViewController: UIViewController {
     
     private let loginButton = LoginButton().then {
         $0.dataSetting(title: "로그인")
+        $0.addTarget(self, action: #selector(onTapLogin(sender:)), for: .touchUpInside)
     }
     
     private let signUpButton = UIButton().then {
@@ -69,7 +70,14 @@ class LoginViewController: UIViewController {
     }
     
     //MARK: - Selectors
+    @objc private func onTapLogin(sender:UIButton){
+        print("Login")
+        let nextVC = MainViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
 
+    
     
     //MARK: - Helpers
     private func configureUI(){
