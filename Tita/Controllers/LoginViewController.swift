@@ -143,9 +143,13 @@ class LoginViewController: UIViewController {
             make.height.equalToSuperview().dividedBy(60)
         }
     }
-    
 
-    
+    // MARK: - KeyboardType Setting
+    private func keyboardTypeSetting(){
+        idTextField.loginTextField.keyboardType = .asciiCapable
+        pwTextField.loginTextField.keyboardType = .asciiCapable
+    }
+
     // MARK: - textField Point Set
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
