@@ -21,11 +21,12 @@ class LoginViewController: UIViewController {
     }
     
     private let welcomeLabel = UILabel().then {
-        $0.text = "어서오세요\nTimeTable입니다"
+        let example = NSAttributedString(string: "어서오세요\nTimeTable입니다").withLineSpacing(5)
+        $0.attributedText = example
         $0.numberOfLines = 0
         $0.textAlignment = .center
         $0.textColor = .black
-        $0.dynamicFont(fontSize: 20, currentFontName: "NotoSans-Bold")
+        $0.dynamicFont(fontSize: 20, currentFontName: "AppleSDGothicNeo-Bold")
     }
     //MARK: - Lifecycle
     override func viewDidLoad() {
