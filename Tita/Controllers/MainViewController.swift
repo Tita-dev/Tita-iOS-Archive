@@ -16,6 +16,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     private let collectionViewTitleList = ["오늘의 급식", "게시글 쓰러가기", "자유게시판", "공지게시판"]
     private let collectionViewSubTitleList = ["제일 중요한 급식을 보러가요", "당신의 이야기를 학생들과 공유해요", "다양한 이야기를 자유롭게 나눠요", "학교의 다양한 공지를 만나봐요"]
     
+    private let noticeTableViewDataList = ["체육대회 공지사항", "체육대회 공지사항"]
     private let tableViewTitleList = ["2022년 새해 소원", "12월 30일 급식 공지사항", "TITA 1학년 FE를 모집합니다"]
     private let tableViewTextList = ["다들 뭐야?? 나는 일단 취업하기랑 코로나 없어져서 여행가기....", "급식 파업으로 인해 목요일 점심 급식이 제공되지 않습니다. 이점 유의하여 주시기 바랍니다.\n급식 파업으로 인해 목요일 점심 급식이 제공되지 않습니다. 이점 유의하여 주시기 바랍니다.", "고교 익명 커뮤니티 서비스 TITA의 1학년 FE를 모집합니다. 관심이 있는 학생은 디스코드 #3128로 연락주시기 바랍니다. 자세한 사항은 하단의 노션 링크를 참고하여 주시기..."]
     private let tableViewWriterList = ["취뽀하자", "익명", "익명"]
@@ -134,10 +135,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == noticePostTableView {
-            return 2
+            return noticeTableViewDataList.count
         }
         if tableView == bestPostTableView {
-            return 3
+            return tableViewTitleList.count
         }
         return 0
     }
