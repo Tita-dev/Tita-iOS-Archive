@@ -11,7 +11,7 @@ class LoginTextField: UIView {
     // MARK: - Properties
     private let viewBounds = UIScreen.main.bounds
 
-    private lazy var loginTextField = UITextField().then{
+    lazy var loginTextField = UITextField().then{
         $0.placeholder = "아이디"
         $0.textColor = .black
         $0.backgroundColor = .white

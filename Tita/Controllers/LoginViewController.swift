@@ -11,7 +11,6 @@ import Then
 
 class LoginViewController: UIViewController {
     //MARK: - Properties
-    
     private let background = UIImageView().then {
         $0.image = UIImage(named: "Tita-LoginBack")
     }
@@ -35,6 +34,7 @@ class LoginViewController: UIViewController {
     
     private let pwTextField = LoginTextField().then {
         $0.dataSetting(placeholderText: "비밀번호")
+        $0.loginTextField.isSecureTextEntry = true
     }
     
     private let loginButton = LoginButton().then {
@@ -61,6 +61,7 @@ class LoginViewController: UIViewController {
         $0.setTitleColor(.black, for: .normal)
         $0.backgroundColor = .white
     }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,29 +69,21 @@ class LoginViewController: UIViewController {
     }
     
     //MARK: - Selectors
+
     
     //MARK: - Helpers
     private func configureUI(){
         view.backgroundColor = .white
         addView()
-        cornerRadius()
         location()
     }
     
     // MARK: - Add View
-    
     private func addView(){
         [background, logo, welcomeLabel, idTextField, pwTextField, loginButton, signUpButton, forgotIdButton, forgotPwButton].forEach{ view.addSubview($0) }
     }
     
-    // MARK: - Corner Radius
-    
-    private func cornerRadius(){
-        
-    }
-    
     // MARK: - Location
-    
     private func location(){
         background.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -151,6 +144,7 @@ class LoginViewController: UIViewController {
         }
     }
     
+
 }
 
 //MARK: - Preview
