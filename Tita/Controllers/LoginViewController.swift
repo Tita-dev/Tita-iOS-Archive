@@ -129,11 +129,11 @@ class LoginViewController: UIViewController {
             make.height.equalToSuperview().dividedBy(20.3)
         }
         signUpLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(self.view.frame.width/3.35)
+            make.left.equalToSuperview().offset(self.view.frame.width/3.44)
             make.top.equalTo(loginButton.snp.bottom).offset(self.view.frame.height/29)
         }
         signUpButton.snp.makeConstraints { make in
-            make.left.equalTo(signUpLabel.snp.right).offset(self.view.frame.width/46.88)
+            make.left.equalTo(signUpLabel.snp.right).offset(self.view.frame.width/75)
             make.centerY.equalTo(signUpLabel)
             make.width.equalToSuperview().dividedBy(10.3)
             make.height.equalToSuperview().dividedBy(50.75)
