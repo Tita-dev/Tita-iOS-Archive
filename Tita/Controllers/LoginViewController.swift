@@ -48,7 +48,7 @@ class LoginViewController: UIViewController {
         $0.textColor = .black
         $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Light")
     }
-    
+
     private let signUpButton = UIButton().then {
         $0.setTitle("회원가입", for: .normal)
         $0.setTitleColor(.rgb(red: 53, green: 117, blue: 172), for: .normal)
@@ -56,6 +56,7 @@ class LoginViewController: UIViewController {
         $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Bold")
         $0.addTarget(self, action: #selector(onTapSignUp(sender:)), for: .touchUpInside)
     }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,10 +81,8 @@ class LoginViewController: UIViewController {
     //MARK: - Helpers
     private func configureUI(){
         view.backgroundColor = .white
-        
         keyboardTypeSetting()
         addNotificationCenter()
-        
         addView()
         location()
     }
@@ -167,29 +166,3 @@ class LoginViewController: UIViewController {
         self.view.frame.origin.y = 0
     }
 }
-
-//MARK: - Preview
-#if DEBUG
-import SwiftUI
-struct LoginViewControllerRepresentable: UIViewControllerRepresentable {
-    
-func updateUIViewController(_ uiView: UIViewController,context: Context) {
-        // leave this empty
-}
-    @available(iOS 13.0.0, *)
-    func makeUIViewController(context: Context) -> UIViewController{
-        LoginViewController()
-    }
-}
-@available(iOS 13.0, *)
-struct ViewControllerRepresentable_PreviewProvider: PreviewProvider {
-    static var previews: some View {
-        Group {
-            LoginViewControllerRepresentable()
-                .ignoresSafeArea()
-                .previewDisplayName(/*@START_MENU_TOKEN@*/"Preview"/*@END_MENU_TOKEN@*/)
-                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
-        }
-        
-    }
-} #endif
