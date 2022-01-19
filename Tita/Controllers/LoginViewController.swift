@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
     private let signUpButton = UIButton().then {
         $0.setTitle("회원가입", for: .normal)
         $0.setTitleColor(.rgb(red: 53, green: 117, blue: 172), for: .normal)
-        $0.backgroundColor = .black
+        $0.backgroundColor = .white
         $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Bold")
         $0.addTarget(self, action: #selector(onTapSignUp(sender:)), for: .touchUpInside)
     }
@@ -130,6 +130,12 @@ class LoginViewController: UIViewController {
         signUpLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(self.view.frame.width/3.35)
             make.top.equalTo(loginButton.snp.bottom).offset(self.view.frame.height/29)
+        }
+        signUpButton.snp.makeConstraints { make in
+            make.left.equalTo(signUpLabel.snp.right).offset(self.view.frame.width/46.88)
+            make.centerY.equalTo(signUpLabel)
+            make.width.equalToSuperview().dividedBy(10.3)
+            make.height.equalToSuperview().dividedBy(50.75)
         }
     }
 
