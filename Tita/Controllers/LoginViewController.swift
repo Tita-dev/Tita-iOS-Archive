@@ -42,6 +42,19 @@ class LoginViewController: UIViewController {
         $0.dataSetting(title: "로그인")
         $0.addTarget(self, action: #selector(onTapLogin(sender:)), for: .touchUpInside)
     }
+    
+    private let signUpLabel = UILabel().then {
+        $0.text = "혹시 아직 회원이 아니신가요?"
+        $0.textColor = .black
+        $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Light")
+    }
+    
+    private let signUpButton = UIButton().then {
+        $0.setTitle("회원가입", for: .normal)
+        $0.setTitleColor(.rgb(red: 53, green: 117, blue: 172), for: .normal)
+        $0.backgroundColor = .black
+        $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Bold")
+    }
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
