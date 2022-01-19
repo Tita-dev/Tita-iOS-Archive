@@ -96,7 +96,8 @@ class LoginViewController: UIViewController {
 
     // MARK: - KeyboardType Setting
     private func keyboardTypeSetting(){
-        
+        idTextField.keyboardType = .asciiCapable
+        pwTextField.keyboardType = .asciiCapable
     }
 
     // MARK: - textField Point Set
