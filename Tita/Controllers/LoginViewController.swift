@@ -54,6 +54,7 @@ class LoginViewController: UIViewController {
         $0.setTitleColor(.rgb(red: 53, green: 117, blue: 172), for: .normal)
         $0.backgroundColor = .black
         $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Bold")
+        $0.addTarget(self, action: #selector(onTapSignUp(sender:)), for: .touchUpInside)
     }
     //MARK: - Lifecycle
     override func viewDidLoad() {
