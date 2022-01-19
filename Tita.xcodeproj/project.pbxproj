@@ -23,7 +23,6 @@
 		C06F3281275E532400F4A97E /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C06F327F275E52B900F4A97E /* NotoSans-BoldItalic.ttf */; };
 		C06F3282275E532700F4A97E /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C06F327E275E52B900F4A97E /* NotoSans-Italic.ttf */; };
 		C06F3283275E532A00F4A97E /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C06F327D275E52B900F4A97E /* NotoSans-Regular.ttf */; };
-		C06F3285275E557C00F4A97E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06F3284275E557C00F4A97E /* LoginViewController.swift */; };
 		C0DBC1E7278C4E0900E310D8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +46,6 @@
 		C06F327D275E52B900F4A97E /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		C06F327E275E52B900F4A97E /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
 		C06F327F275E52B900F4A97E /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
-		C06F3284275E557C00F4A97E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CF5D6514FA08B636D80D0304 /* Pods-Tita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tita.release.xcconfig"; path = "Target Support Files/Pods-Tita/Pods-Tita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,7 +110,6 @@
 		AA3837AF275E59D2005C0323 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C06F3284275E557C00F4A97E /* LoginViewController.swift */,
 				C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */,
 			);
 			path = Controllers;
@@ -314,7 +311,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C06F3285275E557C00F4A97E /* LoginViewController.swift in Sources */,
 				AAB6A9602796D8A800DE26C6 /* LoginButton.swift in Sources */,
 				C06F3268275E4F1500F4A97E /* AppDelegate.swift in Sources */,
 				C0525E5E2792B6E2004FD735 /* MenuCollectionViewCell.swift in Sources */,
