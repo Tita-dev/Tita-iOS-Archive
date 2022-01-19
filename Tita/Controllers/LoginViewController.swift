@@ -11,7 +11,9 @@ import Then
 
 class LoginViewController: UIViewController {
     //MARK: - Properties
-    
+    private let logo = UIImageView().then {
+        $0.image = UIImage(named: "Tita-Logo")
+    }
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -37,6 +39,7 @@ class LoginViewController: UIViewController {
     @objc private func onTapForgotPw(sender:UIButton){
         print("ForgotPw")
     }
+    
     //MARK: - Helpers
     private func configureUI(){
         view.backgroundColor = .white
@@ -46,12 +49,17 @@ class LoginViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [].forEach{ view.addSubview($0) }
+        [logo].forEach{ view.addSubview($0) }
     }
     
     // MARK: - Location
     private func location(){
-        
+        logo.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(self.view.frame.height/3.59)
+            make.width.equalToSuperview().dividedBy(3.46)
+            make.height.equalToSuperview().dividedBy(20.12)
+        }
     }
 
     // MARK: - KeyboardType Setting
