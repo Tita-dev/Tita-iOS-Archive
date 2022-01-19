@@ -35,6 +35,7 @@ class LoginViewController: UIViewController {
         $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Light")
         $0.backgroundColor = .white
         $0.setTitleColor(.rgb(red: 53, green: 117, blue: 172), for: .normal)
+        $0.addTarget(self, action: #selector(onTapForgot(sender:)), for: .touchUpInside)
     }
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -53,12 +54,8 @@ class LoginViewController: UIViewController {
         print("SignUP")
     }
 
-    @objc private func onTapForgotId(sender:UIButton){
-        print("ForgotId")
-    }
-
-    @objc private func onTapForgotPw(sender:UIButton){
-        print("ForgotPw")
+    @objc private func onTapForgot(sender:UIButton){
+        print("Forgot")
     }
     
     //MARK: - Helpers
