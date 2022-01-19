@@ -29,6 +29,13 @@ class LoginViewController: UIViewController {
         $0.dataSetting(placeholderText: "비밀번호")
         $0.isSecureTextEntry = true
     }
+    
+    private let forgotButton = UIButton().then {
+        $0.setTitle("아이디 / 비밀번호를 잊으셨나요?", for: .normal)
+        $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Light")
+        $0.backgroundColor = .white
+        $0.setTitleColor(.rgb(red: 53, green: 117, blue: 172), for: .normal)
+    }
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,13 +64,16 @@ class LoginViewController: UIViewController {
     //MARK: - Helpers
     private func configureUI(){
         view.backgroundColor = .white
+        
+        keyboardTypeSetting()
+        
         addView()
         location()
     }
     
     // MARK: - Add View
     private func addView(){
-        [logo, aboutTita, idTextField, pwTextField].forEach{ view.addSubview($0) }
+        [logo, aboutTita, idTextField, pwTextField, forgotButton].forEach{ view.addSubview($0) }
     }
     
     // MARK: - Location
@@ -91,6 +101,13 @@ class LoginViewController: UIViewController {
             make.centerX.equalToSuperview()
             make.top.equalTo(idTextField.snp.bottom).offset(self.view.frame.height/62.46)
             make.width.height.equalTo(idTextField)
+        }
+        
+        forgotButton.snp.makeConstraints { make in
+            make.right.equalTo(pwTextField)
+            make.top.equalTo(pwTextField.snp.bottom).offset(self.view.frame.height/90.22)
+            make.width.equalToSuperview().dividedBy(2.7)
+            make.height.equalToSuperview().dividedBy(54.13)
         }
     }
 
