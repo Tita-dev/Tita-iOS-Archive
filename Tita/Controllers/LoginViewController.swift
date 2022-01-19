@@ -89,7 +89,7 @@ class LoginViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [logo, aboutTita, idTextField, pwTextField, forgotButton, loginButton].forEach{ view.addSubview($0) }
+        [logo, aboutTita, idTextField, pwTextField, forgotButton, loginButton, signUpLabel, signUpButton].forEach{ view.addSubview($0) }
     }
     
     // MARK: - Location
@@ -126,6 +126,10 @@ class LoginViewController: UIViewController {
             make.top.equalTo(forgotButton.snp.bottom).offset(self.view.frame.height/29)
             make.width.equalToSuperview().dividedBy(3.18)
             make.height.equalToSuperview().dividedBy(20.3)
+        }
+        signUpLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(self.view.frame.width/3.35)
+            make.top.equalTo(loginButton.snp.bottom).offset(self.view.frame.height/29)
         }
     }
 
