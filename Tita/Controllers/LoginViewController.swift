@@ -27,6 +27,7 @@ class LoginViewController: UIViewController {
     
     private let pwTextField = LoginTextField().then {
         $0.dataSetting(placeholderText: "비밀번호")
+        $0.isSecureTextEntry = true
     }
     //MARK: - Lifecycle
     override func viewDidLoad() {
