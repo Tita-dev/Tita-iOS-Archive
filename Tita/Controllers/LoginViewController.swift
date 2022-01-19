@@ -37,6 +37,11 @@ class LoginViewController: UIViewController {
         $0.setTitleColor(.rgb(red: 53, green: 117, blue: 172), for: .normal)
         $0.addTarget(self, action: #selector(onTapForgot(sender:)), for: .touchUpInside)
     }
+    
+    private let loginButton = LoginButton().then {
+        $0.dataSetting(title: "로그인")
+        $0.addTarget(self, action: #selector(onTapLogin(sender:)), for: .touchUpInside)
+    }
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +75,7 @@ class LoginViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [logo, aboutTita, idTextField, pwTextField, forgotButton].forEach{ view.addSubview($0) }
+        [logo, aboutTita, idTextField, pwTextField, forgotButton, loginButton].forEach{ view.addSubview($0) }
     }
     
     // MARK: - Location
@@ -81,30 +86,32 @@ class LoginViewController: UIViewController {
             make.width.equalToSuperview().dividedBy(3.46)
             make.height.equalToSuperview().dividedBy(20.12)
         }
-        
         aboutTita.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(logo.snp.bottom).offset(self.view.frame.height/174.62)
         }
-        
         idTextField.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(aboutTita.snp.bottom).offset(self.view.frame.height/15.62)
             make.width.equalToSuperview().dividedBy(1.43)
             make.height.equalToSuperview().dividedBy(19.33)
         }
-        
         pwTextField.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(idTextField.snp.bottom).offset(self.view.frame.height/62.46)
             make.width.height.equalTo(idTextField)
         }
-        
         forgotButton.snp.makeConstraints { make in
             make.right.equalTo(pwTextField)
             make.top.equalTo(pwTextField.snp.bottom).offset(self.view.frame.height/90.22)
             make.width.equalToSuperview().dividedBy(2.7)
             make.height.equalToSuperview().dividedBy(54.13)
+        }
+        loginButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(forgotButton.snp.bottom).offset(self.view.frame.height/29)
+            make.width.equalToSuperview().dividedBy(3.18)
+            make.height.equalToSuperview().dividedBy(20.3)
         }
     }
 
