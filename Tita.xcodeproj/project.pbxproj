@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AA3837AC275E5960005C0323 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3837AB275E5960005C0323 /* Extension.swift */; };
-		AAB6A95C2796B57B00DE26C6 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB6A95B2796B57B00DE26C6 /* LoginTextField.swift */; };
 		AAB6A9602796D8A800DE26C6 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB6A95F2796D8A800DE26C6 /* LoginButton.swift */; };
+		AAB6A9622798066900DE26C6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB6A9612798066900DE26C6 /* LoginViewController.swift */; };
+		AAB6A964279809E700DE26C6 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB6A963279809E700DE26C6 /* LoginTextField.swift */; };
 		B482FBB2A4C005038D809087 /* Pods_Tita.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251ABCF5232EE1ED1774C54C /* Pods_Tita.framework */; };
 		C00F5A7D27904747002B34DF /* MainTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F5A7C27904747002B34DF /* MainTopView.swift */; };
 		C0525E5E2792B6E2004FD735 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0525E5D2792B6E2004FD735 /* MenuCollectionViewCell.swift */; };
@@ -24,7 +25,6 @@
 		C06F3281275E532400F4A97E /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C06F327F275E52B900F4A97E /* NotoSans-BoldItalic.ttf */; };
 		C06F3282275E532700F4A97E /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C06F327E275E52B900F4A97E /* NotoSans-Italic.ttf */; };
 		C06F3283275E532A00F4A97E /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C06F327D275E52B900F4A97E /* NotoSans-Regular.ttf */; };
-		C06F3285275E557C00F4A97E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06F3284275E557C00F4A97E /* LoginViewController.swift */; };
 		C0DBC1E7278C4E0900E310D8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,8 +32,9 @@
 		113E1EBF524BAD834CEFC395 /* Pods-Tita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tita.debug.xcconfig"; path = "Target Support Files/Pods-Tita/Pods-Tita.debug.xcconfig"; sourceTree = "<group>"; };
 		251ABCF5232EE1ED1774C54C /* Pods_Tita.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tita.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3837AB275E5960005C0323 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		AAB6A95B2796B57B00DE26C6 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		AAB6A95F2796D8A800DE26C6 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		AAB6A9612798066900DE26C6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AAB6A963279809E700DE26C6 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		C00F5A7C27904747002B34DF /* MainTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTopView.swift; path = Tita/MainTopView.swift; sourceTree = SOURCE_ROOT; };
 		C0525E5D2792B6E2004FD735 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuCollectionViewCell.swift; path = Tita/Views/Cells/MenuCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		C0525E612793E99F004FD735 /* MainPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainPostTableViewCell.swift; path = Tita/Views/MainPostTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -49,7 +50,6 @@
 		C06F327D275E52B900F4A97E /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		C06F327E275E52B900F4A97E /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
 		C06F327F275E52B900F4A97E /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
-		C06F3284275E557C00F4A97E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CF5D6514FA08B636D80D0304 /* Pods-Tita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tita.release.xcconfig"; path = "Target Support Files/Pods-Tita/Pods-Tita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,8 +114,8 @@
 		AA3837AF275E59D2005C0323 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C06F3284275E557C00F4A97E /* LoginViewController.swift */,
 				C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */,
+				AAB6A9612798066900DE26C6 /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -133,7 +133,7 @@
 		AAB6A95D2796D87A00DE26C6 /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
-				AAB6A95B2796B57B00DE26C6 /* LoginTextField.swift */,
+				AAB6A963279809E700DE26C6 /* LoginTextField.swift */,
 			);
 			path = TextFields;
 			sourceTree = "<group>";
@@ -317,7 +317,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C06F3285275E557C00F4A97E /* LoginViewController.swift in Sources */,
 				AAB6A9602796D8A800DE26C6 /* LoginButton.swift in Sources */,
 				C06F3268275E4F1500F4A97E /* AppDelegate.swift in Sources */,
 				C0525E5E2792B6E2004FD735 /* MenuCollectionViewCell.swift in Sources */,
@@ -326,9 +325,10 @@
 				C059093F2794E0A1002C9056 /* NoticeLabelView.swift in Sources */,
 				C00F5A7D27904747002B34DF /* MainTopView.swift in Sources */,
 				AA3837AC275E5960005C0323 /* Extension.swift in Sources */,
-				AAB6A95C2796B57B00DE26C6 /* LoginTextField.swift in Sources */,
 				C0DBC1E7278C4E0900E310D8 /* MainViewController.swift in Sources */,
+				AAB6A964279809E700DE26C6 /* LoginTextField.swift in Sources */,
 				C0525E6427947431004FD735 /* EmptyPostView.swift in Sources */,
+				AAB6A9622798066900DE26C6 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
