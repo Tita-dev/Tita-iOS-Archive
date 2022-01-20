@@ -16,8 +16,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     private let collectionViewTitleList = ["오늘의 급식", "게시글 쓰러가기", "자유게시판", "공지게시판"]
     private let collectionViewSubTitleList = ["제일 중요한 급식을 보러가요", "당신의 이야기를 학생들과 공유해요", "다양한 이야기를 자유롭게 나눠요", "학교의 다양한 공지를 만나봐요"]
     
-    private let noticeTableViewDataList = ["체육대회 공지사항", "체육대회 공지사항"]
-    private let tableViewTitleList = ["2022년 새해 소원", "12월 30일 급식 공지사항", "TITA 1학년 FE를 모집합니다"]
+    private let noticeTableViewDataList = [String]()
+    private let tableViewTitleList = [String]()
     private let tableViewTextList = ["다들 뭐야?? 나는 일단 취업하기랑 코로나 없어져서 여행가기....", "급식 파업으로 인해 목요일 점심 급식이 제공되지 않습니다. 이점 유의하여 주시기 바랍니다.\n급식 파업으로 인해 목요일 점심 급식이 제공되지 않습니다. 이점 유의하여 주시기 바랍니다.", "고교 익명 커뮤니티 서비스 TITA의 1학년 FE를 모집합니다. 관심이 있는 학생은 디스코드 #3128로 연락주시기 바랍니다. 자세한 사항은 하단의 노션 링크를 참고하여 주시기..."]
     private let tableViewWriterList = ["취뽀하자", "익명", "익명"]
     private let tableViewIconList = ["Tita-Globe", "Tita-Pin", "Tita-Globe"]
@@ -51,6 +51,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         $0.separatorStyle = .none
     }
     
+    private let noticeEmptyView = EmptyPostView().then {
+        $0.isHidden = true
+    }
+    
     private let bestLabel = NoticeLabelView().then {
         $0.label.text = "BEST 게시글"
         $0.button.addTarget(self, action: #selector(tapBestMoreButton(_:)), for: .touchUpInside)
@@ -60,6 +64,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         $0.showsVerticalScrollIndicator = false
         $0.separatorStyle = .none
     }
+    
+    private let bestEmptyView = EmptyPostView().then {
+        $0.noticeText.text = "아직 BEST 게시글이 없어요!"
+        $0.isHidden = true
+    }
+    
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -95,7 +105,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     // MARK: - Add View
     private func addView(){
-        [topView, menuLabel, menuCollectionView, noticeLabel, noticePostTableView, bestLabel, bestPostTableView].forEach { view.addSubview($0) }
+        [topView, menuLabel, menuCollectionView, noticeLabel, noticePostTableView, noticeEmptyView, bestLabel, bestPostTableView, bestEmptyView].forEach { view.addSubview($0) }
     }
     
     //MARK: - collectionViewSetting
@@ -135,9 +145,17 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == noticePostTableView {
+            if noticeTableViewDataList.isEmpty{
+                noticeEmptyView.isHidden = false
+                noticeLabel.button.isHidden = true
+            }
             return noticeTableViewDataList.count
         }
         if tableView == bestPostTableView {
+            if tableViewTitleList.isEmpty{
+                bestEmptyView.isHidden = false
+                bestLabel.button.isHidden = true
+            }
             return tableViewTitleList.count
         }
         return 0
@@ -146,6 +164,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainPostTableViewCell.identifier) as! MainPostTableViewCell
         cell.selectionStyle = .none
+        
+        if tableView == noticePostTableView {
+            cell.title.text = noticeTableViewDataList[indexPath.row]
+        }
         
         if tableView == bestPostTableView {
             cell.dataSetting(postTitle: tableViewTitleList[indexPath.row], postText: tableViewTextList[indexPath.row], postWriter: tableViewWriterList[indexPath.row], postIcon: tableViewIconList[indexPath.row])
@@ -193,6 +215,13 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             make.centerX.equalToSuperview()
         }
         
+        noticeEmptyView.snp.makeConstraints { make in
+            make.height.equalToSuperview().dividedBy(5.14)
+            make.width.equalToSuperview().dividedBy(1.09)
+            make.top.equalTo(noticeLabel.label.snp.bottom).offset(self.view.frame.height/101.5)
+            make.centerX.equalToSuperview()
+        }
+        
         bestLabel.snp.makeConstraints { make in
             make.width.equalToSuperview()
             make.height.equalTo(noticeLabel)
@@ -203,6 +232,13 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             make.height.equalToSuperview().dividedBy(3.6)
             make.width.equalTo(noticePostTableView)
             make.top.equalTo(bestLabel.snp.bottom).offset(self.view.frame.height/50.75)
+            make.centerX.equalToSuperview()
+        }
+        
+        bestEmptyView.snp.makeConstraints { make in
+            make.height.equalToSuperview().dividedBy(3.41)
+            make.width.equalTo(noticeEmptyView)
+            make.top.equalTo(bestLabel.label.snp.bottom).offset(self.view.frame.height/101.5)
             make.centerX.equalToSuperview()
         }
     }
