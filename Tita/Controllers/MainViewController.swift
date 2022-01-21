@@ -170,7 +170,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cell.selectionStyle = .none
         
         if tableView == noticePostTableView {
-            cell.title.text = noticeTableViewTitleList[indexPath.row]
+            cell.dataSetting(postTitle: noticeTableViewTitleList[indexPath.row], postText: noticeTableViewTextList[indexPath.row], postWriter: noticeTableViewWriterList[indexPath.row], postIcon: noticeTableViewIconList[indexPath.row])
         }
         
         if tableView == bestPostTableView {
