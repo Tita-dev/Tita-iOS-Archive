@@ -329,3 +329,47 @@ extension UITextField {
     }
 }
 
+// MARK: - Line Spacing
+extension NSAttributedString {
+    func withLineSpacing(_ spacing: CGFloat) -> NSAttributedString {
+
+
+        let attributedString = NSMutableAttributedString(attributedString: self)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineBreakMode = .byTruncatingTail
+        paragraphStyle.lineSpacing = spacing
+        attributedString.addAttribute(.paragraphStyle,
+                                      value: paragraphStyle,
+                                      range: NSRange(location: 0, length: string.count))
+        return NSAttributedString(attributedString: attributedString)
+    }
+}
+
+// MARK: - placeholder color change
+public extension UITextField {
+    
+    func setPlaceholderColor(_ placeholderColor: UIColor) {
+        attributedPlaceholder = NSAttributedString(
+            string: placeholder ?? "",
+            attributes: [
+                .foregroundColor: placeholderColor,
+                .font: font
+            ].compactMapValues { $0 }
+        )
+    }
+}
+
+// MARK: - textField padding
+extension UITextField {
+    func setLeftPaddingPoints(_ amount:CGFloat){ //왼쪽에 여백 주기
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.leftView = paddingView
+        self.leftViewMode = .always
+    }
+ 
+    func setRightPaddingPoints(_ amount:CGFloat) { //오른쪽에 여백 주기
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.rightView = paddingView
+        self.rightViewMode = .always
+    }
+}
