@@ -25,6 +25,7 @@
 		C06F3281275E532400F4A97E /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C06F327F275E52B900F4A97E /* NotoSans-BoldItalic.ttf */; };
 		C06F3282275E532700F4A97E /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C06F327E275E52B900F4A97E /* NotoSans-Italic.ttf */; };
 		C06F3283275E532A00F4A97E /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C06F327D275E52B900F4A97E /* NotoSans-Regular.ttf */; };
+		C0D1328527A295E1003E4811 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1328427A295E1003E4811 /* SignUpViewController.swift */; };
 		C0DBC1E7278C4E0900E310D8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		C06F327D275E52B900F4A97E /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		C06F327E275E52B900F4A97E /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
 		C06F327F275E52B900F4A97E /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C0D1328427A295E1003E4811 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CF5D6514FA08B636D80D0304 /* Pods-Tita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tita.release.xcconfig"; path = "Target Support Files/Pods-Tita/Pods-Tita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 			children = (
 				C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */,
 				AAB6A9612798066900DE26C6 /* LoginViewController.swift */,
+				C0D1328427A295E1003E4811 /* SignUpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				C0DBC1E7278C4E0900E310D8 /* MainViewController.swift in Sources */,
 				AAB6A964279809E700DE26C6 /* LoginTextField.swift in Sources */,
 				C0525E6427947431004FD735 /* EmptyPostView.swift in Sources */,
+				C0D1328527A295E1003E4811 /* SignUpViewController.swift in Sources */,
 				AAB6A9622798066900DE26C6 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
