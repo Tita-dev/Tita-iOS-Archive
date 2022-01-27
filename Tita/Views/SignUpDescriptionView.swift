@@ -11,6 +11,10 @@ import Then
 
 class SignUpDescriptionView: UIView {
     private let viewBounds = UIScreen.main.bounds
+    
+    let previousButton = UIButton().then {
+       $0.setImage(UIImage(named: "Tita-Previous"), for: .normal)
+    }
 
     private let logo = UIImageView().then {
         $0.image = UIImage(named: "Tita-Logo")
@@ -50,16 +54,23 @@ class SignUpDescriptionView: UIView {
         
     // MARK: - addView
     private func addView(){
-        [logo, descriptionLabel, additionalDescriptionLabel].forEach { addSubview($0) }
+        [previousButton, logo, descriptionLabel, additionalDescriptionLabel].forEach { addSubview($0) }
     }
             
     // MARK: - location
     private func location(){
+        
+        previousButton.snp.makeConstraints { make in
+            make.width.equalTo(viewBounds.width/17.86)
+            make.height.equalTo(viewBounds.height/40.6)
+            make.top.equalToSuperview()
+            make.left.equalTo(viewBounds.width/15.63)
+        }
         logo.snp.makeConstraints { make in
             make.width.equalTo(viewBounds.width/3.22)
             make.height.equalTo(viewBounds.height/19.33)
-            make.top.equalToSuperview()
-            make.left.equalTo(viewBounds.width/15.63)
+            make.top.equalTo(previousButton.snp.bottom).offset(viewBounds.height/13.1)
+            make.left.equalTo(previousButton)
         }
         
         descriptionLabel.snp.makeConstraints { make in

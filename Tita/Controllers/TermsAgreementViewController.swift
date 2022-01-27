@@ -12,11 +12,8 @@ import Then
 class TermsAgreementViewController: UIViewController {
     
     //MARK: - Properties
-    private let descriptionView = SignUpDescriptionView()
-    
-    private let previousButton = UIButton().then {
-        $0.setImage(UIImage(named: "Tita-Previous"), for: .normal)
-        $0.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
+    private let descriptionView = SignUpDescriptionView().then {
+        $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
     private let allTermsAgreeButton = UIButton().then {
@@ -174,7 +171,7 @@ class TermsAgreementViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [previousButton, descriptionView, allTermsAgreeButton, allTermsLabel, line, subTermsButton1, subTermsLabel1, subTermsButton2, subTermsLabel2, subTermsButton3, subTermsLabel3, nextButton].forEach{ view.addSubview($0)}
+        [descriptionView, allTermsAgreeButton, allTermsLabel, line, subTermsButton1, subTermsLabel1, subTermsButton2, subTermsLabel2, subTermsButton3, subTermsLabel3, nextButton].forEach{ view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -184,17 +181,10 @@ class TermsAgreementViewController: UIViewController {
     
     // MARK: - Location
     private func location(){
-        previousButton.snp.makeConstraints { make in
-            make.width.equalToSuperview().dividedBy(17.86)
-            make.height.equalToSuperview().dividedBy(40.6)
-            make.top.equalToSuperview().offset(self.view.frame.height/13.1)
-            make.left.equalToSuperview().offset(self.view.frame.width/15.63)
-        }
-        
         descriptionView.snp.makeConstraints { make in
             make.width.equalToSuperview()
-            make.height.equalToSuperview().dividedBy(6.66)
-            make.top.equalToSuperview().offset(self.view.frame.height/5.64)
+            make.height.equalToSuperview().dividedBy(3.98)
+            make.top.equalToSuperview().offset(self.view.frame.height/13.1)
             make.centerX.equalToSuperview()
         }
         
@@ -202,7 +192,7 @@ class TermsAgreementViewController: UIViewController {
             make.width.equalToSuperview().dividedBy(20.83)
             make.height.equalToSuperview().dividedBy(45.11)
             make.top.equalTo(descriptionView.snp.bottom).offset(self.view.frame.height/14)
-            make.left.equalTo(previousButton)
+            make.left.equalToSuperview().offset(self.view.frame.width/15.63)
         }
         
         allTermsLabel.snp.makeConstraints { make in
