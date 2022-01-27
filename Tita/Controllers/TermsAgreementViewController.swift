@@ -54,6 +54,10 @@ class TermsAgreementViewController: UIViewController {
         $0.dynamicFont(fontSize: 17, currentFontName: "AppleSDGothicNeo-Light")
     }
     
+    private let nextButton = LoginButton().then {
+        $0.dataSetting(title: "다음")
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +76,7 @@ class TermsAgreementViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView, allTermsAgreeButton, allTermsLabel, line, subTermsButton1, subTermsLabel1, subTermsButton2, subTermsLabel2, subTermsButton3, subTermsLabel3].forEach{ view.addSubview($0)}
+        [descriptionView, allTermsAgreeButton, allTermsLabel, line, subTermsButton1, subTermsLabel1, subTermsButton2, subTermsLabel2, subTermsButton3, subTermsLabel3, nextButton].forEach{ view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -138,6 +142,13 @@ class TermsAgreementViewController: UIViewController {
         subTermsLabel3.snp.makeConstraints { make in
             make.centerY.equalTo(subTermsButton3)
             make.left.equalTo(subTermsLabel1)
+        }
+        
+        nextButton.snp.makeConstraints { make in
+            make.width.equalToSuperview().dividedBy(1.15)
+            make.height.equalToSuperview().dividedBy(16.24)
+            make.bottom.equalToSuperview().inset(self.view.frame.height/25.38)
+            make.centerX.equalToSuperview()
         }
 
     }
