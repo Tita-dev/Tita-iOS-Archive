@@ -12,6 +12,7 @@ import Then
 class TermsAgreementViewController: UIViewController {
     
     //MARK: - Properties
+    private let descriptionView = SignUpDescriptionView()
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -31,7 +32,7 @@ class TermsAgreementViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        
+        [descriptionView].forEach{ view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -41,7 +42,12 @@ class TermsAgreementViewController: UIViewController {
     
     // MARK: - Location
     private func location(){
-        
+        descriptionView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalToSuperview().dividedBy(6.66)
+            make.top.equalToSuperview().offset(self.view.frame.height/5.64)
+            make.centerX.equalToSuperview()
+        }
     }
     
 }
