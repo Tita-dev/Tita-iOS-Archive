@@ -45,6 +45,10 @@ class TermsAgreementViewController: UIViewController {
         $0.dynamicFont(fontSize: 17, currentFontName: "AppleSDGothicNeo-Light")
     }
     
+    private let subTermsButton3 = UIButton().then {
+        $0.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +67,7 @@ class TermsAgreementViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView, allTermsAgreeButton, allTermsLabel, line, subTermsButton1, subTermsLabel1, subTermsButton2, subTermsLabel2].forEach{ view.addSubview($0)}
+        [descriptionView, allTermsAgreeButton, allTermsLabel, line, subTermsButton1, subTermsLabel1, subTermsButton2, subTermsLabel2, subTermsButton3].forEach{ view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -119,6 +123,11 @@ class TermsAgreementViewController: UIViewController {
         subTermsLabel2.snp.makeConstraints { make in
             make.centerY.equalTo(subTermsButton2)
             make.left.equalTo(subTermsLabel1)
+        }
+        
+        subTermsButton3.snp.makeConstraints { make in
+            make.width.height.left.equalTo(subTermsButton2)
+            make.top.equalTo(subTermsButton2.snp.bottom).offset(self.view.frame.height/30.07)
         }
 
     }
