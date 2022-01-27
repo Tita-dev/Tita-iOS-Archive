@@ -14,6 +14,10 @@ class TermsAgreementViewController: UIViewController {
     //MARK: - Properties
     private let descriptionView = SignUpDescriptionView()
     
+    private let allTermsAgreeButton = UIButton().then {
+        $0.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +36,7 @@ class TermsAgreementViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView].forEach{ view.addSubview($0)}
+        [descriptionView, allTermsAgreeButton].forEach{ view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -47,6 +51,13 @@ class TermsAgreementViewController: UIViewController {
             make.height.equalToSuperview().dividedBy(6.66)
             make.top.equalToSuperview().offset(self.view.frame.height/5.64)
             make.centerX.equalToSuperview()
+        }
+        
+        allTermsAgreeButton.snp.makeConstraints { make in
+            make.width.equalToSuperview().dividedBy(20.83)
+            make.height.equalToSuperview().dividedBy(45.11)
+            make.top.equalTo(descriptionView.snp.bottom).offset(self.view.frame.height/14)
+            make.left.equalToSuperview().offset(self.view.frame.width/15.63)
         }
     }
     
