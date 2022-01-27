@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Properties
     private let logo = UIImageView().then {
         $0.image = UIImage(named: "Tita-Logo")
@@ -82,6 +82,7 @@ class LoginViewController: UIViewController {
     private func configureUI(){
         view.backgroundColor = .white
         keyboardTypeSetting()
+        textFieldDeleageSetting()
         addNotificationCenter()
         addView()
         location()
@@ -124,7 +125,7 @@ class LoginViewController: UIViewController {
         loginButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(forgotButton.snp.bottom).offset(self.view.frame.height/29)
-            make.width.equalToSuperview().dividedBy(3.18)
+            make.width.equalToSuperview().dividedBy(1.43)
             make.height.equalToSuperview().dividedBy(20.3)
         }
         signUpLabel.snp.makeConstraints { make in
@@ -143,6 +144,12 @@ class LoginViewController: UIViewController {
     private func keyboardTypeSetting(){
         idTextField.keyboardType = .asciiCapable
         pwTextField.keyboardType = .asciiCapable
+    }
+    
+    // MARK: - textField delegate Setting
+    private func textFieldDeleageSetting(){
+        idTextField.delegate = self
+        pwTextField.delegate = self
     }
 
     // MARK: - textField Point Set
@@ -165,4 +172,47 @@ class LoginViewController: UIViewController {
     @objc private func keyboardWillHide(_ sender: Notification) {
         self.view.frame.origin.y = 0
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == idTextField {
+            idTextField.layer.borderColor = UIColor.black.cgColor
+        } else if textField == pwTextField {
+            pwTextField.layer.borderColor = UIColor.black.cgColor
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == idTextField {
+            idTextField.layer.borderColor = UIColor.rgb(red: 205, green: 205, blue: 205).cgColor
+        } else if textField == pwTextField {
+            pwTextField.layer.borderColor = UIColor.rgb(red: 205, green: 205, blue: 205).cgColor
+        }
+    }
 }
+
+//MARK: - Preview
+#if DEBUG
+import SwiftUI
+struct LoginViewControllerRepresentable: UIViewControllerRepresentable {
+    
+func updateUIViewController(_ uiView: UIViewController,context: Context) {
+        // leave this empty
+}
+    @available(iOS 13.0.0, *)
+    func makeUIViewController(context: Context) -> UIViewController{
+        LoginViewController()
+    }
+}
+@available(iOS 13.0, *)
+struct LoginViewControllerRepresentable_PreviewProvider: PreviewProvider {
+    static var previews: some View {
+        Group {
+            LoginViewControllerRepresentable()
+                .ignoresSafeArea()
+                .previewDisplayName(/*@START_MENU_TOKEN@*/"Preview"/*@END_MENU_TOKEN@*/)
+                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
+        }
+        
+    }
+} #endif
+  
