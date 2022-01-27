@@ -16,6 +16,12 @@ class SignUpDescriptionView: UIView {
         $0.image = UIImage(named: "Tita-Logo")
     }
     
+    let descriptionLabel = UILabel().then {
+        $0.numberOfLines = 0
+        $0.text = "안녕하세요, 여러분!\n우리만의 공간으로 들어가볼까요?"
+        $0.dynamicFont(fontSize: 22, currentFontName: "AppleSDGothicNeo-Bold")
+    }
+    
 // MARK: - LifeCycles
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,7 +45,7 @@ class SignUpDescriptionView: UIView {
         
     // MARK: - addView
     private func addView(){
-        [logo].forEach { addSubview($0) }
+        [logo, descriptionLabel].forEach { addSubview($0) }
     }
             
     // MARK: - location
@@ -49,6 +55,11 @@ class SignUpDescriptionView: UIView {
             make.height.equalTo(viewBounds.height/19.33)
             make.top.equalToSuperview()
             make.left.equalTo(viewBounds.width/15.63)
+        }
+        
+        descriptionLabel.snp.makeConstraints { make in
+            make.top.equalTo(logo.snp.bottom).offset(viewBounds.height/45.11)
+            make.left.equalTo(logo)
         }
     }
 }
