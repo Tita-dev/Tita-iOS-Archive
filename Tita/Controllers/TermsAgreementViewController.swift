@@ -23,6 +23,14 @@ class TermsAgreementViewController: UIViewController {
         $0.dynamicFont(fontSize: 20, currentFontName: "AppleSDGothicNeo-Light")
     }
     
+    private let line = UIView().then {
+        $0.backgroundColor = .rgb(red: 201, green: 201, blue: 201)
+    }
+    
+    private let subTermsButton1 = UIButton().then {
+        $0.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +49,7 @@ class TermsAgreementViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView, allTermsAgreeButton, allTermsLabel].forEach{ view.addSubview($0)}
+        [descriptionView, allTermsAgreeButton, allTermsLabel, line, subTermsButton1].forEach{ view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -69,6 +77,21 @@ class TermsAgreementViewController: UIViewController {
             make.centerY.equalTo(allTermsAgreeButton)
             make.left.equalTo(allTermsAgreeButton.snp.right).offset(self.view.frame.width/41.67)
         }
+        
+        line.snp.makeConstraints { make in
+            make.width.equalToSuperview().dividedBy(1.15)
+            make.height.equalToSuperview().dividedBy(812)
+            make.top.equalTo(allTermsLabel.snp.bottom).offset(self.view.frame.height/35.3)
+            make.centerX.equalToSuperview()
+        }
+        
+        subTermsButton1.snp.makeConstraints { make in
+            make.width.equalToSuperview().dividedBy(23.44)
+            make.height.equalToSuperview().dividedBy(50.75)
+            make.top.equalTo(line.snp.bottom).offset(self.view.frame.height/31.23)
+            make.left.equalTo(allTermsAgreeButton)
+        }
+
     }
     
 }
