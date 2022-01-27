@@ -22,6 +22,11 @@ class SignUpDescriptionView: UIView {
         $0.dynamicFont(fontSize: 22, currentFontName: "AppleSDGothicNeo-Bold")
     }
     
+    let additionalDescriptionLabel = UILabel().then {
+        $0.numberOfLines = 0
+        $0.dynamicFont(fontSize: 12, currentFontName: "AppleSDGothicNeo-Regular")
+    }
+    
 // MARK: - LifeCycles
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,7 +50,7 @@ class SignUpDescriptionView: UIView {
         
     // MARK: - addView
     private func addView(){
-        [logo, descriptionLabel].forEach { addSubview($0) }
+        [logo, descriptionLabel, additionalDescriptionLabel].forEach { addSubview($0) }
     }
             
     // MARK: - location
@@ -60,6 +65,11 @@ class SignUpDescriptionView: UIView {
         descriptionLabel.snp.makeConstraints { make in
             make.top.equalTo(logo.snp.bottom).offset(viewBounds.height/45.11)
             make.left.equalTo(logo)
+        }
+        
+        additionalDescriptionLabel.snp.makeConstraints { make in
+            make.top.equalTo(descriptionLabel.snp.bottom).offset(viewBounds.height/116)
+            make.left.equalTo(descriptionLabel)
         }
     }
 }
