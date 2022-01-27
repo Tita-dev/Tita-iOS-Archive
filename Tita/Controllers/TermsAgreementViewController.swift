@@ -18,6 +18,11 @@ class TermsAgreementViewController: UIViewController {
         $0.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
     }
     
+    private let allTermsLabel = UILabel().then {
+        $0.text = "약관 전체 동의"
+        $0.dynamicFont(fontSize: 20, currentFontName: "AppleSDGothicNeo-Light")
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +41,7 @@ class TermsAgreementViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView, allTermsAgreeButton].forEach{ view.addSubview($0)}
+        [descriptionView, allTermsAgreeButton, allTermsLabel].forEach{ view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -58,6 +63,11 @@ class TermsAgreementViewController: UIViewController {
             make.height.equalToSuperview().dividedBy(45.11)
             make.top.equalTo(descriptionView.snp.bottom).offset(self.view.frame.height/14)
             make.left.equalToSuperview().offset(self.view.frame.width/15.63)
+        }
+        
+        allTermsLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(allTermsAgreeButton)
+            make.left.equalTo(allTermsAgreeButton.snp.right).offset(self.view.frame.width/41.67)
         }
     }
     
