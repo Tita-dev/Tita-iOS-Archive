@@ -14,8 +14,14 @@ class TermsAgreementViewController: UIViewController {
     //MARK: - Properties
     private let descriptionView = SignUpDescriptionView()
     
+    private let previousButton = UIButton().then {
+        $0.setImage(UIImage(named: "Tita-Previous"), for: .normal)
+        $0.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
+    }
+    
     private let allTermsAgreeButton = UIButton().then {
         $0.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+        $0.addTarget(self, action: #selector(tapAllButton(_:)), for: .touchUpInside)
     }
     
     private let allTermsLabel = UILabel().then {
@@ -29,6 +35,7 @@ class TermsAgreementViewController: UIViewController {
     
     private let subTermsButton1 = UIButton().then {
         $0.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+        $0.addTarget(self, action: #selector(tapButton1), for: .touchUpInside)
     }
     
     private let subTermsLabel1 = UILabel().then {
@@ -38,6 +45,7 @@ class TermsAgreementViewController: UIViewController {
     
     private let subTermsButton2 = UIButton().then {
         $0.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+        $0.addTarget(self, action: #selector(tapButton2), for: .touchUpInside)
     }
     
     private let subTermsLabel2 = UILabel().then {
@@ -47,6 +55,7 @@ class TermsAgreementViewController: UIViewController {
     
     private let subTermsButton3 = UIButton().then {
         $0.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+        $0.addTarget(self, action: #selector(tapButton3), for: .touchUpInside)
     }
     
     private let subTermsLabel3 = UILabel().then {
@@ -56,6 +65,7 @@ class TermsAgreementViewController: UIViewController {
     
     private let nextButton = LoginButton().then {
         $0.dataSetting(title: "다음")
+        $0.addTarget(self, action: #selector(tapNextButton(_:)), for: .touchUpInside)
     }
     
     //MARK: - Lifecycle
@@ -65,6 +75,94 @@ class TermsAgreementViewController: UIViewController {
     }
     
     //MARK: - Selectors
+    
+    lazy var allFlag = false
+    lazy var flag1 = false
+    lazy var flag2 = false
+    lazy var flag3 = false
+    
+    @objc private func tapPrevious(_ sender: UIButton){
+        navigationController?.popViewController(animated: true)
+        print("previous")
+    }
+    
+    @objc private func tapAllButton(_ sender: UIButton){
+        if allFlag == false {
+            allTermsAgreeButton.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
+            subTermsButton1.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
+            subTermsButton2.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
+            subTermsButton3.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
+            flag1 = true
+            flag2 = true
+            flag3 = true
+            allFlag = true
+        } else if allFlag == true {
+            allTermsAgreeButton.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+            subTermsButton1.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+            subTermsButton2.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+            subTermsButton3.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+            flag1 = false
+            flag2 = false
+            flag3 = false
+            allFlag = false
+        }
+    }
+    
+    @objc private func tapButton1(){
+        if flag1 == false {
+            subTermsButton1.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
+            flag1 = true
+            if flag2 == true && flag3 == true {
+                allTermsAgreeButton.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
+                allFlag = true
+            }
+        } else if flag1 == true {
+            subTermsButton1.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+            allTermsAgreeButton.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+            allFlag = false
+            flag1 = false
+        }
+    }
+    
+    @objc private func tapButton2(){
+        if flag2 == false {
+            subTermsButton2.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
+            flag2 = true
+            if flag1 == true && flag3 == true {
+                allTermsAgreeButton.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
+                allFlag = true
+            }
+        } else if flag2 == true {
+            subTermsButton2.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+            allTermsAgreeButton.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+            allFlag = false
+            flag2 = false
+        }
+    }
+    
+    @objc private func tapButton3(){
+        if flag3 == false {
+            subTermsButton3.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
+            flag3 = true
+            if flag1 == true && flag2 == true {
+                allTermsAgreeButton.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
+                allFlag = true
+            }
+        } else if flag3 == true {
+            subTermsButton3.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+            allTermsAgreeButton.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+            allFlag = false
+            flag3 = false
+        }
+    }
+    
+    @objc private func tapNextButton(_ sender: UIButton){
+        if allFlag == true {
+            print("성공~~")
+        }else{
+            print("실패ㅜㅜ")
+        }
+    }
     
     //MARK: - Helpers
     private func configureUI(){
@@ -76,7 +174,7 @@ class TermsAgreementViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView, allTermsAgreeButton, allTermsLabel, line, subTermsButton1, subTermsLabel1, subTermsButton2, subTermsLabel2, subTermsButton3, subTermsLabel3, nextButton].forEach{ view.addSubview($0)}
+        [previousButton, descriptionView, allTermsAgreeButton, allTermsLabel, line, subTermsButton1, subTermsLabel1, subTermsButton2, subTermsLabel2, subTermsButton3, subTermsLabel3, nextButton].forEach{ view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -86,6 +184,13 @@ class TermsAgreementViewController: UIViewController {
     
     // MARK: - Location
     private func location(){
+        previousButton.snp.makeConstraints { make in
+            make.width.equalToSuperview().dividedBy(17.86)
+            make.height.equalToSuperview().dividedBy(40.6)
+            make.top.equalToSuperview().offset(self.view.frame.height/13.1)
+            make.left.equalToSuperview().offset(self.view.frame.width/15.63)
+        }
+        
         descriptionView.snp.makeConstraints { make in
             make.width.equalToSuperview()
             make.height.equalToSuperview().dividedBy(6.66)
@@ -97,7 +202,7 @@ class TermsAgreementViewController: UIViewController {
             make.width.equalToSuperview().dividedBy(20.83)
             make.height.equalToSuperview().dividedBy(45.11)
             make.top.equalTo(descriptionView.snp.bottom).offset(self.view.frame.height/14)
-            make.left.equalToSuperview().offset(self.view.frame.width/15.63)
+            make.left.equalTo(previousButton)
         }
         
         allTermsLabel.snp.makeConstraints { make in
