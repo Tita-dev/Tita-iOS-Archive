@@ -72,7 +72,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @objc private func onTapSignUp(sender:UIButton){
         print("SignUP")
-        let nextVC = SignUpViewController()
+        let nextVC = TermsAgreementViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 

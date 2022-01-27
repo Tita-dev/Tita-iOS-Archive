@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class SignUpViewController: UIViewController {
+class TermsAgreementViewController: UIViewController {
     
     //MARK: - Properties
     
@@ -56,7 +56,7 @@ func updateUIViewController(_ uiView: UIViewController,context: Context) {
 }
     @available(iOS 13.0.0, *)
     func makeUIViewController(context: Context) -> UIViewController{
-        SignUpViewController()
+        TermsAgreementViewController()
     }
 }
 @available(iOS 13.0, *)
