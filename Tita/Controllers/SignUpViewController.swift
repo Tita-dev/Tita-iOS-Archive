@@ -56,7 +56,7 @@ func updateUIViewController(_ uiView: UIViewController,context: Context) {
 }
     @available(iOS 13.0.0, *)
     func makeUIViewController(context: Context) -> UIViewController{
-        ViewController()
+        SignUpViewController()
     }
 }
 @available(iOS 13.0, *)

@@ -72,6 +72,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @objc private func onTapSignUp(sender:UIButton){
         print("SignUP")
+        let nextVC = SignUpViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
 
     @objc private func onTapForgot(sender:UIButton){
