@@ -83,4 +83,10 @@ class SignUpDescriptionView: UIView {
             make.left.equalTo(descriptionLabel)
         }
     }
+    
+    // MARK: - DataSetting
+    func dataSetting(description: String, additionalDescription: String){
+        descriptionLabel.text = description
+        additionalDescriptionLabel.text = additionalDescription
+    }
 }
