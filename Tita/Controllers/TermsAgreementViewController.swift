@@ -155,9 +155,11 @@ class TermsAgreementViewController: UIViewController {
     
     @objc private func tapNextButton(_ sender: UIButton){
         if allFlag == true {
-            print("성공~~")
+            print("next")
+            let nextVC = BirthDateViewController()
+            self.navigationController?.pushViewController(nextVC, animated: true)
         }else{
-            print("실패ㅜㅜ")
+            print("fail")
         }
     }
     
