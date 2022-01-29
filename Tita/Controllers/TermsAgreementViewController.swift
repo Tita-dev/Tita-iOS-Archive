@@ -167,18 +167,12 @@ class TermsAgreementViewController: UIViewController {
     private func configureUI(){
         view.backgroundColor = .white
         addView()
-        cornerRadius()
         location()
     }
     
     // MARK: - Add View
     private func addView(){
         [descriptionView, allTermsAgreeButton, allTermsLabel, line, subTermsButton1, subTermsLabel1, subTermsButton2, subTermsLabel2, subTermsButton3, subTermsLabel3, nextButton].forEach{ view.addSubview($0)}
-    }
-    
-    // MARK: - Corner Radius
-    private func cornerRadius(){
-        
     }
     
     // MARK: - Location
@@ -251,29 +245,3 @@ class TermsAgreementViewController: UIViewController {
     }
     
 }
-
-//MARK: - Preview
-#if DEBUG
-import SwiftUI
-struct ViewControllerRepresentable: UIViewControllerRepresentable {
-    
-func updateUIViewController(_ uiView: UIViewController,context: Context) {
-        // leave this empty
-}
-    @available(iOS 13.0.0, *)
-    func makeUIViewController(context: Context) -> UIViewController{
-        TermsAgreementViewController()
-    }
-}
-@available(iOS 13.0, *)
-struct ViewControllerRepresentable_PreviewProvider: PreviewProvider {
-    static var previews: some View {
-        Group {
-            ViewControllerRepresentable()
-                .ignoresSafeArea()
-                .previewDisplayName(/*@START_MENU_TOKEN@*/"Preview"/*@END_MENU_TOKEN@*/)
-                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
-        }
-        
-    }
-} #endif
