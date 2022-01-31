@@ -12,7 +12,7 @@ class SignUpTextFieldView: UIView {
     private let viewBounds = UIScreen.main.bounds
     
     let label = UILabel().then {
-        $0.dynamicFont(fontSize: 14, currentFontName: "AppleSDGothicNeo-SemiBold")
+        $0.dynamicFont(fontSize: 14, currentFontName: "AppleSDGothicNeo-Medium")
     }
     
     private let textField = UITextField().then {
@@ -94,8 +94,7 @@ class SignUpTextFieldView: UIView {
     }
     
     // MARK: - DataSetting
-    func dataSetting(labelText: String, errorMessage: String){
+    func dataSetting(labelText: String){
         label.text = labelText
-        errorLabel.text = errorMessage
     }
 }

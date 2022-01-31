@@ -18,6 +18,11 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     private let datePickerView = UIPickerView()
     
+    private let nextButton = LoginButton().then {
+        $0.dataSetting(title: "다음")
+        $0.addTarget(self, action: #selector(tapNextButton(_:)), for: .touchUpInside)
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +30,11 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     //MARK: - Selectors
+    @objc private func tapNextButton(_ sender: UIButton){
+        print("next")
+        let nextVC = SignUpIDViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
     
     //MARK: - Helpers
     private func configureUI(){
@@ -36,7 +46,7 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView, datePickerView].forEach{view.addSubview($0)}
+        [descriptionView, datePickerView, nextButton].forEach{view.addSubview($0)}
     }
     
     // MARK: - PickerViewSetting
@@ -72,6 +82,13 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             make.width.equalToSuperview().dividedBy(1.5)
             make.height.equalToSuperview().dividedBy(6.01)
             make.center.equalToSuperview()
+        }
+        
+        nextButton.snp.makeConstraints { make in
+            make.width.equalToSuperview().dividedBy(1.15)
+            make.height.equalToSuperview().dividedBy(16.24)
+            make.bottom.equalToSuperview().inset(self.view.frame.height/25.38)
+            make.centerX.equalToSuperview()
         }
     }
     
