@@ -19,6 +19,7 @@ class SignUpPWViewController: UIViewController {
         $0.dataSetting(labelText: "비밀번호")
         $0.visibilityButton.isHidden = false
         $0.textField.isSecureTextEntry = true
+        $0.visibilityButton.addTarget(self, action: #selector(tapVisibilityButton(_:)), for: .touchUpInside)
     }
     
     private let nextButton = LoginButton().then {
@@ -32,7 +33,17 @@ class SignUpPWViewController: UIViewController {
     }
     
     //MARK: - Selectors
-    
+    @objc
+    func tapVisibilityButton(_ sender: UIButton){
+        if textFieldView.textField.isSecureTextEntry{
+            sender.setImage(UIImage(named: "Tita-Eye"), for: .normal)
+        }else{
+            sender.setImage(UIImage(named: "Tita-EyeSlash"), for: .normal)
+        }
+        textFieldView.textField.isSecureTextEntry.toggle()
+        
+    }
+
     //MARK: - Helpers
     private func configureUI(){
         view.backgroundColor = .white
