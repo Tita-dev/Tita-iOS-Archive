@@ -21,10 +21,12 @@ class SignUpSchoolViewController: UIViewController {
     
     private let searchButton = LoginButton().then {
         $0.dataSetting(title: "검색")
+        $0.addTarget(self, action: #selector(tapSearchButton(_:)), for: .touchUpInside)
     }
     
     private let nextButton = LoginButton().then {
         $0.dataSetting(title: "다음")
+        $0.addTarget(self, action: #selector(tapNextButton(_:)), for: .touchUpInside)
     }
     
     //MARK: - Lifecycle
@@ -34,6 +36,15 @@ class SignUpSchoolViewController: UIViewController {
     }
     
     //MARK: - Selectors
+    @objc
+    private func tapSearchButton(_ sender: UIButton){
+        print("search")
+    }
+    
+    @objc
+    private func tapNextButton(_ sender: UIButton){
+        print("next")
+    }
     
     //MARK: - Helpers
     private func configureUI(){

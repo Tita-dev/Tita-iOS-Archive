@@ -35,7 +35,7 @@ class SignUpPWViewController: UIViewController {
     
     //MARK: - Selectors
     @objc
-    func tapVisibilityButton(_ sender: UIButton){
+    private func tapVisibilityButton(_ sender: UIButton){
         if textFieldView.textField.isSecureTextEntry{
             sender.setImage(UIImage(named: "Tita-Eye"), for: .normal)
         }else{
@@ -44,7 +44,8 @@ class SignUpPWViewController: UIViewController {
         textFieldView.textField.isSecureTextEntry.toggle()
     }
     
-    @objc private func tapNextButton(_ sender: UIButton){
+    @objc
+    private func tapNextButton(_ sender: UIButton){
         let passwordPattern = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,16}"
         let passwordRegex = try? NSRegularExpression(pattern: passwordPattern)
         
