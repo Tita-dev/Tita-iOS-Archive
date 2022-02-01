@@ -14,6 +14,13 @@ class SignUpPWViewController: UIViewController {
     private let descriptionView = SignUpDescriptionView().then {
         $0.dataSetting(description: "본격적으로 계정을 만들어봐요!", additionalDescription: "영문, 숫자, 특수문자를 섞어 8~16자 이내로 적어주세요.")
     }
+    
+    private let textFieldView = SignUpTextFieldView().then {
+        $0.dataSetting(labelText: "비밀번호")
+        $0.visibilityButton.isHidden = false
+        $0.textField.isSecureTextEntry = true
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +39,7 @@ class SignUpPWViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView].forEach { view.addSubview($0)}
+        [descriptionView, textFieldView].forEach { view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -46,6 +53,13 @@ class SignUpPWViewController: UIViewController {
             make.width.equalToSuperview()
             make.height.equalToSuperview().dividedBy(3.98)
             make.top.equalToSuperview().offset(self.view.frame.height/13.1)
+            make.centerX.equalToSuperview()
+        }
+        
+        textFieldView.snp.makeConstraints { make in
+            make.width.equalToSuperview().dividedBy(1.15)
+            make.height.equalToSuperview().dividedBy(9.12)
+            make.top.equalTo(descriptionView.snp.bottom).offset(self.view.frame.height/32.48)
             make.centerX.equalToSuperview()
         }
     }
