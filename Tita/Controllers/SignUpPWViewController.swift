@@ -46,7 +46,8 @@ class SignUpPWViewController: UIViewController {
     
     @objc private func tapNextButton(_ sender: UIButton){
         updateSignUp()
-        print("next")
+        let nextVC = SignUpSchoolViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
 
     //MARK: - Helpers
