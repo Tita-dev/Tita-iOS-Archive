@@ -45,9 +45,17 @@ class SignUpPWViewController: UIViewController {
     }
     
     @objc private func tapNextButton(_ sender: UIButton){
-        updateSignUp()
-        let nextVC = SignUpSchoolViewController()
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        let passwordPattern = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,16}"
+        let passwordRegex = try? NSRegularExpression(pattern: passwordPattern)
+        
+        if let _ = passwordRegex?.firstMatch(in: textFieldView.textField.text!, options: [], range: NSRange(location: 0, length: textFieldView.textField.text!.count)) {
+            print("성공")
+            let nextVC = SignUpSchoolViewController()
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        }else{
+            print("실패")
+            textFieldView.errorLabel.text = "조건에 맞지 않는 비밀번호입니다."
+        }
     }
 
     //MARK: - Helpers
@@ -68,18 +76,6 @@ class SignUpPWViewController: UIViewController {
         
     }
     
-    //MARK: - Update SignUp
-    @objc
-    func updateSignUp() {
-        let passwordPattern = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,16}"
-        let passwordRegex = try? NSRegularExpression(pattern: passwordPattern)
-        
-        if let _ = passwordRegex?.firstMatch(in: textFieldView.textField.text!, options: [], range: NSRange(location: 0, length: textFieldView.textField.text!.count)) {
-            print("성공")
-        }else{
-            print("실패")
-        }
-    }
     // MARK: - Location
     private func location(){
         descriptionView.snp.makeConstraints { make in
