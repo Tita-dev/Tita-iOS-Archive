@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class SignUpIDViewController: UIViewController {
+class SignUpIDViewController: UIViewController{
     //MARK: - Properties
     private let descriptionView = SignUpDescriptionView().then {
         $0.dataSetting(description: "본격적으로 계정을 만들어봐요!", additionalDescription: "먼저, 아이디부터 입력할까요?")
@@ -21,6 +21,7 @@ class SignUpIDViewController: UIViewController {
     
     private let nextButton = LoginButton().then {
         $0.dataSetting(title: "다음")
+        $0.addTarget(self, action: #selector(tapNextButton(_:)), for: .touchUpInside)
     }
     
     //MARK: - Lifecycle
@@ -28,8 +29,13 @@ class SignUpIDViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
     }
-    
+
     //MARK: - Selectors
+    @objc private func tapNextButton(_ sender: UIButton){
+        print("next")
+        let nextVC = SignUpPWViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
     
     //MARK: - Helpers
     private func configureUI(){

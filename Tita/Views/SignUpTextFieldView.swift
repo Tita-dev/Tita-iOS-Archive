@@ -8,15 +8,16 @@
 import UIKit
 import SwiftUI
 
-class SignUpTextFieldView: UIView {
+class SignUpTextFieldView: UIView{
     private let viewBounds = UIScreen.main.bounds
     
     let label = UILabel().then {
         $0.dynamicFont(fontSize: 14, currentFontName: "AppleSDGothicNeo-Medium")
     }
     
-    private let textField = UITextField().then {
-        $0.dynamicFont(fontSize: 14, currentFontName: "AppleSDGothicNeo-Light")}
+    let textField = UITextField().then {
+        $0.dynamicFont(fontSize: 14, currentFontName: "AppleSDGothicNeo-Light")
+    }
     
     private let line = UIView().then {
         $0.backgroundColor = .black
