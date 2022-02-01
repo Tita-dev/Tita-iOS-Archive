@@ -23,6 +23,10 @@ class SignUpSchoolViewController: UIViewController {
         $0.dataSetting(title: "검색")
     }
     
+    private let nextButton = LoginButton().then {
+        $0.dataSetting(title: "다음")
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +45,7 @@ class SignUpSchoolViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView, textFieldView, searchButton].forEach { view.addSubview($0)}
+        [descriptionView, textFieldView, searchButton, nextButton].forEach { view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -78,6 +82,13 @@ class SignUpSchoolViewController: UIViewController {
             make.height.equalToSuperview().dividedBy(16.24)
             make.left.equalTo(textFieldView.line.snp.right).offset(self.view.frame.width/23.44)
             make.top.equalTo(descriptionView.snp.bottom).offset(self.view.frame.height/16.92)
+        }
+        
+        nextButton.snp.makeConstraints { make in
+            make.width.equalToSuperview().dividedBy(1.15)
+            make.height.equalToSuperview().dividedBy(16.24)
+            make.bottom.equalToSuperview().inset(self.view.frame.height/25.38)
+            make.centerX.equalToSuperview()
         }
     }
     
