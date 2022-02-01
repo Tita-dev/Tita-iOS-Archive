@@ -12,7 +12,7 @@ import Then
 class SignUpPWViewController: UIViewController {
     //MARK: - Properties
     private let descriptionView = SignUpDescriptionView().then {
-        $0.dataSetting(description: "어느 학교에 재학 중인가요?", additionalDescription: "학교 인증이 추후 진행되니 사실대로 골라주세요.")
+        $0.dataSetting(description: "본격적으로 계정을 만들어봐요!", additionalDescription: "영문, 숫자, 특수문자를 섞어 8~16자 이내로 적어주세요.")
     }
     //MARK: - Lifecycle
     override func viewDidLoad() {
