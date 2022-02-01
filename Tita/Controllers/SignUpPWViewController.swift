@@ -11,7 +11,9 @@ import Then
 
 class SignUpPWViewController: UIViewController {
     //MARK: - Properties
-    
+    private let descriptionView = SignUpDescriptionView().then {
+        $0.dataSetting(description: "어느 학교에 재학 중인가요?", additionalDescription: "학교 인증이 추후 진행되니 사실대로 골라주세요.")
+    }
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,7 @@ class SignUpPWViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        
+        [descriptionView].forEach { view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -40,7 +42,12 @@ class SignUpPWViewController: UIViewController {
     
     // MARK: - Location
     private func location(){
-        
+        descriptionView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalToSuperview().dividedBy(3.98)
+            make.top.equalToSuperview().offset(self.view.frame.height/13.1)
+            make.centerX.equalToSuperview()
+        }
     }
     
 }
