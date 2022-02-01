@@ -19,7 +19,7 @@ class SignUpTextFieldView: UIView{
         $0.dynamicFont(fontSize: 14, currentFontName: "AppleSDGothicNeo-Light")
     }
     
-    private let line = UIView().then {
+    let line = UIView().then {
         $0.backgroundColor = .black
     }
     
