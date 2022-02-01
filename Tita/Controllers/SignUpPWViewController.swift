@@ -24,6 +24,7 @@ class SignUpPWViewController: UIViewController {
     
     private let nextButton = LoginButton().then {
         $0.dataSetting(title: "다음")
+        $0.addTarget(self, action: #selector(tapNextButton(_:)), for: .touchUpInside)
     }
     
     //MARK: - Lifecycle
@@ -41,7 +42,11 @@ class SignUpPWViewController: UIViewController {
             sender.setImage(UIImage(named: "Tita-EyeSlash"), for: .normal)
         }
         textFieldView.textField.isSecureTextEntry.toggle()
-        
+    }
+    
+    @objc private func tapNextButton(_ sender: UIButton){
+        updateSignUp()
+        print("next")
     }
 
     //MARK: - Helpers
@@ -62,6 +67,18 @@ class SignUpPWViewController: UIViewController {
         
     }
     
+    //MARK: - Update SignUp
+    @objc
+    func updateSignUp() {
+        let passwordPattern = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,16}"
+        let passwordRegex = try? NSRegularExpression(pattern: passwordPattern)
+        
+        if let _ = passwordRegex?.firstMatch(in: textFieldView.textField.text!, options: [], range: NSRange(location: 0, length: textFieldView.textField.text!.count)) {
+            print("성공")
+        }else{
+            print("실패")
+        }
+    }
     // MARK: - Location
     private func location(){
         descriptionView.snp.makeConstraints { make in
