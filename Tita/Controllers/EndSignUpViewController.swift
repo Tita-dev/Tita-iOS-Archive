@@ -11,6 +11,10 @@ import Then
 
 class EndSignUpViewController: UIViewController {
     //MARK: - Properties
+    private let descriptionView = SignUpDescriptionView().then {
+        $0.dataSetting(description: "우리만의 공간에 들어갈\n준비가 모두 끝났어요!", additionalDescription: "Ti-Ta는 무분별한 욕설, 비방 등에 대해 제재를 가하고 있습니다.\n커뮤니티 가이드를 지키며 Ti-Ta 이용 부탁드립니다.")
+        $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
+    }
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -19,6 +23,11 @@ class EndSignUpViewController: UIViewController {
     }
     
     //MARK: - Selectors
+    @objc
+    private func tapPrevious(_ sender: UIButton){
+        navigationController?.popViewController(animated: true)
+        print("previous")
+    }
     
     //MARK: - Helpers
     private func configureUI(){
@@ -30,7 +39,7 @@ class EndSignUpViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        
+        [descriptionView].forEach { view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -40,7 +49,12 @@ class EndSignUpViewController: UIViewController {
     
     // MARK: - Location
     private func location(){
-        
+        descriptionView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalToSuperview().dividedBy(3.37)
+            make.top.equalToSuperview().offset(self.view.frame.height/13.1)
+            make.centerX.equalToSuperview()
+        }
     }
     
 }
