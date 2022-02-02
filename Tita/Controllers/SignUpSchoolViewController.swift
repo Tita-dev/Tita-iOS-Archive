@@ -13,6 +13,7 @@ class SignUpSchoolViewController: UIViewController {
     //MARK: - Properties
     private let descriptionView = SignUpDescriptionView().then {
         $0.dataSetting(description: "어느 학교에 재학 중인가요?", additionalDescription: "학교 인증이 추후 진행되니 사실대로 골라주세요.")
+        $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
     private let textFieldView = SignUpTextFieldView().then {
@@ -36,6 +37,12 @@ class SignUpSchoolViewController: UIViewController {
     }
     
     //MARK: - Selectors
+    @objc
+    private func tapPrevious(_ sender: UIButton){
+        navigationController?.popViewController(animated: true)
+        print("previous")
+    }
+    
     @objc
     private func tapSearchButton(_ sender: UIButton){
         print("search")

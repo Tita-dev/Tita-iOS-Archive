@@ -13,6 +13,7 @@ class SignUpIDViewController: UIViewController{
     //MARK: - Properties
     private let descriptionView = SignUpDescriptionView().then {
         $0.dataSetting(description: "본격적으로 계정을 만들어봐요!", additionalDescription: "먼저, 아이디부터 입력할까요?")
+        $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
     private let textFieldView = SignUpTextFieldView().then {
@@ -31,6 +32,12 @@ class SignUpIDViewController: UIViewController{
     }
 
     //MARK: - Selectors
+    @objc
+    private func tapPrevious(_ sender: UIButton){
+        navigationController?.popViewController(animated: true)
+        print("previous")
+    }
+    
     @objc private func tapNextButton(_ sender: UIButton){
         print("next")
         let nextVC = SignUpPWViewController()

@@ -14,6 +14,7 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     //MARK: - Properties
     private let descriptionView = SignUpDescriptionView().then {
         $0.dataSetting(description: "당신의 생일은 언제인가요?", additionalDescription: "생일은 공개되지 않아요!")
+        $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
     private let datePickerView = UIPickerView()
@@ -30,6 +31,12 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     //MARK: - Selectors
+    @objc
+    private func tapPrevious(_ sender: UIButton){
+        navigationController?.popViewController(animated: true)
+        print("previous")
+    }
+    
     @objc private func tapNextButton(_ sender: UIButton){
         print("next")
         let nextVC = SignUpIDViewController()
