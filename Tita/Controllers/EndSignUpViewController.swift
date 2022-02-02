@@ -22,6 +22,11 @@ class EndSignUpViewController: UIViewController {
         $0.textColor = .rgb(red: 57, green: 117, blue: 172)
     }
     
+    private let mainButton = LoginButton().then {
+        $0.dataSetting(title: "메인으로")
+        $0.addTarget(self, action: #selector(tapMainButton(_:)), for: .touchUpInside)
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +40,14 @@ class EndSignUpViewController: UIViewController {
         print("previous")
     }
     
+    @objc
+    private func tapMainButton(_ sender: UIButton){
+        let nextVC = MainViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
+        
+        print("complete sign up")
+    }
+    
     //MARK: - Helpers
     private func configureUI(){
         view.backgroundColor = .white
@@ -45,7 +58,7 @@ class EndSignUpViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView, mainLabel].forEach { view.addSubview($0)}
+        [descriptionView, mainLabel, mainButton].forEach { view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -64,6 +77,13 @@ class EndSignUpViewController: UIViewController {
         
         mainLabel.snp.makeConstraints { make in
             make.top.equalTo(descriptionView.snp.bottom).offset(self.view.frame.height/2.04)
+            make.centerX.equalToSuperview()
+        }
+        
+        mainButton.snp.makeConstraints { make in
+            make.width.equalToSuperview().dividedBy(1.15)
+            make.height.equalToSuperview().dividedBy(16.24)
+            make.bottom.equalToSuperview().inset(self.view.frame.height/25.38)
             make.centerX.equalToSuperview()
         }
     }
