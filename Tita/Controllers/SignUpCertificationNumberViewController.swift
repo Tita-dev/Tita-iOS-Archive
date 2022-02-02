@@ -26,6 +26,12 @@ class SignUpCertificationNumberViewController: UIViewController {
         $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Regular")
     }
     
+    private let reSendButton = UIButton().then {
+        $0.setTitle("인증번호 재전송", for: .normal)
+        $0.setTitleColor(.black, for: .normal)
+        $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Regular")
+        $0.isHidden = true
+    }
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +55,7 @@ class SignUpCertificationNumberViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView, textFieldView, doNotReceiveButton].forEach { view.addSubview($0)}
+        [descriptionView, textFieldView, doNotReceiveButton, reSendButton].forEach { view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -77,6 +83,13 @@ class SignUpCertificationNumberViewController: UIViewController {
             make.width.equalToSuperview().dividedBy(3.4)
             make.height.equalToSuperview().dividedBy(62.46)
             make.top.equalTo(textFieldView.errorLabel)
+            make.right.equalTo(textFieldView.line)
+        }
+        
+        reSendButton.snp.makeConstraints { make in
+            make.width.equalToSuperview().dividedBy(5.65)
+            make.height.equalToSuperview().dividedBy(62.46)
+            make.top.equalTo(doNotReceiveButton)
             make.right.equalTo(textFieldView.line)
         }
     }
