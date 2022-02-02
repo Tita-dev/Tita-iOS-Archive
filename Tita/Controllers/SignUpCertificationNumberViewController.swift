@@ -20,6 +20,12 @@ class SignUpCertificationNumberViewController: UIViewController {
         $0.dataSetting(labelText: "인증번호")
     }
     
+    private let doNotReceiveButton = UIButton().then {
+        $0.setTitle("인증번호가 오지 않았나요?", for: .normal)
+        $0.setTitleColor(.rgb(red: 57, green: 117, blue: 172), for: .normal)
+        $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Regular")
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +49,7 @@ class SignUpCertificationNumberViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView, textFieldView].forEach { view.addSubview($0)}
+        [descriptionView, textFieldView, doNotReceiveButton].forEach { view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -65,6 +71,13 @@ class SignUpCertificationNumberViewController: UIViewController {
             make.height.equalToSuperview().dividedBy(9.12)
             make.top.equalTo(descriptionView.snp.bottom).offset(self.view.frame.height/32.48)
             make.centerX.equalToSuperview()
+        }
+        
+        doNotReceiveButton.snp.makeConstraints { make in
+            make.width.equalToSuperview().dividedBy(3.4)
+            make.height.equalToSuperview().dividedBy(62.46)
+            make.top.equalTo(textFieldView.errorLabel)
+            make.right.equalTo(textFieldView.line)
         }
     }
     
