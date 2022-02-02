@@ -13,6 +13,7 @@ class SignUpEmailViewController: UIViewController {
     //MARK: - Properties
     private let descriptionView = SignUpDescriptionView().then {
         $0.dataSetting(description: "마지막으로, 본인인증을 위해\n이메일을 입력해주세요.")
+        $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
     private let textFieldView = SignUpTextFieldView().then {
@@ -21,6 +22,7 @@ class SignUpEmailViewController: UIViewController {
     
     private let nextButton = LoginButton().then {
         $0.dataSetting(title: "다음")
+        $0.addTarget(self, action: #selector(tapNextButton(_:)), for: .touchUpInside)
     }
     
     //MARK: - Lifecycle
@@ -30,6 +32,16 @@ class SignUpEmailViewController: UIViewController {
     }
     
     //MARK: - Selectors
+    @objc
+    private func tapPrevious(_ sender: UIButton){
+        navigationController?.popViewController(animated: true)
+        print("previous")
+    }
+    
+    @objc
+    private func tapNextButton(_ sender: UIButton){
+        print("next")
+    }
     
     //MARK: - Helpers
     private func configureUI(){
