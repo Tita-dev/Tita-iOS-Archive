@@ -16,6 +16,10 @@ class SignUpCertificationNumberViewController: UIViewController {
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
+    private let textFieldView = SignUpTextFieldView().then {
+        $0.dataSetting(labelText: "인증번호")
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +43,7 @@ class SignUpCertificationNumberViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView].forEach { view.addSubview($0)}
+        [descriptionView, textFieldView].forEach { view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -53,6 +57,13 @@ class SignUpCertificationNumberViewController: UIViewController {
             make.width.equalToSuperview()
             make.height.equalToSuperview().dividedBy(3.98)
             make.top.equalToSuperview().offset(self.view.frame.height/13.1)
+            make.centerX.equalToSuperview()
+        }
+        
+        textFieldView.snp.makeConstraints { make in
+            make.width.equalToSuperview().dividedBy(1.15)
+            make.height.equalToSuperview().dividedBy(9.12)
+            make.top.equalTo(descriptionView.snp.bottom).offset(self.view.frame.height/32.48)
             make.centerX.equalToSuperview()
         }
     }
