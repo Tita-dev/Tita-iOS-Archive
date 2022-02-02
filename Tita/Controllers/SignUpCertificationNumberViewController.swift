@@ -24,6 +24,7 @@ class SignUpCertificationNumberViewController: UIViewController {
         $0.setTitle("인증번호가 오지 않았나요?", for: .normal)
         $0.setTitleColor(.rgb(red: 57, green: 117, blue: 172), for: .normal)
         $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Regular")
+        $0.addTarget(self, action: #selector(tapDoNotReceive(_:)), for: .touchUpInside)
     }
     
     private let reSendButton = UIButton().then {
@@ -52,9 +53,34 @@ class SignUpCertificationNumberViewController: UIViewController {
     }
     
     @objc
+    private func tapDoNotReceive(_ sender: UIButton){
+        print("do not receive")
+        if reSendButton.isHidden == true {
+            doNotReceiveButton.snp.remakeConstraints { make in
+                make.width.equalToSuperview().dividedBy(3.4)
+                make.height.equalToSuperview().dividedBy(62.46)
+                make.top.equalTo(textFieldView.errorLabel)
+                make.left.equalToSuperview().offset(self.view.frame.width/2.21)
+            }
+            reSendButton.isHidden = false
+        }
+    }
+    
+    @objc
     private func tapNextButton(_ sender: UIButton){
+        if reSendButton.isHidden == false{
+            doNotReceiveButton.snp.remakeConstraints { make in
+                make.width.equalToSuperview().dividedBy(3.4)
+                make.height.equalToSuperview().dividedBy(62.46)
+                make.top.equalTo(textFieldView.errorLabel)
+                make.right.equalTo(textFieldView.line)
+            }
+            reSendButton.isHidden = true
+        }
         print("next")
     }
+    
+
     
     //MARK: - Helpers
     private func configureUI(){
