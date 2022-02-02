@@ -16,6 +16,12 @@ class EndSignUpViewController: UIViewController {
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
+    private let mainLabel = UILabel().then {
+        $0.text = "지금 바로 들어가 볼까요?"
+        $0.dynamicFont(fontSize: 11, currentFontName: "AppleSDGothicNeo-Regular")
+        $0.textColor = .rgb(red: 57, green: 117, blue: 172)
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +45,7 @@ class EndSignUpViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView].forEach { view.addSubview($0)}
+        [descriptionView, mainLabel].forEach { view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -53,6 +59,11 @@ class EndSignUpViewController: UIViewController {
             make.width.equalToSuperview()
             make.height.equalToSuperview().dividedBy(3.37)
             make.top.equalToSuperview().offset(self.view.frame.height/13.1)
+            make.centerX.equalToSuperview()
+        }
+        
+        mainLabel.snp.makeConstraints { make in
+            make.top.equalTo(descriptionView.snp.bottom).offset(self.view.frame.height/2.04)
             make.centerX.equalToSuperview()
         }
     }
