@@ -11,6 +11,10 @@ import Then
 
 class SignUpCertificationNumberViewController: UIViewController {
     //MARK: - Properties
+    private let descriptionView = SignUpDescriptionView().then {
+        $0.dataSetting(description: "이메일을 열어 Ti-Ta가 남긴\n인증번호를 확인해주세요!")
+        $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
+    }
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -19,6 +23,11 @@ class SignUpCertificationNumberViewController: UIViewController {
     }
     
     //MARK: - Selectors
+    @objc
+    private func tapPrevious(_ sender: UIButton){
+        navigationController?.popViewController(animated: true)
+        print("previous")
+    }
     
     //MARK: - Helpers
     private func configureUI(){
@@ -30,7 +39,7 @@ class SignUpCertificationNumberViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        
+        [descriptionView].forEach { view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -40,7 +49,12 @@ class SignUpCertificationNumberViewController: UIViewController {
     
     // MARK: - Location
     private func location(){
-        
+        descriptionView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalToSuperview().dividedBy(3.98)
+            make.top.equalToSuperview().offset(self.view.frame.height/13.1)
+            make.centerX.equalToSuperview()
+        }
     }
     
 }
