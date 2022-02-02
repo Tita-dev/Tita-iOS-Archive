@@ -84,6 +84,8 @@ class SignUpCertificationNumberViewController: UIViewController {
             reSendButton.isHidden = true
         }
         print("next")
+        let nextVC = EndSignUpViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
 
