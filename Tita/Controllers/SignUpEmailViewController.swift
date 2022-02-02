@@ -11,6 +11,9 @@ import Then
 
 class SignUpEmailViewController: UIViewController {
     //MARK: - Properties
+    private let descriptionView = SignUpDescriptionView().then {
+        $0.dataSetting(description: "마지막으로, 본인인증을 위해\n이메일을 입력해주세요.")
+    }
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -30,7 +33,7 @@ class SignUpEmailViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        
+        [descriptionView].forEach { view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -40,7 +43,12 @@ class SignUpEmailViewController: UIViewController {
     
     // MARK: - Location
     private func location(){
-        
+        descriptionView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalToSuperview().dividedBy(3.98)
+            make.top.equalToSuperview().offset(self.view.frame.height/13.1)
+            make.centerX.equalToSuperview()
+        }
     }
     
 }
