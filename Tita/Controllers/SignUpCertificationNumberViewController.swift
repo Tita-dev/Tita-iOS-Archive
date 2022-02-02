@@ -32,6 +32,7 @@ class SignUpCertificationNumberViewController: UIViewController {
         $0.setTitleColor(.black, for: .normal)
         $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Regular")
         $0.isHidden = true
+        $0.addTarget(self, action: #selector(tapResendButton(_:)), for: .touchUpInside)
     }
     
     private let nextButton = LoginButton().then {
@@ -64,6 +65,11 @@ class SignUpCertificationNumberViewController: UIViewController {
             }
             reSendButton.isHidden = false
         }
+    }
+    
+    @objc
+    private func tapResendButton(_ sender: UIButton){
+        print("re-send")
     }
     
     @objc
