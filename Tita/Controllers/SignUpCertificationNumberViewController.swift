@@ -32,6 +32,12 @@ class SignUpCertificationNumberViewController: UIViewController {
         $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Regular")
         $0.isHidden = true
     }
+    
+    private let nextButton = LoginButton().then {
+        $0.dataSetting(title: "다음")
+        $0.addTarget(self, action: #selector(tapNextButton(_:)), for: .touchUpInside)
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +51,11 @@ class SignUpCertificationNumberViewController: UIViewController {
         print("previous")
     }
     
+    @objc
+    private func tapNextButton(_ sender: UIButton){
+        print("next")
+    }
+    
     //MARK: - Helpers
     private func configureUI(){
         view.backgroundColor = .white
@@ -55,7 +66,7 @@ class SignUpCertificationNumberViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView, textFieldView, doNotReceiveButton, reSendButton].forEach { view.addSubview($0)}
+        [descriptionView, textFieldView, doNotReceiveButton, reSendButton, nextButton].forEach { view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -91,6 +102,13 @@ class SignUpCertificationNumberViewController: UIViewController {
             make.height.equalToSuperview().dividedBy(62.46)
             make.top.equalTo(doNotReceiveButton)
             make.right.equalTo(textFieldView.line)
+        }
+        
+        nextButton.snp.makeConstraints { make in
+            make.width.equalToSuperview().dividedBy(1.15)
+            make.height.equalToSuperview().dividedBy(16.24)
+            make.bottom.equalToSuperview().inset(self.view.frame.height/25.38)
+            make.centerX.equalToSuperview()
         }
     }
     
