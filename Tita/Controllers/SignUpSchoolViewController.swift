@@ -43,6 +43,8 @@ class SignUpSchoolViewController: UIViewController {
     
     @objc
     private func tapNextButton(_ sender: UIButton){
+        let nextVC = SignUpNicknameViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
         print("next")
     }
     
