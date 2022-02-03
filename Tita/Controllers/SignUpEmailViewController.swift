@@ -45,8 +45,38 @@ class SignUpEmailViewController: UIViewController {
         print("next")
     }
     
+    //MARK: - Keyboard Setting
+    @objc
+    func keyboardWillShow(_ sender: Notification) {
+        nextButton.snp.remakeConstraints { make in
+            make.width.equalToSuperview().dividedBy(1.15)
+            make.height.equalToSuperview().dividedBy(16.24)
+            make.top.equalToSuperview().offset(self.view.frame.height/1.8)
+            make.centerX.equalToSuperview()
+        }
+
+    }
+
+    @objc
+    func keyboardWillHide(_ sender: Notification) {
+        nextButton.snp.remakeConstraints { make in
+            make.width.equalToSuperview().dividedBy(1.15)
+            make.height.equalToSuperview().dividedBy(16.24)
+            make.bottom.equalToSuperview().inset(self.view.frame.height/25.38)
+            make.centerX.equalToSuperview()
+        }
+        
+    }
+        
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        textFieldView.textField.resignFirstResponder()
+    }
+
     //MARK: - Helpers
     private func configureUI(){
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         view.backgroundColor = .white
         addView()
         location()
