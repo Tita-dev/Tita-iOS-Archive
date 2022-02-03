@@ -47,7 +47,6 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     private func configureUI(){
         view.backgroundColor = .white
         addView()
-        cornerRadius()
         location()
     }
     
@@ -68,12 +67,6 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
        return 0
-    }
-    
-    
-    // MARK: - Corner Radius
-    private func cornerRadius(){
-        
     }
     
     // MARK: - Location
