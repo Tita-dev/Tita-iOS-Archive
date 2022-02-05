@@ -69,6 +69,11 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
        return 0
     }
     
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return ""
+    }
+      
+
     // MARK: - Location
     private func location(){
         descriptionView.snp.makeConstraints { make in
