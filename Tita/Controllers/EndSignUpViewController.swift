@@ -34,14 +34,12 @@ class EndSignUpViewController: UIViewController {
     }
     
     //MARK: - Selectors
-    @objc
-    private func tapPrevious(_ sender: UIButton){
+    @objc private func tapPrevious(_ sender: UIButton){
         navigationController?.popViewController(animated: true)
         print("previous")
     }
     
-    @objc
-    private func tapMainButton(_ sender: UIButton){
+    @objc private func tapMainButton(_ sender: UIButton){
         let nextVC = MainViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
        print("complete sign up")
