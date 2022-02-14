@@ -31,8 +31,7 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     //MARK: - Selectors
-    @objc
-    private func tapPrevious(_ sender: UIButton){
+    @objc private func tapPrevious(_ sender: UIButton){
         navigationController?.popViewController(animated: true)
         print("previous")
     }
