@@ -85,8 +85,7 @@ class SignUpCertificationNumberViewController: UIViewController {
     }
     
     //MARK: - Keyboard Setting
-    @objc
-    func keyboardWillShow(_ sender: Notification) {
+    @objc func keyboardWillShow(_ sender: Notification) {
         nextButton.snp.remakeConstraints { make in
             make.width.equalToSuperview().dividedBy(1.15)
             make.height.equalToSuperview().dividedBy(16.24)
@@ -96,8 +95,7 @@ class SignUpCertificationNumberViewController: UIViewController {
 
     }
 
-    @objc
-    func keyboardWillHide(_ sender: Notification) {
+    @objc func keyboardWillHide(_ sender: Notification) {
         nextButton.snp.remakeConstraints { make in
             make.width.equalToSuperview().dividedBy(1.15)
             make.height.equalToSuperview().dividedBy(16.24)
