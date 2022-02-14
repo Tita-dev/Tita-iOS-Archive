@@ -44,8 +44,7 @@ class EndSignUpViewController: UIViewController {
     private func tapMainButton(_ sender: UIButton){
         let nextVC = MainViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
-        
-        print("complete sign up")
+       print("complete sign up")
     }
     
     //MARK: - Helpers
