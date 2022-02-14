@@ -85,11 +85,8 @@ class SignUpDescriptionView: UIView {
     }
     
     // MARK: - DataSetting
-    func dataSetting(description: String){
-        descriptionLabel.text = description
-    }
     
-    func dataSetting(description: String, additionalDescription: String){
+    func dataSetting(description: String, additionalDescription: String?){
         descriptionLabel.text = description
         additionalDescriptionLabel.text = additionalDescription
     }
