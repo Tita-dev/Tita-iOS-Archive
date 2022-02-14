@@ -35,14 +35,12 @@ class SignUpPWViewController: UIViewController {
     }
     
     //MARK: - Selectors
-    @objc
-    private func tapPrevious(_ sender: UIButton){
+    @objc private func tapPrevious(_ sender: UIButton){
         navigationController?.popViewController(animated: true)
         print("previous")
     }
     
-    @objc
-    private func tapVisibilityButton(_ sender: UIButton){
+    @objc private func tapVisibilityButton(_ sender: UIButton){
         if textFieldView.textField.isSecureTextEntry{
             sender.setImage(UIImage(named: "Tita-Eye"), for: .normal)
         }else{
@@ -51,8 +49,7 @@ class SignUpPWViewController: UIViewController {
         textFieldView.textField.isSecureTextEntry.toggle()
     }
     
-    @objc
-    private func tapNextButton(_ sender: UIButton){
+    @objc private func tapNextButton(_ sender: UIButton){
         let passwordPattern = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,16}"
         let passwordRegex = try? NSRegularExpression(pattern: passwordPattern)
         
@@ -68,8 +65,7 @@ class SignUpPWViewController: UIViewController {
     }
     
     //MARK: - Keyboard Setting
-    @objc
-    func keyboardWillShow(_ sender: Notification) {
+    @objc func keyboardWillShow(_ sender: Notification) {
         nextButton.snp.remakeConstraints { make in
             make.width.equalToSuperview().dividedBy(1.15)
             make.height.equalToSuperview().dividedBy(16.24)
