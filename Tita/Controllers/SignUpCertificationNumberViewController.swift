@@ -47,14 +47,12 @@ class SignUpCertificationNumberViewController: UIViewController {
     }
     
     //MARK: - Selectors
-    @objc
-    private func tapPrevious(_ sender: UIButton){
+    @objc private func tapPrevious(_ sender: UIButton){
         navigationController?.popViewController(animated: true)
         print("previous")
     }
     
-    @objc
-    private func tapDoNotReceive(_ sender: UIButton){
+    @objc private func tapDoNotReceive(_ sender: UIButton){
         print("do not receive")
         if reSendButton.isHidden == true {
             doNotReceiveButton.snp.remakeConstraints { make in
@@ -67,13 +65,11 @@ class SignUpCertificationNumberViewController: UIViewController {
         }
     }
     
-    @objc
-    private func tapResendButton(_ sender: UIButton){
+    @objc private func tapResendButton(_ sender: UIButton){
         print("re-send")
     }
     
-    @objc
-    private func tapNextButton(_ sender: UIButton){
+    @objc private func tapNextButton(_ sender: UIButton){
         if reSendButton.isHidden == false{
             doNotReceiveButton.snp.remakeConstraints { make in
                 make.width.equalToSuperview().dividedBy(3.4)
