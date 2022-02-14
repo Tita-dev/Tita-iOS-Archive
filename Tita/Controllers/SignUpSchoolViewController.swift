@@ -37,27 +37,23 @@ class SignUpSchoolViewController: UIViewController {
     }
     
     //MARK: - Selectors
-    @objc
-    private func tapPrevious(_ sender: UIButton){
+    @objc private func tapPrevious(_ sender: UIButton){
         navigationController?.popViewController(animated: true)
         print("previous")
     }
     
-    @objc
-    private func tapSearchButton(_ sender: UIButton){
+    @objc private func tapSearchButton(_ sender: UIButton){
         print("search")
     }
     
-    @objc
-    private func tapNextButton(_ sender: UIButton){
+    @objc private func tapNextButton(_ sender: UIButton){
         let nextVC = SignUpNicknameViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
         print("next")
     }
     
     //MARK: - Keyboard Setting
-    @objc
-    func keyboardWillShow(_ sender: Notification) {
+    @objc func keyboardWillShow(_ sender: Notification) {
         nextButton.snp.remakeConstraints { make in
             make.width.equalToSuperview().dividedBy(1.15)
             make.height.equalToSuperview().dividedBy(16.24)
@@ -67,8 +63,7 @@ class SignUpSchoolViewController: UIViewController {
 
     }
 
-    @objc
-    func keyboardWillHide(_ sender: Notification) {
+    @objc func keyboardWillHide(_ sender: Notification) {
         nextButton.snp.remakeConstraints { make in
             make.width.equalToSuperview().dividedBy(1.15)
             make.height.equalToSuperview().dividedBy(16.24)
