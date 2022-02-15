@@ -12,7 +12,7 @@ import Then
 class SignUpEmailViewController: UIViewController {
     //MARK: - Properties
     private let descriptionView = SignUpDescriptionView().then {
-        $0.dataSetting(description: "마지막으로, 본인인증을 위해\n이메일을 입력해주세요.")
+        $0.dataSetting(description: "마지막으로, 본인인증을 위해\n이메일을 입력해주세요.", additionalDescription: nil)
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     

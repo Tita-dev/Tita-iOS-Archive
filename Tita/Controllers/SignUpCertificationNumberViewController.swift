@@ -12,7 +12,7 @@ import Then
 class SignUpCertificationNumberViewController: UIViewController {
     //MARK: - Properties
     private let descriptionView = SignUpDescriptionView().then {
-        $0.dataSetting(description: "이메일을 열어 Ti-Ta가 남긴\n인증번호를 확인해주세요!")
+        $0.dataSetting(description: "이메일을 열어 Ti-Ta가 남긴\n인증번호를 확인해주세요!", additionalDescription: nil)
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
