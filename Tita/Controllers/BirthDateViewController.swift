@@ -12,6 +12,10 @@ import Then
 class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     
     //MARK: - Properties
+    let yearList = ["2003", "2004", "2005"]
+    let monthList = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+    let dateList = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"]
+    
     private let descriptionView = SignUpDescriptionView().then {
         $0.dataSetting(description: "당신의 생일은 언제인가요?", additionalDescription: "생일은 공개되지 않아요!")
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
@@ -47,6 +51,7 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         view.backgroundColor = .white
         addView()
         location()
+        pickerViewSetting()
     }
     
     // MARK: - Add View
@@ -65,13 +70,30 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-       return 0
+        switch component{
+        case 0 :
+            return yearList.count
+        case 1:
+            return monthList.count
+        case 2:
+            return dateList.count
+        default:
+            return 0
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return ""
+        switch component{
+        case 0 :
+            return yearList[row]
+        case 1:
+            return monthList[row]
+        case 2:
+            return dateList[row]
+        default:
+            return ""
+        }
     }
-      
 
     // MARK: - Location
     private func location(){

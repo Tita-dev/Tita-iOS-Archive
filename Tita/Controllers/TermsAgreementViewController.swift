@@ -30,34 +30,25 @@ class TermsAgreementViewController: UIViewController {
         $0.backgroundColor = .rgb(red: 201, green: 201, blue: 201)
     }
     
-    private let subTermsButton1 = UIButton().then {
-        $0.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
-        $0.addTarget(self, action: #selector(tapButton1), for: .touchUpInside)
+    private let subTermsView1 = TermsAgreeView().then {
+        $0.dataSetting(termsText: "서비스 이용약관 동의(필수)")
+        $0.termsButton.addTarget(self, action: #selector(tapButton1), for: .touchUpInside)
     }
     
-    private let subTermsLabel1 = UILabel().then {
-        $0.text = "서비스 이용약관 동의(필수)"
-        $0.dynamicFont(fontSize: 17, currentFontName: "AppleSDGothicNeo-Light")
+    private let subTermsView2 = TermsAgreeView().then {
+        $0.dataSetting(termsText: "개인정보처리방침 동의(필수)")
+        $0.termsButton.addTarget(self, action: #selector(tapButton2), for: .touchUpInside)
     }
     
-    private let subTermsButton2 = UIButton().then {
-        $0.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
-        $0.addTarget(self, action: #selector(tapButton2), for: .touchUpInside)
+    private let subTermsView3 = TermsAgreeView().then {
+        $0.dataSetting(termsText: "커뮤니티이용규칙 동의(필수)")
+        $0.termsButton.addTarget(self, action: #selector(tapButton3), for: .touchUpInside)
     }
     
-    private let subTermsLabel2 = UILabel().then {
-        $0.text = "개인정보처리방침 동의(필수)"
-        $0.dynamicFont(fontSize: 17, currentFontName: "AppleSDGothicNeo-Light")
-    }
-    
-    private let subTermsButton3 = UIButton().then {
-        $0.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
-        $0.addTarget(self, action: #selector(tapButton3), for: .touchUpInside)
-    }
-    
-    private let subTermsLabel3 = UILabel().then {
-        $0.text = "커뮤니티이용규칙 동의(필수)"
-        $0.dynamicFont(fontSize: 17, currentFontName: "AppleSDGothicNeo-Light")
+    lazy var stackView = UIStackView(arrangedSubviews: [subTermsView1, subTermsView2, subTermsView3]).then {
+        $0.axis = .vertical
+        $0.distribution = .fillEqually
+        $0.spacing = self.view.frame.height/50.75
     }
     
     private let nextButton = LoginButton().then {
@@ -72,89 +63,90 @@ class TermsAgreementViewController: UIViewController {
     }
     
     //MARK: - Selectors
-    
-    lazy var allFlag = false
-    lazy var flag1 = false
-    lazy var flag2 = false
-    lazy var flag3 = false
-    
+
     @objc private func tapPrevious(_ sender: UIButton){
         navigationController?.popViewController(animated: true)
         print("previous")
     }
     
     @objc private func tapAllButton(_ sender: UIButton){
-        if allFlag == false {
+        if allTermsAgreeButton.isSelected == false {
             allTermsAgreeButton.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
-            subTermsButton1.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
-            subTermsButton2.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
-            subTermsButton3.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
-            flag1 = true
-            flag2 = true
-            flag3 = true
-            allFlag = true
-        } else if allFlag == true {
+            subTermsView1.termsButton.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
+            subTermsView2.termsButton.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
+            subTermsView3.termsButton.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
+            
+            allTermsAgreeButton.isSelected = true
+            subTermsView1.termsButton.isSelected = true
+            subTermsView2.termsButton.isSelected = true
+            subTermsView3.termsButton.isSelected = true
+            
+        } else if allTermsAgreeButton.isSelected == true {
             allTermsAgreeButton.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
-            subTermsButton1.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
-            subTermsButton2.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
-            subTermsButton3.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
-            flag1 = false
-            flag2 = false
-            flag3 = false
-            allFlag = false
+            subTermsView1.termsButton.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+            subTermsView2.termsButton.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+            subTermsView3.termsButton.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+            
+            allTermsAgreeButton.isSelected = false
+            subTermsView1.termsButton.isSelected = false
+            subTermsView2.termsButton.isSelected = false
+            subTermsView3.termsButton.isSelected = false
         }
     }
-    
+
     @objc private func tapButton1(){
-        if flag1 == false {
-            subTermsButton1.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
-            flag1 = true
-            if flag2 == true && flag3 == true {
+        if subTermsView1.termsButton.isSelected == false {
+            subTermsView1.termsButton.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
+            subTermsView1.termsButton.isSelected = true
+            
+            if subTermsView2.termsButton.isSelected == true && subTermsView3.termsButton.isSelected == true {
                 allTermsAgreeButton.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
-                allFlag = true
+                allTermsAgreeButton.isSelected = true
             }
-        } else if flag1 == true {
-            subTermsButton1.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+        } else if subTermsView1.termsButton.isSelected == true {
+            subTermsView1.termsButton.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
             allTermsAgreeButton.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
-            allFlag = false
-            flag1 = false
+            allTermsAgreeButton.isSelected = false
+            subTermsView1.termsButton.isSelected = false
         }
     }
     
     @objc private func tapButton2(){
-        if flag2 == false {
-            subTermsButton2.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
-            flag2 = true
-            if flag1 == true && flag3 == true {
+        if subTermsView2.termsButton.isSelected == false {
+            subTermsView2.termsButton.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
+            subTermsView2.termsButton.isSelected = true
+            
+            if subTermsView1.termsButton.isSelected == true && subTermsView3.termsButton.isSelected == true {
                 allTermsAgreeButton.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
-                allFlag = true
+                allTermsAgreeButton.isSelected = true
             }
-        } else if flag2 == true {
-            subTermsButton2.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+        } else if subTermsView2.termsButton.isSelected == true {
+            subTermsView2.termsButton.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
             allTermsAgreeButton.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
-            allFlag = false
-            flag2 = false
+            allTermsAgreeButton.isSelected = false
+            subTermsView2.termsButton.isSelected = false
         }
     }
-    
+
     @objc private func tapButton3(){
-        if flag3 == false {
-            subTermsButton3.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
-            flag3 = true
-            if flag1 == true && flag2 == true {
+        if subTermsView3.termsButton.isSelected == false {
+            subTermsView3.termsButton.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
+            subTermsView3.termsButton.isSelected = true
+            
+            if subTermsView1.termsButton.isSelected == true && subTermsView2.termsButton.isSelected == true {
                 allTermsAgreeButton.setImage(UIImage(named: "Tita-CheckedBox"), for: .normal)
-                allFlag = true
+                allTermsAgreeButton.isSelected = true
             }
-        } else if flag3 == true {
-            subTermsButton3.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
+        } else if subTermsView3.termsButton.isSelected == true {
+            subTermsView3.termsButton.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
             allTermsAgreeButton.setImage(UIImage(named: "Tita-UncheckedBox"), for: .normal)
-            allFlag = false
-            flag3 = false
+            allTermsAgreeButton.isSelected = false
+            subTermsView3.termsButton.isSelected = false
         }
     }
     
     @objc private func tapNextButton(_ sender: UIButton){
-        if allFlag == true {
+        if allTermsAgreeButton.isSelected == true {
             print("next")
             let nextVC = BirthDateViewController()
             self.navigationController?.pushViewController(nextVC, animated: true)
@@ -172,7 +164,7 @@ class TermsAgreementViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView, allTermsAgreeButton, allTermsLabel, line, subTermsButton1, subTermsLabel1, subTermsButton2, subTermsLabel2, subTermsButton3, subTermsLabel3, nextButton].forEach{ view.addSubview($0)}
+        [descriptionView, allTermsAgreeButton, allTermsLabel, line, subTermsView1, subTermsView2, subTermsView3,stackView, nextButton].forEach{ view.addSubview($0)}
     }
     
     // MARK: - Location
@@ -203,36 +195,26 @@ class TermsAgreementViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
         
-        subTermsButton1.snp.makeConstraints { make in
-            make.width.equalToSuperview().dividedBy(23.44)
-            make.height.equalToSuperview().dividedBy(50.75)
-            make.top.equalTo(line.snp.bottom).offset(self.view.frame.height/31.23)
+//        subTermsView1.snp.makeConstraints { make in
+//            make.width.equalToSuperview().dividedBy(1.16)
+//            make.height.equalToSuperview().dividedBy(30.07)
+//            make.top.equalTo(line.snp.bottom).offset(40.6)
+//            make.left.equalTo(allTermsAgreeButton)
+//        }
+//
+//        subTermsView2.snp.makeConstraints { make in
+//            make.height.equalTo(subTermsView1)
+//        }
+//
+//        subTermsView3.snp.makeConstraints { make in
+//            make.height.equalTo(subTermsView1)
+//        }
+        
+        stackView.snp.makeConstraints { make in
+            make.width.equalToSuperview().dividedBy(1.16)
+            make.height.equalToSuperview().dividedBy(7.19)
+            make.top.equalToSuperview().offset(self.view.frame.height/2.09)
             make.left.equalTo(allTermsAgreeButton)
-        }
-        
-        subTermsLabel1.snp.makeConstraints { make in
-            make.centerY.equalTo(subTermsButton1)
-            make.left.equalTo(subTermsButton1.snp.right).offset(self.view.frame.width/53.57)
-        }
-        
-        subTermsButton2.snp.makeConstraints { make in
-            make.width.height.left.equalTo(subTermsButton1)
-            make.top.equalTo(subTermsButton1.snp.bottom).offset(self.view.frame.height/30.07)
-        }
-    
-        subTermsLabel2.snp.makeConstraints { make in
-            make.centerY.equalTo(subTermsButton2)
-            make.left.equalTo(subTermsLabel1)
-        }
-        
-        subTermsButton3.snp.makeConstraints { make in
-            make.width.height.left.equalTo(subTermsButton2)
-            make.top.equalTo(subTermsButton2.snp.bottom).offset(self.view.frame.height/30.07)
-        }
-        
-        subTermsLabel3.snp.makeConstraints { make in
-            make.centerY.equalTo(subTermsButton3)
-            make.left.equalTo(subTermsLabel1)
         }
         
         nextButton.snp.makeConstraints { make in
@@ -241,7 +223,6 @@ class TermsAgreementViewController: UIViewController {
             make.bottom.equalToSuperview().inset(self.view.frame.height/25.38)
             make.centerX.equalToSuperview()
         }
-
     }
     
 }
