@@ -63,6 +63,8 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     private func pickerViewSetting(){
         datePickerView.dataSource = self
         datePickerView.delegate = self
+        
+        datePickerView.subviews[1].backgroundColor = .clear
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -93,6 +95,7 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         default:
             return ""
         }
+        
     }
 
     // MARK: - Location
