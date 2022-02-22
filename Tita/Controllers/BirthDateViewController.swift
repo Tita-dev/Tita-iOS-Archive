@@ -23,6 +23,14 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     private let datePickerView = UIPickerView()
     
+    let upLine = UIView().then {
+        $0.backgroundColor = .rgb(red: 123, green: 176, blue: 222)
+    }
+    let underLine = UIView().then {
+        $0.backgroundColor = .rgb(red: 123, green: 176, blue: 222)
+    }
+            
+    
     private let nextButton = LoginButton().then {
         $0.dataSetting(title: "다음")
         $0.addTarget(self, action: #selector(tapNextButton(_:)), for: .touchUpInside)
@@ -64,6 +72,10 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         datePickerView.dataSource = self
         datePickerView.delegate = self
         
+
+                
+        datePickerView.subviews[1].addSubview(upLine)
+        datePickerView.subviews[1].addSubview(underLine)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
