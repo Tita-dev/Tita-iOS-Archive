@@ -37,6 +37,7 @@
 		C0D1329927AAE484003E4811 /* SignUpCertificationNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1329827AAE484003E4811 /* SignUpCertificationNumberViewController.swift */; };
 		C0D1329D27AB09A2003E4811 /* EndSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1329C27AB09A2003E4811 /* EndSignUpViewController.swift */; };
 		C0D132A127BB61CF003E4811 /* TermsAgreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D132A027BB61CF003E4811 /* TermsAgreeView.swift */; };
+		C0D132A327C4DB4E003E4811 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D132A227C4DB4E003E4811 /* LineView.swift */; };
 		C0DBC1E7278C4E0900E310D8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		C0D1329827AAE484003E4811 /* SignUpCertificationNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCertificationNumberViewController.swift; sourceTree = "<group>"; };
 		C0D1329C27AB09A2003E4811 /* EndSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndSignUpViewController.swift; sourceTree = "<group>"; };
 		C0D132A027BB61CF003E4811 /* TermsAgreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAgreeView.swift; sourceTree = "<group>"; };
+		C0D132A227C4DB4E003E4811 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CF5D6514FA08B636D80D0304 /* Pods-Tita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tita.release.xcconfig"; path = "Target Support Files/Pods-Tita/Pods-Tita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +129,7 @@
 				C0D1328627A29930003E4811 /* SignUpDescriptionView.swift */,
 				C0D132A027BB61CF003E4811 /* TermsAgreeView.swift */,
 				C0D1328E27A59665003E4811 /* SignUpTextFieldView.swift */,
+				C0D132A227C4DB4E003E4811 /* LineView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				C059093F2794E0A1002C9056 /* NoticeLabelView.swift in Sources */,
 				C00F5A7D27904747002B34DF /* MainTopView.swift in Sources */,
 				C0D1329327A97CE1003E4811 /* SignUpSchoolViewController.swift in Sources */,
+				C0D132A327C4DB4E003E4811 /* LineView.swift in Sources */,
 				AA3837AC275E5960005C0323 /* Extension.swift in Sources */,
 				C0DBC1E7278C4E0900E310D8 /* MainViewController.swift in Sources */,
 				C0D1329D27AB09A2003E4811 /* EndSignUpViewController.swift in Sources */,
