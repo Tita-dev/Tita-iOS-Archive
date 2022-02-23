@@ -59,7 +59,7 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView, datePickerView, upLine, nextButton].forEach{view.addSubview($0)}
+        [descriptionView, datePickerView, upLine, underLine, nextButton].forEach{view.addSubview($0)}
     }
     
     // MARK: - PickerViewSetting
@@ -119,6 +119,13 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             make.height.equalToSuperview().dividedBy(812)
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(self.view.frame.height/2.15)
+        }
+        
+        underLine.snp.makeConstraints { make in
+            make.width.equalToSuperview().dividedBy(1.5)
+            make.height.equalToSuperview().dividedBy(812)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(upLine.snp.bottom).offset(self.view.frame.height/14.68)
         }
         
         nextButton.snp.makeConstraints { make in
