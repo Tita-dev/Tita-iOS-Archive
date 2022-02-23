@@ -76,7 +76,7 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 60))
 
         let yearLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 75, height: 60))
-        yearLabel.text = yearList[row]
+        yearLabel.text = self.yearList[row]
         yearLabel.textAlignment = .center
         yearLabel.font = UIFont.systemFont(ofSize: 28, weight: .light)
 
