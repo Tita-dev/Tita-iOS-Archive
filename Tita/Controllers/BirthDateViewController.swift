@@ -71,6 +71,18 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3
     }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 60))
+
+        let yearLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 75, height: 60))
+        yearLabel.text = yearList[row]
+        yearLabel.textAlignment = .center
+        yearLabel.font = UIFont.systemFont(ofSize: 28, weight: .light)
+
+        view.addSubview(yearLabel)
+        return view
+    }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch component{
@@ -96,7 +108,6 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         default:
             return ""
         }
-        
     }
 
     // MARK: - Location
