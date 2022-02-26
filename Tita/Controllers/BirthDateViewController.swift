@@ -71,7 +71,6 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3
     }
-    
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch component{
@@ -98,6 +97,20 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             return ""
         }
     }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        pickerView.subviews.forEach {
+            $0.backgroundColor = .clear
+        }
+        
+        let numberLabel = UILabel()
+        numberLabel.textAlignment = .center
+        numberLabel.dynamicFont(fontSize: 18, currentFontName: "AppleSDGothicNeo-Bold")
+        numberLabel.text = "\(dateList[row])"
+        
+        return numberLabel
+    }
+
 
     // MARK: - Location
     private func location(){
