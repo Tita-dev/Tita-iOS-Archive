@@ -164,7 +164,7 @@ class TermsAgreementViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView, allTermsAgreeButton, allTermsLabel, line, subTermsView1, subTermsView2, subTermsView3,stackView, nextButton].forEach{ view.addSubview($0)}
+        [descriptionView, allTermsAgreeButton, allTermsLabel, line, stackView, nextButton].forEach{ view.addSubview($0)}
     }
     
     // MARK: - Location
@@ -194,22 +194,7 @@ class TermsAgreementViewController: UIViewController {
             make.top.equalTo(allTermsLabel.snp.bottom).offset(self.view.frame.height/35.3)
             make.centerX.equalToSuperview()
         }
-        
-//        subTermsView1.snp.makeConstraints { make in
-//            make.width.equalToSuperview().dividedBy(1.16)
-//            make.height.equalToSuperview().dividedBy(30.07)
-//            make.top.equalTo(line.snp.bottom).offset(40.6)
-//            make.left.equalTo(allTermsAgreeButton)
-//        }
-//
-//        subTermsView2.snp.makeConstraints { make in
-//            make.height.equalTo(subTermsView1)
-//        }
-//
-//        subTermsView3.snp.makeConstraints { make in
-//            make.height.equalTo(subTermsView1)
-//        }
-        
+
         stackView.snp.makeConstraints { make in
             make.width.equalToSuperview().dividedBy(1.16)
             make.height.equalToSuperview().dividedBy(7.19)

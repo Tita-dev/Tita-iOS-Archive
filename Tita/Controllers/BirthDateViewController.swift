@@ -122,7 +122,8 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         }
         return numberLabel
     }
-
+    
+    // 선택된 달에 따른 행 개수 변경
 
     // MARK: - Location
     private func location(){
