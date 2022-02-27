@@ -21,6 +21,8 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
+    private let yearPickerView = UIPickerView()
+    private let monthPickerView = UIPickerView()
     private let datePickerView = UIPickerView()
     
     private let upLine = LineView()
@@ -59,11 +61,17 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView, datePickerView, upLine, underLine, nextButton].forEach{view.addSubview($0)}
+        [descriptionView,yearPickerView, monthPickerView, datePickerView, upLine, underLine, nextButton].forEach{view.addSubview($0)}
     }
     
     // MARK: - PickerViewSetting
     private func pickerViewSetting(){
+        yearPickerView.dataSource = self
+        yearPickerView.delegate = self
+        
+        monthPickerView.dataSource = self
+        monthPickerView.delegate = self
+        
         datePickerView.dataSource = self
         datePickerView.delegate = self
     }
@@ -73,31 +81,18 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        switch component{
-        case 0 :
+        switch pickerView{
+        case yearPickerView :
             return yearList.count
-        case 1:
+        case monthPickerView:
             return monthList.count
-        case 2:
+        case datePickerView:
             return dateList.count
         default:
             return 0
         }
     }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        switch component{
-        case 0 :
-            return yearList[row]
-        case 1:
-            return monthList[row]
-        case 2:
-            return dateList[row]
-        default:
-            return ""
-        }
-    }
-    
+
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return self.view.frame.height/14.68
     }
@@ -115,8 +110,16 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         numberLabel.textAlignment = .center
         numberLabel.dynamicFont(fontSize: 18, currentFontName: "AppleSDGothicNeo-Bold")
         
-        numberLabel.text = "\(dateList[row])"
-        
+        switch pickerView{
+        case yearPickerView:
+            numberLabel.text = "\(yearList[row])"
+        case monthPickerView:
+            numberLabel.text = "\(monthList[row])"
+        case datePickerView:
+            numberLabel.text = "\(dateList[row])"
+        default:
+            numberLabel.text = ""
+        }
         return numberLabel
     }
 
@@ -130,10 +133,21 @@ class BirthDateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             make.centerX.equalToSuperview()
         }
         
-        datePickerView.snp.makeConstraints { make in
-            make.width.equalToSuperview().dividedBy(1.5)
+        yearPickerView.snp.makeConstraints { make in
+            make.width.equalToSuperview().dividedBy(4.98)
             make.height.equalToSuperview().dividedBy(6.01)
+            make.left.equalToSuperview().offset(self.view.frame.width/6.06)
+            make.centerY.equalToSuperview()
+        }
+        
+        monthPickerView.snp.makeConstraints { make in
+            make.width.height.equalTo(yearPickerView)
             make.center.equalToSuperview()
+        }
+        
+        datePickerView.snp.makeConstraints { make in
+            make.width.height.centerY.equalTo(yearPickerView)
+            make.right.equalToSuperview().inset(self.view.frame.width/6.06)
         }
         
         upLine.snp.makeConstraints { make in
