@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Then
+import Alamofire
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Properties
@@ -57,6 +58,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         $0.addTarget(self, action: #selector(onTapSignUp(sender:)), for: .touchUpInside)
     }
     
+    private let errorAlert = UIAlertController(title: "로그인 오류", message: "입력한 아이디 혹은 비밀번호가 올바르지 않습니다.\n다시 시도하세요.", preferredStyle: .alert).then {
+        $0.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+    }
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +70,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Selectors
     @objc private func onTapLogin(sender:UIButton){
         print("Login")
+        // 로그인 오류 시 Alert
+//        present(errorAlert, animated: true, completion: nil)
+        
+        // VC 이동
         let nextVC = MainViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
