@@ -11,6 +11,9 @@ import Then
 
 class CafeteriaViewController: UIViewController {
     //MARK: - Properties
+    private let topView = CafeteriaTopView().then {
+        $0.pageName.text = "오늘의 급식"
+    }
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -30,7 +33,7 @@ class CafeteriaViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        
+        [topView].forEach { view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -40,7 +43,12 @@ class CafeteriaViewController: UIViewController {
     
     // MARK: - Location
     private func location(){
-        
+        topView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(self.view.frame.height/18.45)
+            make.left.equalToSuperview()
+            make.width.equalToSuperview()
+            make.height.equalToSuperview().dividedBy(29)
+        }
     }
 }
 
