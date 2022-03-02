@@ -39,6 +39,7 @@
 		C0D132A127BB61CF003E4811 /* TermsAgreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D132A027BB61CF003E4811 /* TermsAgreeView.swift */; };
 		C0D132A327C4DB4E003E4811 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D132A227C4DB4E003E4811 /* LineView.swift */; };
 		C0DBC1E7278C4E0900E310D8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */; };
+		C0FBE61127CF85B300D37EC8 /* CafeteriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FBE61027CF85B300D37EC8 /* CafeteriaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		C0D132A027BB61CF003E4811 /* TermsAgreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAgreeView.swift; sourceTree = "<group>"; };
 		C0D132A227C4DB4E003E4811 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C0FBE61027CF85B300D37EC8 /* CafeteriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeteriaViewController.swift; sourceTree = "<group>"; };
 		CF5D6514FA08B636D80D0304 /* Pods-Tita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tita.release.xcconfig"; path = "Target Support Files/Pods-Tita/Pods-Tita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,6 +157,7 @@
 				C0D1329627AAB4E0003E4811 /* SignUpEmailViewController.swift */,
 				C0D1329827AAE484003E4811 /* SignUpCertificationNumberViewController.swift */,
 				C0D1329C27AB09A2003E4811 /* EndSignUpViewController.swift */,
+				C0FBE61027CF85B300D37EC8 /* CafeteriaViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAB6A9602796D8A800DE26C6 /* LoginButton.swift in Sources */,
+				C0FBE61127CF85B300D37EC8 /* CafeteriaViewController.swift in Sources */,
 				C0D1328F27A59665003E4811 /* SignUpTextFieldView.swift in Sources */,
 				C06F3268275E4F1500F4A97E /* AppDelegate.swift in Sources */,
 				C0D1329727AAB4E0003E4811 /* SignUpEmailViewController.swift in Sources */,
