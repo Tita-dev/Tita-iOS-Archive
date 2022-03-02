@@ -14,7 +14,10 @@ class CafeteriaTopView: UIView {
        $0.setImage(UIImage(named: "Tita-Previous"), for: .normal)
     }
 
-
+    let pageName = UILabel().then {
+        $0.dynamicFont(fontSize: 20, currentFontName: "AppleSDGothicNeo-Bold")
+    }
+        
 // MARK: - LifeCycles
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,7 +41,7 @@ class CafeteriaTopView: UIView {
         
     // MARK: - addView
     private func addView(){
-        [previousButton].forEach { addSubview($0) }
+        [previousButton, pageName].forEach { addSubview($0) }
     }
             
     // MARK: - location
@@ -48,6 +51,11 @@ class CafeteriaTopView: UIView {
             make.height.equalTo(viewBounds.height/40.6)
             make.top.equalToSuperview()
             make.left.equalTo(viewBounds.width/15.63)
+        }
+        
+        pageName.snp.makeConstraints { make in
+            make.centerY.equalTo(previousButton)
+            make.left.equalTo(previousButton.snp.right).offset(viewBounds.width/25)
         }
     }
 }
