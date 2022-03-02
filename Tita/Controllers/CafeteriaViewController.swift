@@ -13,6 +13,7 @@ class CafeteriaViewController: UIViewController {
     //MARK: - Properties
     private let topView = CafeteriaTopView().then {
         $0.pageName.text = "오늘의 급식"
+        $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
     //MARK: - Lifecycle
@@ -22,7 +23,10 @@ class CafeteriaViewController: UIViewController {
     }
     
     //MARK: - Selectors
-    
+    @objc private func tapPrevious(_ sender: UIButton){
+        navigationController?.popViewController(animated: true)
+        print("previous")
+    }
     //MARK: - Helpers
     private func configureUI(){
         view.backgroundColor = .white
