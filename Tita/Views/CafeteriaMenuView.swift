@@ -17,6 +17,10 @@ class CafeteriaMenuView: UIView {
     let title = UILabel().then {
         $0.dynamicFont(fontSize: 18, currentFontName: "AppleSDGothicNeo-Bold")
     }
+    
+    let menu = UILabel().then {
+        $0.dynamicFont(fontSize: 15, currentFontName: "AppleSDGothicNeo-Regular")
+    }
 
 // MARK: - LifeCycles
     override init(frame: CGRect) {
@@ -56,6 +60,11 @@ class CafeteriaMenuView: UIView {
         title.snp.makeConstraints { make in
             make.top.equalTo(icon)
             make.centerX.equalToSuperview()
+        }
+        
+        menu.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().offset(viewBounds.height/12.67)
         }
     }
 }
