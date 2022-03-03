@@ -13,6 +13,10 @@ class CafeteriaMenuView: UIView {
     let icon = UIImageView().then {
         $0.image = UIImage(named: "Tita-Breakfast")
     }
+    
+    let title = UILabel().then {
+        $0.dynamicFont(fontSize: 18, currentFontName: "AppleSDGothicNeo-Bold")
+    }
 
 // MARK: - LifeCycles
     override init(frame: CGRect) {
@@ -37,7 +41,7 @@ class CafeteriaMenuView: UIView {
         
     // MARK: - addView
     private func addView(){
-        [icon].forEach { addSubview($0) }
+        [icon, title].forEach { addSubview($0) }
     }
             
     // MARK: - location
@@ -47,6 +51,11 @@ class CafeteriaMenuView: UIView {
             make.left.equalTo(viewBounds.width/13.39)
             make.width.equalToSuperview().dividedBy(15)
             make.height.equalToSuperview().dividedBy(32.48)
+        }
+        
+        title.snp.makeConstraints { make in
+            make.top.equalTo(icon)
+            make.centerX.equalToSuperview()
         }
     }
 }
