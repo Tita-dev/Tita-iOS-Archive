@@ -39,13 +39,17 @@ class CafeteriaMenuView: UIView {
         
     // MARK: - Helpers
     private func configureUI(){
+        self.backgroundColor = .white
+        self.layer.applySketchShadow(color: .rgb(red: 0, green: 0, blue: 0), alpha: 0.25, x: 0, y: 4, blur: 10, spread: 0)
+        self.layer.cornerRadius = viewBounds.width/12.5
+        
         addView()
         location()
     }
         
     // MARK: - addView
     private func addView(){
-        [icon, title].forEach { addSubview($0) }
+        [icon, title, menu].forEach { addSubview($0) }
     }
             
     // MARK: - location
@@ -53,8 +57,8 @@ class CafeteriaMenuView: UIView {
         icon.snp.makeConstraints { make in
             make.top.equalTo(viewBounds.height/42.74)
             make.left.equalTo(viewBounds.width/13.39)
-            make.width.equalToSuperview().dividedBy(15)
-            make.height.equalToSuperview().dividedBy(32.48)
+            make.width.equalTo(viewBounds.width/15)
+            make.height.equalTo(viewBounds.height/32.48)
         }
         
         title.snp.makeConstraints { make in
@@ -64,7 +68,14 @@ class CafeteriaMenuView: UIView {
         
         menu.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(viewBounds.height/12.67)
+            make.centerY.equalToSuperview()
         }
+    }
+    
+    // MARK: - dataSetting
+    func dataSetting(iconName: String, titleName: String, menuName: String) {
+        icon.image = UIImage(named: iconName)
+        title.text = titleName
+        menu.text = menuName
     }
 }

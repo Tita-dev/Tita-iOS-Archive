@@ -20,6 +20,18 @@ class CafeteriaViewController: UIViewController {
         $0.dateLabel.text = "03.02(수)"
     }
     
+    private let breakfastMenuView = CafeteriaMenuView().then {
+        $0.dataSetting(iconName: "Tita-Breakfast", titleName: "아침 식사", menuName: "준비된 아침 급식이 없어요")
+    }
+    
+    private let lunchMenuView = CafeteriaMenuView().then {
+        $0.dataSetting(iconName: "TIta-Lunch", titleName: "점심 식사", menuName: "준비된 점심 급식이 없어요")
+    }
+    
+    private let dinnerMenuView = CafeteriaMenuView().then {
+        $0.dataSetting(iconName: "Tita-Dinner", titleName: "저녁 식사", menuName: "준비된 저녁 급식이 없어요")
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +53,7 @@ class CafeteriaViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [topView, dateView].forEach { view.addSubview($0)}
+        [topView, dateView, breakfastMenuView, lunchMenuView, dinnerMenuView].forEach { view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -64,6 +76,24 @@ class CafeteriaViewController: UIViewController {
             make.width.equalToSuperview().dividedBy(1.15)
             make.height.equalToSuperview().dividedBy(27.01)
         }
+        
+        breakfastMenuView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(self.view.frame.height/5.21)
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview().dividedBy(1.15)
+            make.height.equalToSuperview().dividedBy(4.27)
+        }
+        
+        lunchMenuView.snp.makeConstraints { make in
+            make.width.height.centerX.equalTo(breakfastMenuView)
+            make.top.equalTo(breakfastMenuView.snp.bottom).offset(self.view.frame.height/38.67)
+        }
+        
+        dinnerMenuView.snp.makeConstraints { make in
+            make.width.height.centerX.equalTo(lunchMenuView)
+            make.top.equalTo(lunchMenuView.snp.bottom).offset(self.view.frame.height/38.67)
+        }
+    
     }
 }
 
