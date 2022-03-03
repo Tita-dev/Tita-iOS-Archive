@@ -18,6 +18,8 @@ class CafeteriaViewController: UIViewController {
     
     private let dateView = CafeteriaDateView().then {
         $0.dateLabel.text = "03.02(수)"
+        $0.lastDayButton.addTarget(self, action: #selector(tapLastDayButton(_:)), for: .touchUpInside)
+        $0.nextDayButton.addTarget(self, action: #selector(tapNextDayButton(_:)), for: .touchUpInside)
     }
     
     private let breakfastMenuView = CafeteriaMenuView().then {
@@ -43,6 +45,15 @@ class CafeteriaViewController: UIViewController {
         navigationController?.popViewController(animated: true)
         print("previous")
     }
+    
+    @objc private func tapLastDayButton(_ sender: UIButton){
+        print("last day")
+    }
+    
+    @objc private func tapNextDayButton(_ sender: UIButton){
+        print("next day")
+    }
+    
     //MARK: - Helpers
     private func configureUI(){
         view.backgroundColor = .white
