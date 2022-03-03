@@ -9,6 +9,10 @@ import UIKit
 
 class CafeteriaMenuView: UIView {
     private let viewBounds = UIScreen.main.bounds
+    
+    let icon = UIImageView().then {
+        $0.image = UIImage(named: "Tita-Breakfast")
+    }
 
 // MARK: - LifeCycles
     override init(frame: CGRect) {
@@ -33,11 +37,16 @@ class CafeteriaMenuView: UIView {
         
     // MARK: - addView
     private func addView(){
-        [].forEach { addSubview($0) }
+        [icon].forEach { addSubview($0) }
     }
             
     // MARK: - location
     private func location(){
-        
+        icon.snp.makeConstraints { make in
+            make.top.equalTo(viewBounds.height/42.74)
+            make.left.equalTo(viewBounds.width/13.39)
+            make.width.equalToSuperview().dividedBy(15)
+            make.height.equalToSuperview().dividedBy(32.48)
+        }
     }
 }
