@@ -19,7 +19,7 @@ class CafeteriaDateView: UIView {
     }
     
     let nextDayButton = UIButton().then {
-        $0.setImage(UIImage(named: "Tita-ChevronDown_right"), for: .normal)
+        $0.setImage(UIImage(named: "TIta-ChevronDown_right"), for: .normal)
     }
 
 // MARK: - LifeCycles

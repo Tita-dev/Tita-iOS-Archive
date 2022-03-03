@@ -16,6 +16,10 @@ class CafeteriaViewController: UIViewController {
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
+    private let dateView = CafeteriaDateView().then {
+        $0.dateLabel.text = "03.02(수)"
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +41,7 @@ class CafeteriaViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [topView].forEach { view.addSubview($0)}
+        [topView, dateView].forEach { view.addSubview($0)}
     }
     
     // MARK: - Corner Radius
@@ -52,6 +56,13 @@ class CafeteriaViewController: UIViewController {
             make.left.equalToSuperview()
             make.width.equalToSuperview()
             make.height.equalToSuperview().dividedBy(29)
+        }
+        
+        dateView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(self.view.frame.height/8.12)
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview().dividedBy(1.15)
+            make.height.equalToSuperview().dividedBy(27.01)
         }
     }
 }
