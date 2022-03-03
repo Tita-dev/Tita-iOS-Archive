@@ -13,6 +13,10 @@ class CafeteriaDateView: UIView {
     let lastDayButton = UIButton().then {
         $0.setImage(UIImage(named: "Tita-ChevronDown_left"), for: .normal)
     }
+    
+    let dateLabel = UILabel().then {
+        $0.dynamicFont(fontSize: 20, currentFontName: "AppleSDGothicNeo-Bold")
+    }
 
 // MARK: - LifeCycles
     override init(frame: CGRect) {
@@ -37,7 +41,7 @@ class CafeteriaDateView: UIView {
         
     // MARK: - addView
     private func addView(){
-        [lastDayButton].forEach { addSubview($0) }
+        [lastDayButton, dateLabel].forEach { addSubview($0) }
     }
             
     // MARK: - location
@@ -47,6 +51,10 @@ class CafeteriaDateView: UIView {
             make.height.equalTo(viewBounds.height/27.01)
             make.left.equalToSuperview()
             make.centerY.equalToSuperview()
+        }
+        
+        dateLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
         }
     }
 }
