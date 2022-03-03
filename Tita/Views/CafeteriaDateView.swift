@@ -9,6 +9,10 @@ import UIKit
 
 class CafeteriaDateView: UIView {
     private let viewBounds = UIScreen.main.bounds
+    
+    let lastDayButton = UIButton().then {
+        $0.setImage(UIImage(named: "Tita-ChevronDown_left"), for: .normal)
+    }
 
 // MARK: - LifeCycles
     override init(frame: CGRect) {
@@ -33,11 +37,16 @@ class CafeteriaDateView: UIView {
         
     // MARK: - addView
     private func addView(){
-        [].forEach { addSubview($0) }
+        [lastDayButton].forEach { addSubview($0) }
     }
             
     // MARK: - location
     private func location(){
-
+        lastDayButton.snp.makeConstraints { make in
+            make.width.equalTo(viewBounds.width/12.5)
+            make.height.equalTo(viewBounds.height/27.01)
+            make.left.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
     }
 }
