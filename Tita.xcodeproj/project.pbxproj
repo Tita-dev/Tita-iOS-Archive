@@ -40,6 +40,7 @@
 		C0D132A327C4DB4E003E4811 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D132A227C4DB4E003E4811 /* LineView.swift */; };
 		C0DBC1E7278C4E0900E310D8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */; };
 		C0DE36C427D0369000943D42 /* CafeteriaDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE36C327D0369000943D42 /* CafeteriaDateView.swift */; };
+		C0DE36C627D0478700943D42 /* CafeteriaMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE36C527D0478700943D42 /* CafeteriaMenuView.swift */; };
 		C0FBE61127CF85B300D37EC8 /* CafeteriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FBE61027CF85B300D37EC8 /* CafeteriaViewController.swift */; };
 		C0FBE61327CF888300D37EC8 /* CafeteriaTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FBE61227CF888300D37EC8 /* CafeteriaTopView.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,7 @@
 		C0D132A227C4DB4E003E4811 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C0DE36C327D0369000943D42 /* CafeteriaDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeteriaDateView.swift; sourceTree = "<group>"; };
+		C0DE36C527D0478700943D42 /* CafeteriaMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeteriaMenuView.swift; sourceTree = "<group>"; };
 		C0FBE61027CF85B300D37EC8 /* CafeteriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeteriaViewController.swift; sourceTree = "<group>"; };
 		C0FBE61227CF888300D37EC8 /* CafeteriaTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeteriaTopView.swift; sourceTree = "<group>"; };
 		CF5D6514FA08B636D80D0304 /* Pods-Tita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tita.release.xcconfig"; path = "Target Support Files/Pods-Tita/Pods-Tita.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				C0D132A027BB61CF003E4811 /* TermsAgreeView.swift */,
 				C0D1328E27A59665003E4811 /* SignUpTextFieldView.swift */,
 				C0D132A227C4DB4E003E4811 /* LineView.swift */,
+				C0DE36C527D0478700943D42 /* CafeteriaMenuView.swift */,
 				C0FBE61227CF888300D37EC8 /* CafeteriaTopView.swift */,
 			);
 			path = Views;
@@ -383,6 +386,7 @@
 				AA3837AC275E5960005C0323 /* Extension.swift in Sources */,
 				C0DBC1E7278C4E0900E310D8 /* MainViewController.swift in Sources */,
 				C0D1329D27AB09A2003E4811 /* EndSignUpViewController.swift in Sources */,
+				C0DE36C627D0478700943D42 /* CafeteriaMenuView.swift in Sources */,
 				C0D1328B27A58B1D003E4811 /* SignUpIDViewController.swift in Sources */,
 				C0D132A127BB61CF003E4811 /* TermsAgreeView.swift in Sources */,
 				C0D1328927A42916003E4811 /* BirthDateViewController.swift in Sources */,
