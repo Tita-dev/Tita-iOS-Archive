@@ -39,6 +39,10 @@
 		C0D132A127BB61CF003E4811 /* TermsAgreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D132A027BB61CF003E4811 /* TermsAgreeView.swift */; };
 		C0D132A327C4DB4E003E4811 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D132A227C4DB4E003E4811 /* LineView.swift */; };
 		C0DBC1E7278C4E0900E310D8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */; };
+		C0DE36C427D0369000943D42 /* CafeteriaDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE36C327D0369000943D42 /* CafeteriaDateView.swift */; };
+		C0DE36C627D0478700943D42 /* CafeteriaMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE36C527D0478700943D42 /* CafeteriaMenuView.swift */; };
+		C0FBE61127CF85B300D37EC8 /* CafeteriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FBE61027CF85B300D37EC8 /* CafeteriaViewController.swift */; };
+		C0FBE61327CF888300D37EC8 /* CafeteriaTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FBE61227CF888300D37EC8 /* CafeteriaTopView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +81,10 @@
 		C0D132A027BB61CF003E4811 /* TermsAgreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAgreeView.swift; sourceTree = "<group>"; };
 		C0D132A227C4DB4E003E4811 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C0DE36C327D0369000943D42 /* CafeteriaDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeteriaDateView.swift; sourceTree = "<group>"; };
+		C0DE36C527D0478700943D42 /* CafeteriaMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeteriaMenuView.swift; sourceTree = "<group>"; };
+		C0FBE61027CF85B300D37EC8 /* CafeteriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeteriaViewController.swift; sourceTree = "<group>"; };
+		C0FBE61227CF888300D37EC8 /* CafeteriaTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeteriaTopView.swift; sourceTree = "<group>"; };
 		CF5D6514FA08B636D80D0304 /* Pods-Tita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tita.release.xcconfig"; path = "Target Support Files/Pods-Tita/Pods-Tita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,11 +133,14 @@
 				C0525E5C2792B459004FD735 /* Cells */,
 				C00F5A7C27904747002B34DF /* MainTopView.swift */,
 				C0525E6327947431004FD735 /* EmptyPostView.swift */,
+				C0DE36C327D0369000943D42 /* CafeteriaDateView.swift */,
 				C059093E2794E0A1002C9056 /* NoticeLabelView.swift */,
 				C0D1328627A29930003E4811 /* SignUpDescriptionView.swift */,
 				C0D132A027BB61CF003E4811 /* TermsAgreeView.swift */,
 				C0D1328E27A59665003E4811 /* SignUpTextFieldView.swift */,
 				C0D132A227C4DB4E003E4811 /* LineView.swift */,
+				C0DE36C527D0478700943D42 /* CafeteriaMenuView.swift */,
+				C0FBE61227CF888300D37EC8 /* CafeteriaTopView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -155,6 +166,7 @@
 				C0D1329627AAB4E0003E4811 /* SignUpEmailViewController.swift */,
 				C0D1329827AAE484003E4811 /* SignUpCertificationNumberViewController.swift */,
 				C0D1329C27AB09A2003E4811 /* EndSignUpViewController.swift */,
+				C0FBE61027CF85B300D37EC8 /* CafeteriaViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -357,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAB6A9602796D8A800DE26C6 /* LoginButton.swift in Sources */,
+				C0FBE61127CF85B300D37EC8 /* CafeteriaViewController.swift in Sources */,
 				C0D1328F27A59665003E4811 /* SignUpTextFieldView.swift in Sources */,
 				C06F3268275E4F1500F4A97E /* AppDelegate.swift in Sources */,
 				C0D1329727AAB4E0003E4811 /* SignUpEmailViewController.swift in Sources */,
@@ -373,14 +386,17 @@
 				AA3837AC275E5960005C0323 /* Extension.swift in Sources */,
 				C0DBC1E7278C4E0900E310D8 /* MainViewController.swift in Sources */,
 				C0D1329D27AB09A2003E4811 /* EndSignUpViewController.swift in Sources */,
+				C0DE36C627D0478700943D42 /* CafeteriaMenuView.swift in Sources */,
 				C0D1328B27A58B1D003E4811 /* SignUpIDViewController.swift in Sources */,
 				C0D132A127BB61CF003E4811 /* TermsAgreeView.swift in Sources */,
 				C0D1328927A42916003E4811 /* BirthDateViewController.swift in Sources */,
 				C0D1328727A29930003E4811 /* SignUpDescriptionView.swift in Sources */,
 				AAB6A964279809E700DE26C6 /* LoginTextField.swift in Sources */,
+				C0FBE61327CF888300D37EC8 /* CafeteriaTopView.swift in Sources */,
 				C0525E6427947431004FD735 /* EmptyPostView.swift in Sources */,
 				C0D1328527A295E1003E4811 /* TermsAgreementViewController.swift in Sources */,
 				AAB6A9622798066900DE26C6 /* LoginViewController.swift in Sources */,
+				C0DE36C427D0369000943D42 /* CafeteriaDateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
