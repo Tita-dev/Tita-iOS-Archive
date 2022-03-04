@@ -66,10 +66,6 @@ class CafeteriaViewController: UIViewController {
         [topView, dateView, breakfastMenuView, lunchMenuView, dinnerMenuView].forEach { view.addSubview($0)}
     }
     
-    // MARK: - Corner Radius
-    private func cornerRadius(){
-        
-    }
     
     // MARK: - Location
     private func location(){
