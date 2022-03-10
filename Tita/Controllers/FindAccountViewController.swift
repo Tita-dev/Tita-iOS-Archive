@@ -11,7 +11,9 @@ import Then
 
 class FindAccountViewController: UIViewController {
     //MARK: - Properties
-    
+    private let logo = UIImageView().then {
+        $0.image = UIImage(named: "Tita-Logo")
+    }
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -31,7 +33,7 @@ class FindAccountViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        
+        [logo].forEach{ view.addSubview($0) }
     }
     
     // MARK: - Corner Radius
@@ -41,7 +43,12 @@ class FindAccountViewController: UIViewController {
     
     // MARK: - Location
     private func location(){
-        
+        logo.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(self.view.frame.height/3.59)
+            make.width.equalToSuperview().dividedBy(3.46)
+            make.height.equalToSuperview().dividedBy(20.12)
+        }
     }
     
 }
