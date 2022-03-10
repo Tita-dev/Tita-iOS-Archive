@@ -25,6 +25,7 @@
 		C06F3281275E532400F4A97E /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C06F327F275E52B900F4A97E /* NotoSans-BoldItalic.ttf */; };
 		C06F3282275E532700F4A97E /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C06F327E275E52B900F4A97E /* NotoSans-Italic.ttf */; };
 		C06F3283275E532A00F4A97E /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C06F327D275E52B900F4A97E /* NotoSans-Regular.ttf */; };
+		C087D1BC27DA1836006B0AD4 /* FindAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C087D1BB27DA1836006B0AD4 /* FindAccountViewController.swift */; };
 		C0D1328527A295E1003E4811 /* TermsAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1328427A295E1003E4811 /* TermsAgreementViewController.swift */; };
 		C0D1328727A29930003E4811 /* SignUpDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1328627A29930003E4811 /* SignUpDescriptionView.swift */; };
 		C0D1328927A42916003E4811 /* BirthDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1328827A42916003E4811 /* BirthDateViewController.swift */; };
@@ -67,6 +68,7 @@
 		C06F327D275E52B900F4A97E /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		C06F327E275E52B900F4A97E /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
 		C06F327F275E52B900F4A97E /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C087D1BB27DA1836006B0AD4 /* FindAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAccountViewController.swift; sourceTree = "<group>"; };
 		C0D1328427A295E1003E4811 /* TermsAgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAgreementViewController.swift; sourceTree = "<group>"; };
 		C0D1328627A29930003E4811 /* SignUpDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDescriptionView.swift; sourceTree = "<group>"; };
 		C0D1328827A42916003E4811 /* BirthDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDateViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				AAB6A9612798066900DE26C6 /* LoginViewController.swift */,
+				C087D1BB27DA1836006B0AD4 /* FindAccountViewController.swift */,
 				C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */,
 				C0D1328427A295E1003E4811 /* TermsAgreementViewController.swift */,
 				C0D1328827A42916003E4811 /* BirthDateViewController.swift */,
@@ -395,6 +398,7 @@
 				C0FBE61327CF888300D37EC8 /* CafeteriaTopView.swift in Sources */,
 				C0525E6427947431004FD735 /* EmptyPostView.swift in Sources */,
 				C0D1328527A295E1003E4811 /* TermsAgreementViewController.swift in Sources */,
+				C087D1BC27DA1836006B0AD4 /* FindAccountViewController.swift in Sources */,
 				AAB6A9622798066900DE26C6 /* LoginViewController.swift in Sources */,
 				C0DE36C427D0369000943D42 /* CafeteriaDateView.swift in Sources */,
 			);
