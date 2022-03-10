@@ -15,6 +15,12 @@ class FindAccountViewController: UIViewController {
         $0.image = UIImage(named: "Tita-Logo")
     }
     
+    private let aboutTita = UILabel().then {
+        $0.text = "우리만의 공간, Time-Table"
+        $0.dynamicFont(fontSize: 8, currentFontName: "AppleSDGothicNeo-Bold")
+        $0.textColor = .black
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +39,7 @@ class FindAccountViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [logo].forEach{ view.addSubview($0) }
+        [logo, aboutTita].forEach{ view.addSubview($0) }
     }
     
     // MARK: - Corner Radius
@@ -48,6 +54,11 @@ class FindAccountViewController: UIViewController {
             make.top.equalToSuperview().offset(self.view.frame.height/3.59)
             make.width.equalToSuperview().dividedBy(3.46)
             make.height.equalToSuperview().dividedBy(20.12)
+        }
+        
+        aboutTita.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(logo.snp.bottom).offset(self.view.frame.height/174.62)
         }
     }
     
