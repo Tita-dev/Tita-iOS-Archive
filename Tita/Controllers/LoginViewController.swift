@@ -86,6 +86,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @objc private func onTapForgot(sender:UIButton){
         print("Forgot")
+        let nextVC = FindAccountViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     //MARK: - Helpers
