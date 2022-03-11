@@ -21,6 +21,10 @@ class FindAccountViewController: UIViewController {
         $0.textColor = .black
     }
     
+    private let findID = FindAccountButton().then {
+        $0.dataSetting(title: "아이디")
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +43,7 @@ class FindAccountViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [logo, aboutTita].forEach{ view.addSubview($0) }
+        [logo, aboutTita, findID].forEach{ view.addSubview($0) }
     }
     
     // MARK: - Corner Radius
@@ -59,6 +63,13 @@ class FindAccountViewController: UIViewController {
         aboutTita.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(logo.snp.bottom).offset(self.view.frame.height/174.62)
+        }
+        
+        findID.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(aboutTita.snp.bottom).offset(self.view.frame.height/15.62)
+            make.width.equalToSuperview().dividedBy(1.43)
+            make.height.equalToSuperview().dividedBy(19.33)
         }
     }
     
