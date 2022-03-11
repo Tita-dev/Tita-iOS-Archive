@@ -23,10 +23,12 @@ class FindAccountViewController: UIViewController {
     
     private let findID = FindAccountButton().then {
         $0.dataSetting(title: "아이디 찾기")
+        $0.addTarget(self, action: #selector(tapFindID(_:)), for: .touchUpInside)
     }
     
     private let findPW = FindAccountButton().then {
         $0.dataSetting(title: "비밀번호 찾기")
+        $0.addTarget(self, action: #selector(tapFindPW(_:)), for: .touchUpInside)
     }
     
     private let signUpLabel = UILabel().then {
@@ -40,6 +42,7 @@ class FindAccountViewController: UIViewController {
         $0.setTitleColor(.rgb(red: 53, green: 117, blue: 172), for: .normal)
         $0.backgroundColor = .white
         $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Bold")
+        $0.addTarget(self, action: #selector(tapSignUp(sender:)), for: .touchUpInside)
     }
     
     //MARK: - Lifecycle
@@ -49,6 +52,19 @@ class FindAccountViewController: UIViewController {
     }
     
     //MARK: - Selectors
+    @objc private func tapFindID(_ sender: UIButton){
+        print("find ID")
+    }
+    
+    @objc private func tapFindPW(_ sender: UIButton){
+        print("find PW")
+    }
+    
+    @objc private func tapSignUp(sender:UIButton){
+        print("SignUP")
+        let nextVC = TermsAgreementViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
     
     //MARK: - Helpers
     private func configureUI(){
@@ -89,7 +105,7 @@ class FindAccountViewController: UIViewController {
             make.height.equalToSuperview().dividedBy(19.33)
         }
         
-        findID.snp.makeConstraints { make in
+        findPW.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(findID.snp.bottom).offset(self.view.frame.height/62.46)
             make.width.equalToSuperview().dividedBy(1.43)
