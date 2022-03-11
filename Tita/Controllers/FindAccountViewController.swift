@@ -22,7 +22,11 @@ class FindAccountViewController: UIViewController {
     }
     
     private let findID = FindAccountButton().then {
-        $0.dataSetting(title: "아이디")
+        $0.dataSetting(title: "아이디 찾기")
+    }
+    
+    private let findPW = FindAccountButton().then {
+        $0.dataSetting(title: "비밀번호 찾기")
     }
     
     //MARK: - Lifecycle
@@ -43,7 +47,7 @@ class FindAccountViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [logo, aboutTita, findID].forEach{ view.addSubview($0) }
+        [logo, aboutTita, findID, findPW].forEach{ view.addSubview($0) }
     }
     
     // MARK: - Corner Radius
@@ -68,6 +72,13 @@ class FindAccountViewController: UIViewController {
         findID.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(aboutTita.snp.bottom).offset(self.view.frame.height/15.62)
+            make.width.equalToSuperview().dividedBy(1.43)
+            make.height.equalToSuperview().dividedBy(19.33)
+        }
+        
+        findID.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(aboutTita.snp.bottom).offset(self.view.frame.height/62.46)
             make.width.equalToSuperview().dividedBy(1.43)
             make.height.equalToSuperview().dividedBy(19.33)
         }
