@@ -54,6 +54,8 @@ class FindAccountViewController: UIViewController {
     //MARK: - Selectors
     @objc private func tapFindID(_ sender: UIButton){
         print("find ID")
+        let nextVC = FindIDViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     @objc private func tapFindPW(_ sender: UIButton){
