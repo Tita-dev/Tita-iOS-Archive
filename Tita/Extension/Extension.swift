@@ -373,3 +373,11 @@ extension UITextField {
         self.rightViewMode = .always
     }
 }
+
+// MARK: - button LeftPadding
+extension UIButton {
+    func addLeftPadding(_ padding: CGFloat) {
+        titleEdgeInsets = UIEdgeInsets(top: 0.0, left: padding, bottom: 0.0, right: -padding)
+        contentEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: padding)
+    }
+}
