@@ -11,6 +11,9 @@ import Then
 
 class FindIDViewController: UIViewController {
     //MARK: - Properties
+    private let descriptionView = SignUpDescriptionView().then {
+        $0.dataSetting(description: "아이디를 까먹으셨나요?", additionalDescription: "본인 인증을 위해 회원가입 시 사용했던 이메일이 필요해요.")
+    }
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -30,7 +33,7 @@ class FindIDViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        
+        [descriptionView].forEach { view.addSubview($0) }
     }
     
     // MARK: - Corner Radius
@@ -40,7 +43,12 @@ class FindIDViewController: UIViewController {
     
     // MARK: - Location
     private func location(){
-        
+        descriptionView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalToSuperview().dividedBy(3.98)
+            make.top.equalToSuperview().offset(self.view.frame.height/13.1)
+            make.centerX.equalToSuperview()
+        }
     }
     
 }
