@@ -42,7 +42,8 @@ class FindIDViewController: UIViewController {
         
         //등록되지 않은 이메일일 경우
         
-        //nextVC
+        let nextVC = FindIDCertificationNumberViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     //MARK: - Keyboard Setting
