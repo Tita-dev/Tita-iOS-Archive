@@ -29,6 +29,8 @@ class FindAccountButton: UIButton {
         self.layer.cornerRadius = UIScreen.main.bounds.width/37.5
         self.layer.borderWidth = UIScreen.main.bounds.width/375
         self.layer.borderColor = UIColor.rgb(red: 205, green: 205, blue: 205).cgColor
+        self.contentHorizontalAlignment = .left
+        self.addLeftPadding(20)
         self.dynamicFont(fontSize: 12, currentFontName: "AppleSDGothicNeo-Light")
         self.setTitleColor(.rgb(red: 133, green: 133, blue: 133), for: .normal)
     }
