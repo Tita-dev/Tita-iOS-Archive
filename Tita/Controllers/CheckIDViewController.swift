@@ -12,6 +12,10 @@ import Then
 
 class CheckIDViewController: UIViewController {
     //MARK: - Properties
+    private let descriptionView = SignUpDescriptionView().then {
+        $0.dataSetting(description: "Ti-Ta가 아이디를 찾았어요!\n이제 다시 로그인을 시도해 봐요!", additionalDescription: nil)
+        $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
+    }
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -20,7 +24,10 @@ class CheckIDViewController: UIViewController {
     }
     
     //MARK: - Selectors
-
+    @objc private func tapPrevious(_ sender: UIButton){
+        navigationController?.popViewController(animated: true)
+        print("previous")
+    }
     
     //MARK: - Helpers
     private func configureUI(){
@@ -31,12 +38,19 @@ class CheckIDViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        
+        [descriptionView].forEach { view.addSubview($0)}
     }
     
     // MARK: - Location
     private func location(){
-
+        descriptionView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalToSuperview().dividedBy(3.37)
+            make.top.equalToSuperview().offset(self.view.frame.height/13.1)
+            make.centerX.equalToSuperview()
+        }
+                
+                
     }
     
 }
