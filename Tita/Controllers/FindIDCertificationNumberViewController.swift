@@ -80,6 +80,8 @@ class FindIDCertificationNumberViewController: UIViewController {
             reSendButton.isHidden = true
         }
         print("next")
+        let nextVC = CheckIDViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     //MARK: - Keyboard Setting
