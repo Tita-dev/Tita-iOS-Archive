@@ -17,6 +17,21 @@ class CheckIDViewController: UIViewController {
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
+    private let checkID = UILabel().then {
+        let userName = "OOO"
+        let userID = "extita0129"
+        
+        let str = NSMutableAttributedString(string: "\(userName)님의 아이디는\n\(userID) 입니다.")
+        str.setFontForText(textToFind: userID, fontSize: 25, currentFontName: "AppleSDGothicNeo-Bold")
+        str.setFontForText(textToFind: "입니다.", fontSize: 25, currentFontName: "AppleSDGothicNeo-Light")
+        $0.dynamicFont(fontSize: 22, currentFontName: "AppleSDGothicNeo-Light")
+        
+        $0.textAlignment = .center
+        $0.numberOfLines = 0
+        $0.attributedText = str
+        
+    }
+    
     private let findPW = UIButton().then {
         $0.setTitle("혹시 비밀번호도 기억나지 않나요?", for: .normal)
         $0.dynamicFont(fontSize: 11, currentFontName: "AppleSDGothicNeo-Regular")
@@ -29,6 +44,8 @@ class CheckIDViewController: UIViewController {
         $0.addTarget(self, action: #selector(tapMainButton(_:)), for: .touchUpInside)
     }
 
+    private var userName: String = ""
+    private var userID: String = ""
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -60,7 +77,7 @@ class CheckIDViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView, findPW, mainButton].forEach { view.addSubview($0)}
+        [descriptionView, findPW, mainButton, checkID].forEach { view.addSubview($0)}
     }
     
     // MARK: - Location
@@ -70,6 +87,10 @@ class CheckIDViewController: UIViewController {
             make.height.equalToSuperview().dividedBy(3.37)
             make.top.equalToSuperview().offset(self.view.frame.height/13.1)
             make.centerX.equalToSuperview()
+        }
+        
+        checkID.snp.makeConstraints { make in
+            make.center.equalToSuperview()
         }
             
         findPW.snp.makeConstraints { make in
@@ -85,6 +106,7 @@ class CheckIDViewController: UIViewController {
         }
                 
     }
+    
     
 }
 

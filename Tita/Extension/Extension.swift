@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 //MARK: - TextField 재정의
 extension UITextField {
@@ -26,80 +27,29 @@ extension UIColor{
     }
 }
 
-//MARK: - UILabel dynamic font extension
+// MARK: - UILabel dynamic font extension
 extension UILabel {
-    func dynamicFont(fontSize size: CGFloat, currentFontName: String) {
-    let bounds = UIScreen.main.bounds
-    let height = bounds.size.height
-    
-    switch height {
-    case 480.0: //Iphone 3,4S => 3.5 inch
-        self.font = UIFont(name: currentFontName, size: size * 0.7)
-      break
-    case 568.0: //iphone 5, SE => 4 inch
-        self.font = UIFont(name: currentFontName, size: size * 0.8)
-      break
-    case 667.0: //iphone 6, 6s, 7, 8 => 4.7 inch
-        self.font = UIFont(name: currentFontName, size: size * 0.92)
-      break
-    case 736.0: //iphone 6s+ 6+, 7+, 8+ => 5.5 inch
-        self.font = UIFont(name: currentFontName, size: size * 0.95)
-      break
-    case 812.0: //iphone X, XS => 5.8 inch
-        self.font = UIFont(name: currentFontName, size: size)
-      break
-    case 896.0: //iphone XR => 6.1 inch  // iphone XS MAX => 6.5 inch
-        self.font = UIFont(name: currentFontName, size: size * 1.15)
-      break
-    case 844.0: //iphone 12, 12Pro => 6.1 inch
-        self.font = UIFont(name: currentFontName, size: size * 1.08)
-        break
-    case 926.0: //iphone 12Pro MAX
-        self.font = UIFont(name: currentFontName, size: size * 1.19)
-        break
-    default:
-      print("not an iPhone")
-      break
+    func dynamicFont(fontSize size: CGFloat, currentFontName: String){
+        let standard: CGFloat = 375
+        let bound = UIScreen.main.bounds
+        
+        let resize = bound.width * (size/standard)
+        let font = UIFont(name: currentFontName, size: resize)!
+        self.font = font
     }
-  }
+    
 }
 
 //MARK: - UITextField dynamic font extension
 extension UITextField {
     func dynamicFont(fontSize size: CGFloat, currentFontName: String) {
-    let bounds = UIScreen.main.bounds
-    let height = bounds.size.height
-
-    switch height {
-    case 480.0: //Iphone 3,4S => 3.5 inch
-        self.font = UIFont(name: currentFontName, size: size * 0.7)
-      break
-    case 568.0: //iphone 5, SE => 4 inch
-        self.font = UIFont(name: currentFontName, size: size * 0.8)
-      break
-    case 667.0: //iphone 6, 6s, 7, 8 => 4.7 inch
-        self.font = UIFont(name: currentFontName, size: size * 0.92)
-      break
-    case 736.0: //iphone 6s+ 6+, 7+, 8+ => 5.5 inch
-        self.font = UIFont(name: currentFontName, size: size * 0.95)
-      break
-    case 812.0: //iphone X, XS => 5.8 inch
-        self.font = UIFont(name: currentFontName, size: size)
-      break
-    case 896.0: //iphone XR => 6.1 inch  // iphone XS MAX => 6.5 inch
-        self.font = UIFont(name: currentFontName, size: size * 1.15)
-      break
-    case 844.0: //iphone 12, 12Pro => 6.1 inch
-        self.font = UIFont(name: currentFontName, size: size * 1.08)
-        break
-    case 926.0: //iphone 12Pro MAX
-        self.font = UIFont(name: currentFontName, size: size * 1.19)
-        break
-    default:
-      print("not an iPhone")
-      break
+        let standard: CGFloat = 375
+        let bound = UIScreen.main.bounds
+    
+        let resize = bound.width * (size/standard)
+        let font = UIFont(name: currentFontName, size: resize)!
+        self.font = font
     }
-  }
 }
 
 //MARK: - UIView roundCornerRadius extension
@@ -114,77 +64,26 @@ extension UIView {
 //MARK: - UIButton dynamic font extension
 extension UIButton {
     func dynamicFont(fontSize size: CGFloat, currentFontName: String) {
-    let bounds = UIScreen.main.bounds
-    let height = bounds.size.height
-
-    switch height {
-    case 480.0: //Iphone 3,4S => 3.5 inch
-        self.titleLabel?.font = UIFont(name: currentFontName, size: size * 0.7)
-      break
-    case 568.0: //iphone 5, SE => 4 inch
-        self.titleLabel?.font = UIFont(name: currentFontName, size: size * 0.8)
-      break
-    case 667.0: //iphone 6, 6s, 7, 8 => 4.7 inch
-        self.titleLabel?.font = UIFont(name: currentFontName, size: size * 0.92)
-      break
-    case 736.0: //iphone 6s+ 6+, 7+, 8+ => 5.5 inch
-        self.titleLabel?.font = UIFont(name: currentFontName, size: size * 0.95)
-      break
-    case 812.0: //iphone X, XS => 5.8 inch
-        self.titleLabel?.font = UIFont(name: currentFontName, size: size)
-      break
-    case 896.0: //iphone XR => 6.1 inch  // iphone XS MAX => 6.5 inch
-        self.titleLabel?.font = UIFont(name: currentFontName, size: size * 1.15)
-      break
-    case 844.0: //iphone 12, 12Pro => 6.1 inch
-        self.titleLabel?.font = UIFont(name: currentFontName, size: size * 1.08)
-        break
-    case 926.0: //iphone 12Pro MAX
-        self.titleLabel?.font = UIFont(name: currentFontName, size: size * 1.19)
-        break
-    default:
-      print("not an iPhone")
-      break
+        let standard: CGFloat = 375
+        let bound = UIScreen.main.bounds
+    
+        let resize = bound.width * (size/standard)
+        let font = UIFont(name: currentFontName, size: resize)!
+        self.titleLabel?.font = font
     }
   }
-}
+
 
 //MARK: - UITextView dynamic font extension
 extension UITextView {
     func dynamicFont(fontSize size: CGFloat, currentFontName: String) {
-    let bounds = UIScreen.main.bounds
-    let height = bounds.size.height
-
-    switch height {
-    case 480.0: //Iphone 3,4S => 3.5 inch
-        self.font = UIFont(name: currentFontName, size: size * 0.7)
-      break
-    case 568.0: //iphone 5, SE => 4 inch
-        self.font = UIFont(name: currentFontName, size: size * 0.8)
-      break
-    case 667.0: //iphone 6, 6s, 7, 8 => 4.7 inch
-        self.font = UIFont(name: currentFontName, size: size * 0.92)
-      break
-    case 736.0: //iphone 6s+ 6+, 7+, 8+ => 5.5 inch
-        self.font = UIFont(name: currentFontName, size: size * 0.95)
-      break
-    case 812.0: //iphone X, XS => 5.8 inch
-        self.font = UIFont(name: currentFontName, size: size)
-      break
-    case 896.0: //iphone XR => 6.1 inch  // iphone XS MAX => 6.5 inch
-        self.font = UIFont(name: currentFontName, size: size * 1.15)
-      break
-    case 844.0: //iphone 12, 12Pro => 6.1 inch
-        self.font = UIFont(name: currentFontName, size: size * 1.08)
-        break
-    case 926.0: //iphone 12Pro MAX
-        self.font = UIFont(name: currentFontName, size: size * 1.19)
-        break
-    default:
-      print("not an iPhone")
-      break
+        let standard: CGFloat = 375
+        let bound = UIScreen.main.bounds
+    
+        let resize = bound.width * (size/standard)
+        let font = UIFont(name: currentFontName, size: resize)!
+        self.font = font
     }
-  }
 }
 
 //MARK: - label gradient extension
@@ -285,54 +184,18 @@ func applySketchShadow(color: UIColor = .lightGray,alpha: Float = 0.5,x:CGFloat,
 extension UITextField {
     func dynamicFont(fontSize size: CGFloat, weight: UIFont.Weight) {
         let currentFontName = self.font?.fontName
-      var calculatedFont: UIFont?
-      let bounds = UIScreen.main.bounds
-      let height = bounds.size.height
-      
-      switch height {
-      case 480.0: //Iphone 3,4S => 3.5 inch
-        calculatedFont = UIFont(name: currentFontName!, size: size * 0.7)
-        resizeFont(calculatedFont: calculatedFont, weight: weight)
-        break
-      case 568.0: //iphone 5, SE => 4 inch
-        calculatedFont = UIFont(name: currentFontName!, size: size * 0.8)
-        resizeFont(calculatedFont: calculatedFont, weight: weight)
-        break
-      case 667.0: //iphone 6, 6s, 7, 8 => 4.7 inch // iphone SE2 -> 4.7 inch
-        calculatedFont = UIFont(name: currentFontName!, size: size * 0.92)
-        resizeFont(calculatedFont: calculatedFont, weight: weight)
-        break
-      case 736.0: //iphone 6s+ 6+, 7+, 8+ => 5.5 inch
-        calculatedFont = UIFont(name: currentFontName!, size: size * 0.95)
-       resizeFont(calculatedFont: calculatedFont, weight: weight)
-        break
-      case 812.0: //iphone X, XS => 5.8 inch // iphone 11 pro => 5.8 inch
-        calculatedFont = UIFont(name: currentFontName!, size: size)
-        resizeFont(calculatedFont: calculatedFont, weight: weight)
-        break
-      case 844.0 : // iphone 12 & iphone 12 pro => 6.1 inch
-        calculatedFont = UIFont(name: currentFontName!, size: size * 1.08)
-        resizeFont(calculatedFont: calculatedFont, weight: weight)
-        break
-      case 896.0: //iphone XR => 6.1 inch  // iphone XS MAX => 6.5 inch // iphone 11 => 6.1 inch // iphone 11 pro max => 6.5 inch
-        calculatedFont = UIFont(name: currentFontName!, size: size * 1.15)
-        resizeFont(calculatedFont: calculatedFont, weight: weight)
-        break
-      case 926.0 : //iphone 12 pro max => 6.7 inch
-        calculatedFont = UIFont(name: currentFontName!, size: size * 1.18)
-        resizeFont(calculatedFont: calculatedFont, weight: weight)
-        break
-      default:
-        print("not an iPhone")
-        break
-      }
+        let standard: CGFloat = 375
+        let bound = UIScreen.main.bounds
+    
+        let resize = bound.width * (size/standard)
+        let font = UIFont(name: currentFontName ?? "", size: resize)!
+        resizeFont(calculatedFont: font, weight: weight)
     }
 }
 
 // MARK: - Line Spacing
 extension NSAttributedString {
     func withLineSpacing(_ spacing: CGFloat) -> NSAttributedString {
-
 
         let attributedString = NSMutableAttributedString(attributedString: self)
         let paragraphStyle = NSMutableParagraphStyle()
@@ -379,5 +242,22 @@ extension UIButton {
     func addLeftPadding(_ padding: CGFloat) {
         titleEdgeInsets = UIEdgeInsets(top: 0.0, left: padding, bottom: 0.0, right: -padding)
         contentEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: padding)
+    }
+}
+
+// MARK: - NSAttributedString
+extension NSMutableAttributedString{
+    func setColorForText(textToFind: String, withColor color: UIColor) {
+        let range: NSRange = self.mutableString.range(of: textToFind, options: .caseInsensitive)
+        self.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
+    }
+    func setFontForText(textToFind: String, fontSize size: CGFloat, currentFontName: String) {
+        let standard: CGFloat = 375
+        let bound = UIScreen.main.bounds
+    
+        let resize = bound.width * (size/standard)
+        let font = UIFont(name: currentFontName, size: resize) ?? .init()
+        let range : NSRange = self.mutableString.range(of: textToFind,options: .caseInsensitive)
+        self.addAttribute(NSAttributedString.Key.font, value: font, range: range)
     }
 }
