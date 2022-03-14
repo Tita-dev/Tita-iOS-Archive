@@ -16,6 +16,14 @@ class CheckIDViewController: UIViewController {
         $0.dataSetting(description: "Ti-Ta가 아이디를 찾았어요!\n이제 다시 로그인을 시도해 봐요!", additionalDescription: nil)
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
+    
+    private let findPW = UIButton().then {
+        $0.setTitle("혹시 비밀번호도 기억나지 않나요?", for: .normal)
+        $0.dynamicFont(fontSize: 11, currentFontName: "AppleSDGothicNeo-Regular")
+        $0.setTitleColor(.rgb(red: 219, green: 64, blue: 64), for: .normal)
+        $0.addTarget(self, action: #selector(tapFindPW(_:)), for: .touchUpInside)
+    }
+
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -29,6 +37,10 @@ class CheckIDViewController: UIViewController {
         print("previous")
     }
     
+    @objc private func tapFindPW(_ sender: UIButton){
+        print("find PW")
+    }
+    
     //MARK: - Helpers
     private func configureUI(){
         view.backgroundColor = .white
@@ -38,7 +50,7 @@ class CheckIDViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView].forEach { view.addSubview($0)}
+        [descriptionView, findPW].forEach { view.addSubview($0)}
     }
     
     // MARK: - Location
@@ -49,7 +61,11 @@ class CheckIDViewController: UIViewController {
             make.top.equalToSuperview().offset(self.view.frame.height/13.1)
             make.centerX.equalToSuperview()
         }
-                
+            
+        findPW.snp.makeConstraints { make in
+            make.top.equalTo(descriptionView.snp.bottom).offset(self.view.frame.height/2.04)
+            make.centerX.equalToSuperview()
+        }
                 
     }
     
