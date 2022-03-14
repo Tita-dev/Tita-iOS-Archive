@@ -13,6 +13,7 @@
 		AAB6A964279809E700DE26C6 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB6A963279809E700DE26C6 /* LoginTextField.swift */; };
 		B482FBB2A4C005038D809087 /* Pods_Tita.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251ABCF5232EE1ED1774C54C /* Pods_Tita.framework */; };
 		C00F5A7D27904747002B34DF /* MainTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F5A7C27904747002B34DF /* MainTopView.swift */; };
+		C03B884D27DEDF3200528F1A /* CheckIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B884C27DEDF3200528F1A /* CheckIDViewController.swift */; };
 		C0525E5E2792B6E2004FD735 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0525E5D2792B6E2004FD735 /* MenuCollectionViewCell.swift */; };
 		C0525E622793E99F004FD735 /* MainPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0525E612793E99F004FD735 /* MainPostTableViewCell.swift */; };
 		C0525E6427947431004FD735 /* EmptyPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0525E6327947431004FD735 /* EmptyPostView.swift */; };
@@ -57,6 +58,7 @@
 		AAB6A9612798066900DE26C6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AAB6A963279809E700DE26C6 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		C00F5A7C27904747002B34DF /* MainTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTopView.swift; path = Tita/MainTopView.swift; sourceTree = SOURCE_ROOT; };
+		C03B884C27DEDF3200528F1A /* CheckIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIDViewController.swift; sourceTree = "<group>"; };
 		C0525E5D2792B6E2004FD735 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuCollectionViewCell.swift; path = Tita/Views/Cells/MenuCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		C0525E612793E99F004FD735 /* MainPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainPostTableViewCell.swift; path = Tita/Views/MainPostTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		C0525E6327947431004FD735 /* EmptyPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPostView.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				AAB6A9612798066900DE26C6 /* LoginViewController.swift */,
 				C087D1BB27DA1836006B0AD4 /* FindAccountViewController.swift */,
 				C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */,
+				C03B884C27DEDF3200528F1A /* CheckIDViewController.swift */,
 				C0D1328427A295E1003E4811 /* TermsAgreementViewController.swift */,
 				C0D1328827A42916003E4811 /* BirthDateViewController.swift */,
 				C0D1328A27A58B1D003E4811 /* SignUpIDViewController.swift */,
@@ -380,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C03B884D27DEDF3200528F1A /* CheckIDViewController.swift in Sources */,
 				AAB6A9602796D8A800DE26C6 /* LoginButton.swift in Sources */,
 				C0FBE61127CF85B300D37EC8 /* CafeteriaViewController.swift in Sources */,
 				C0B6241B27DB697100B173BA /* FindIDViewController.swift in Sources */,
