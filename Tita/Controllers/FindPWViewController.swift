@@ -11,7 +11,11 @@ import Then
 
 class FindPWViewController: UIViewController {
     //MARK: - Properties
-
+    private let descriptionView = SignUpDescriptionView().then {
+        $0.dataSetting(description: "비밀번호를 까먹으셨나요?", additionalDescription: "본인 인증을 위해 회원가입 시 사용했던 이메일이 필요해요.")
+        $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +23,10 @@ class FindPWViewController: UIViewController {
     }
     
     //MARK: - Selectors
+    @objc private func tapPrevious(_ sender: UIButton){
+        navigationController?.popViewController(animated: true)
+        print("previous")
+    }
 
     //MARK: - Helpers
     private func configureUI(){
@@ -30,7 +38,7 @@ class FindPWViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [].forEach { view.addSubview($0) }
+        [descriptionView].forEach { view.addSubview($0) }
     }
     
     // MARK: - Corner Radius
@@ -40,7 +48,12 @@ class FindPWViewController: UIViewController {
     
     // MARK: - Location
     private func location(){
-        
+        descriptionView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalToSuperview().dividedBy(3.98)
+            make.top.equalToSuperview().offset(self.view.frame.height/13.1)
+            make.centerX.equalToSuperview()
+        }
     }
     
 }
