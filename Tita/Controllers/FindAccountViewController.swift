@@ -60,6 +60,9 @@ class FindAccountViewController: UIViewController {
     
     @objc private func tapFindPW(_ sender: UIButton){
         print("find PW")
+        
+        let nextVC = FindPWViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     @objc private func tapSignUp(sender:UIButton){
