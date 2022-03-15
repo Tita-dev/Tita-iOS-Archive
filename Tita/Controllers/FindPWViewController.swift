@@ -105,7 +105,6 @@ class FindPWViewController: UIViewController {
     private func configureUI(){
         view.backgroundColor = .white
         addView()
-        cornerRadius()
         location()
         notificationCenterSetting()
     }
