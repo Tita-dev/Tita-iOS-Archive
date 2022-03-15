@@ -31,6 +31,7 @@
 		C0B6241B27DB697100B173BA /* FindIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6241A27DB697100B173BA /* FindIDViewController.swift */; };
 		C0B6241D27DC5D3B00B173BA /* FindIDCertificationNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6241C27DC5D3B00B173BA /* FindIDCertificationNumberViewController.swift */; };
 		C0CD8C6127E0A5A500347C61 /* FindPWCertificationNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD8C6027E0A5A500347C61 /* FindPWCertificationNumberViewController.swift */; };
+		C0CD8C6327E0A63B00347C61 /* NewPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD8C6227E0A63B00347C61 /* NewPWViewController.swift */; };
 		C0D1328527A295E1003E4811 /* TermsAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1328427A295E1003E4811 /* TermsAgreementViewController.swift */; };
 		C0D1328727A29930003E4811 /* SignUpDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1328627A29930003E4811 /* SignUpDescriptionView.swift */; };
 		C0D1328927A42916003E4811 /* BirthDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1328827A42916003E4811 /* BirthDateViewController.swift */; };
@@ -80,6 +81,7 @@
 		C0B6241A27DB697100B173BA /* FindIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIDViewController.swift; sourceTree = "<group>"; };
 		C0B6241C27DC5D3B00B173BA /* FindIDCertificationNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIDCertificationNumberViewController.swift; sourceTree = "<group>"; };
 		C0CD8C6027E0A5A500347C61 /* FindPWCertificationNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPWCertificationNumberViewController.swift; sourceTree = "<group>"; };
+		C0CD8C6227E0A63B00347C61 /* NewPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPWViewController.swift; sourceTree = "<group>"; };
 		C0D1328427A295E1003E4811 /* TermsAgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAgreementViewController.swift; sourceTree = "<group>"; };
 		C0D1328627A29930003E4811 /* SignUpDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDescriptionView.swift; sourceTree = "<group>"; };
 		C0D1328827A42916003E4811 /* BirthDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDateViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				C0B6241A27DB697100B173BA /* FindIDViewController.swift */,
 				C0CD8C6027E0A5A500347C61 /* FindPWCertificationNumberViewController.swift */,
 				C0E76F1827DF8107006D3861 /* FindPWViewController.swift */,
+				C0CD8C6227E0A63B00347C61 /* NewPWViewController.swift */,
 				C0B6241C27DC5D3B00B173BA /* FindIDCertificationNumberViewController.swift */,
 				C0D1329227A97CE1003E4811 /* SignUpSchoolViewController.swift */,
 				C0D1329427A9E390003E4811 /* SignUpNicknameViewController.swift */,
@@ -391,6 +394,7 @@
 			files = (
 				C03B884D27DEDF3200528F1A /* CheckIDViewController.swift in Sources */,
 				AAB6A9602796D8A800DE26C6 /* LoginButton.swift in Sources */,
+				C0CD8C6327E0A63B00347C61 /* NewPWViewController.swift in Sources */,
 				C0FBE61127CF85B300D37EC8 /* CafeteriaViewController.swift in Sources */,
 				C0E76F1927DF8107006D3861 /* FindPWViewController.swift in Sources */,
 				C0B6241B27DB697100B173BA /* FindIDViewController.swift in Sources */,

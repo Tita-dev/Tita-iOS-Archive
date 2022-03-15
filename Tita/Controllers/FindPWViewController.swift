@@ -61,7 +61,8 @@ class FindPWViewController: UIViewController {
         signUpButton.isHidden = false
         errorLabel */
         
-        // nextVC
+        let nextVC = FindPWCertificationNumberViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     @objc private func tapSignUp(sender:UIButton){

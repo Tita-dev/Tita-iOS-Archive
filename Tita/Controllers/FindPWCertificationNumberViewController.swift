@@ -80,7 +80,7 @@ class FindPWCertificationNumberViewController: UIViewController {
             reSendButton.isHidden = true
         }
         print("next")
-        let nextVC = CheckIDViewController()
+        let nextVC = NewPWViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
