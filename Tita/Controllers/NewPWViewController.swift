@@ -56,7 +56,8 @@ class NewPWViewController: UIViewController {
         if let _ = passwordRegex?.firstMatch(in: textFieldView.textField.text!, options: [], range: NSRange(location: 0, length: textFieldView.textField.text!.count)) {
             print("성공")
             textFieldView.errorLabel.text = ""
-            // nextVC
+            let nextVC = CheckPWViewController()
+            self.navigationController?.pushViewController(nextVC, animated: true)
         }else{
             print("실패")
             textFieldView.errorLabel.text = "조건에 맞지 않는 비밀번호입니다."
