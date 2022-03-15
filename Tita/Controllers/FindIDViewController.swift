@@ -104,7 +104,6 @@ class FindIDViewController: UIViewController {
     private func configureUI(){
         view.backgroundColor = .white
         addView()
-        cornerRadius()
         location()
         notificationCenterSetting()
     }
@@ -113,12 +112,7 @@ class FindIDViewController: UIViewController {
     private func addView(){
         [descriptionView, textFieldView, nextButton, signUpLabel, signUpButton].forEach { view.addSubview($0) }
     }
-    
-    // MARK: - Corner Radius
-    private func cornerRadius(){
-        
-    }
-    
+
     // MARK: - Location
     private func location(){
         descriptionView.snp.makeConstraints { make in
@@ -156,29 +150,3 @@ class FindIDViewController: UIViewController {
     }
     
 }
-
-//MARK: - Preview
-#if DEBUG
-import SwiftUI
-struct FindIDViewControllerRepresentable: UIViewControllerRepresentable {
-    
-func updateUIViewController(_ uiView: UIViewController,context: Context) {
-        // leave this empty
-}
-    @available(iOS 13.0.0, *)
-    func makeUIViewController(context: Context) -> UIViewController{
-        FindIDViewController()
-    }
-}
-@available(iOS 13.0, *)
-struct FindIDViewControllerRepresentable_PreviewProvider: PreviewProvider {
-    static var previews: some View {
-        Group {
-            FindIDViewControllerRepresentable()
-                .ignoresSafeArea()
-                .previewDisplayName(/*@START_MENU_TOKEN@*/"Preview"/*@END_MENU_TOKEN@*/)
-                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
-        }
-        
-    }
-} #endif
