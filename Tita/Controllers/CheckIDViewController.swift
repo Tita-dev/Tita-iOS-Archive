@@ -61,6 +61,9 @@ class CheckIDViewController: UIViewController {
     
     @objc private func tapFindPW(_ sender: UIButton){
         print("find PW")
+        
+        let nextVC = FindPWViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     @objc private func tapMainButton(_ sender: UIButton){
