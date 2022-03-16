@@ -1,38 +1,39 @@
 //
-//  SignUpCertificationNumberViewController.swift
+//  FindIDViewController.swift
 //  Tita
 //
-//  Created by 혜인 on 2022/02/03.
+//  Created by 혜인 on 2022/03/11.
 //
 
 import UIKit
 import SnapKit
 import Then
 
-class SignUpCertificationNumberViewController: UIViewController {
+class FindIDViewController: UIViewController {
     //MARK: - Properties
     private let descriptionView = DescriptionView().then {
-        $0.dataSetting(description: "이메일을 열어 Ti-Ta가 남긴\n인증번호를 확인해주세요!", additionalDescription: nil)
+        $0.dataSetting(description: "아이디를 까먹으셨나요?", additionalDescription: "본인 인증을 위해 회원가입 시 사용했던 이메일이 필요해요.")
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
     private let textFieldView = TextFieldView().then {
-        $0.dataSetting(labelText: "인증번호")
+        $0.dataSetting(labelText: "이메일")
     }
     
-    private let doNotReceiveButton = UIButton().then {
-        $0.setTitle("인증번호가 오지 않았나요?", for: .normal)
-        $0.setTitleColor(.rgb(red: 57, green: 117, blue: 172), for: .normal)
-        $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Regular")
-        $0.addTarget(self, action: #selector(tapDoNotReceive(_:)), for: .touchUpInside)
-    }
-    
-    private let reSendButton = UIButton().then {
-        $0.setTitle("인증번호 재전송", for: .normal)
-        $0.setTitleColor(.black, for: .normal)
-        $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Regular")
+    private let signUpLabel = UILabel().then {
         $0.isHidden = true
-        $0.addTarget(self, action: #selector(tapResendButton(_:)), for: .touchUpInside)
+        $0.text = "혹시 아직 회원이 아니신가요?"
+        $0.textColor = .black
+        $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Light")
+    }
+
+    private let signUpButton = UIButton().then {
+        $0.isHidden = true
+        $0.setTitle("회원가입", for: .normal)
+        $0.setTitleColor(.rgb(red: 53, green: 117, blue: 172), for: .normal)
+        $0.backgroundColor = .white
+        $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Bold")
+        $0.addTarget(self, action: #selector(tapSignUp(sender:)), for: .touchUpInside)
     }
     
     private let nextButton = LoginButton().then {
@@ -52,35 +53,21 @@ class SignUpCertificationNumberViewController: UIViewController {
         print("previous")
     }
     
-    @objc private func tapDoNotReceive(_ sender: UIButton){
-        print("do not receive")
-        if reSendButton.isHidden == true {
-            doNotReceiveButton.snp.remakeConstraints { make in
-                make.width.equalToSuperview().dividedBy(3.4)
-                make.height.equalToSuperview().dividedBy(62.46)
-                make.top.equalTo(textFieldView.errorLabel)
-                make.left.equalToSuperview().offset(self.view.frame.width/2.21)
-            }
-            reSendButton.isHidden = false
-        }
-    }
-    
-    @objc private func tapResendButton(_ sender: UIButton){
-        print("re-send")
-    }
-    
     @objc private func tapNextButton(_ sender: UIButton){
-        if reSendButton.isHidden == false{
-            doNotReceiveButton.snp.remakeConstraints { make in
-                make.width.equalToSuperview().dividedBy(3.4)
-                make.height.equalToSuperview().dividedBy(62.46)
-                make.top.equalTo(textFieldView.errorLabel)
-                make.right.equalTo(textFieldView.line)
-            }
-            reSendButton.isHidden = true
-        }
         print("next")
-        let nextVC = EndSignUpViewController()
+    
+        /* 등록되지 않은 이메일일 경우
+        signUpLabel.isHidden = false
+        signUpButton.isHidden = false
+        errorLabel */
+        
+        let nextVC = FindIDCertificationNumberViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    @objc private func tapSignUp(sender:UIButton){
+        print("SignUP")
+        let nextVC = TermsAgreementViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -92,7 +79,6 @@ class SignUpCertificationNumberViewController: UIViewController {
             make.top.equalToSuperview().offset(self.view.frame.height/1.8)
             make.centerX.equalToSuperview()
         }
-
     }
 
     @objc func keyboardWillHide(_ sender: Notification) {
@@ -102,7 +88,6 @@ class SignUpCertificationNumberViewController: UIViewController {
             make.bottom.equalToSuperview().inset(self.view.frame.height/25.38)
             make.centerX.equalToSuperview()
         }
-        
     }
         
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -125,7 +110,7 @@ class SignUpCertificationNumberViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView, textFieldView, doNotReceiveButton, reSendButton, nextButton].forEach { view.addSubview($0)}
+        [descriptionView, textFieldView, nextButton, signUpLabel, signUpButton].forEach { view.addSubview($0) }
     }
 
     // MARK: - Location
@@ -144,25 +129,23 @@ class SignUpCertificationNumberViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
         
-        doNotReceiveButton.snp.makeConstraints { make in
-            make.width.equalToSuperview().dividedBy(3.4)
-            make.height.equalToSuperview().dividedBy(62.46)
-            make.top.equalTo(textFieldView.errorLabel)
-            make.right.equalTo(textFieldView.line)
-        }
-        
-        reSendButton.snp.makeConstraints { make in
-            make.width.equalToSuperview().dividedBy(5.65)
-            make.height.equalToSuperview().dividedBy(62.46)
-            make.top.equalTo(doNotReceiveButton)
-            make.right.equalTo(textFieldView.line)
-        }
-        
         nextButton.snp.makeConstraints { make in
             make.width.equalToSuperview().dividedBy(1.15)
             make.height.equalToSuperview().dividedBy(16.24)
             make.bottom.equalToSuperview().inset(self.view.frame.height/25.38)
             make.centerX.equalToSuperview()
+        }
+        
+        signUpLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(self.view.frame.width/3.44)
+            make.bottom.equalTo(nextButton.snp.top).offset(self.view.frame.height/(-90.22))
+        }
+        
+        signUpButton.snp.makeConstraints { make in
+            make.left.equalTo(signUpLabel.snp.right).offset(self.view.frame.width/75)
+            make.centerY.equalTo(signUpLabel)
+            make.width.equalToSuperview().dividedBy(10.3)
+            make.height.equalToSuperview().dividedBy(50.75)
         }
     }
     

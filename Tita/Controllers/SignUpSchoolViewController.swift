@@ -11,12 +11,12 @@ import Then
 
 class SignUpSchoolViewController: UIViewController {
     //MARK: - Properties
-    private let descriptionView = SignUpDescriptionView().then {
+    private let descriptionView = DescriptionView().then {
         $0.dataSetting(description: "어느 학교에 재학 중인가요?", additionalDescription: "학교 인증이 추후 진행되니 사실대로 골라주세요.")
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
-    private let textFieldView = SignUpTextFieldView().then {
+    private let textFieldView = TextFieldView().then {
         $0.dataSetting(labelText: "학교")
     }
     

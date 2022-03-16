@@ -11,12 +11,12 @@ import Then
 
 class SignUpEmailViewController: UIViewController {
     //MARK: - Properties
-    private let descriptionView = SignUpDescriptionView().then {
+    private let descriptionView = DescriptionView().then {
         $0.dataSetting(description: "마지막으로, 본인인증을 위해\n이메일을 입력해주세요.", additionalDescription: nil)
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
-    private let textFieldView = SignUpTextFieldView().then {
+    private let textFieldView = TextFieldView().then {
         $0.dataSetting(labelText: "이메일")
     }
     

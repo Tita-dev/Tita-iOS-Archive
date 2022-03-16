@@ -1,32 +1,52 @@
 //
-//  EndSignUpViewController.swift
+//  CheckIDViewController.swift
 //  Tita
 //
-//  Created by 혜인 on 2022/02/03.
+//  Created by 혜인 on 2022/03/14.
 //
+
 
 import UIKit
 import SnapKit
 import Then
 
-class EndSignUpViewController: UIViewController {
+class CheckIDViewController: UIViewController {
     //MARK: - Properties
     private let descriptionView = DescriptionView().then {
-        $0.dataSetting(description: "우리만의 공간에 들어갈\n준비가 모두 끝났어요!", additionalDescription: "Ti-Ta는 무분별한 욕설, 비방 등에 대해 제재를 가하고 있습니다.\n커뮤니티 가이드를 지키며 Ti-Ta 이용 부탁드립니다.")
+        $0.dataSetting(description: "Ti-Ta가 아이디를 찾았어요!\n이제 다시 로그인을 시도해 봐요!", additionalDescription: nil)
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
-    private let mainLabel = UILabel().then {
-        $0.text = "지금 바로 들어가 볼까요?"
+    private let checkID = UILabel().then {
+        let userName = "OOO"
+        let userID = "extita0129"
+        
+        let str = NSMutableAttributedString(string: "\(userName)님의 아이디는\n\(userID) 입니다.")
+        str.setFontForText(textToFind: userID, fontSize: 25, currentFontName: "AppleSDGothicNeo-Bold")
+        str.setFontForText(textToFind: "입니다.", fontSize: 25, currentFontName: "AppleSDGothicNeo-Light")
+        $0.dynamicFont(fontSize: 22, currentFontName: "AppleSDGothicNeo-Light")
+        
+        $0.textAlignment = .center
+        $0.numberOfLines = 0
+        $0.attributedText = str
+        
+    }
+    
+    private let findPW = UIButton().then {
+        $0.setTitle("혹시 비밀번호도 기억나지 않나요?", for: .normal)
         $0.dynamicFont(fontSize: 11, currentFontName: "AppleSDGothicNeo-Regular")
-        $0.textColor = .rgb(red: 57, green: 117, blue: 172)
+        $0.setTitleColor(.rgb(red: 219, green: 64, blue: 64), for: .normal)
+        $0.addTarget(self, action: #selector(tapFindPW(_:)), for: .touchUpInside)
     }
     
     private let mainButton = LoginButton().then {
         $0.dataSetting(title: "메인으로")
         $0.addTarget(self, action: #selector(tapMainButton(_:)), for: .touchUpInside)
     }
-    
+
+    private var userName: String = ""
+    private var userID: String = ""
+
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +59,18 @@ class EndSignUpViewController: UIViewController {
         print("previous")
     }
     
-    @objc private func tapMainButton(_ sender: UIButton){
-        let nextVC = MainViewController()
+    @objc private func tapFindPW(_ sender: UIButton){
+        print("find PW")
+        
+        let nextVC = FindPWViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
-       print("complete sign up")
     }
     
+    @objc private func tapMainButton(_ sender: UIButton){
+        let nextVC = LoginViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
+       print("log in")
+    }
     //MARK: - Helpers
     private func configureUI(){
         view.backgroundColor = .white
@@ -54,7 +80,7 @@ class EndSignUpViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView, mainLabel, mainButton].forEach { view.addSubview($0)}
+        [descriptionView, findPW, mainButton, checkID].forEach { view.addSubview($0)}
     }
     
     // MARK: - Location
@@ -66,7 +92,11 @@ class EndSignUpViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
         
-        mainLabel.snp.makeConstraints { make in
+        checkID.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+            
+        findPW.snp.makeConstraints { make in
             make.top.equalTo(descriptionView.snp.bottom).offset(self.view.frame.height/2.04)
             make.centerX.equalToSuperview()
         }
@@ -77,6 +107,6 @@ class EndSignUpViewController: UIViewController {
             make.bottom.equalToSuperview().inset(self.view.frame.height/25.38)
             make.centerX.equalToSuperview()
         }
+                
     }
-    
 }

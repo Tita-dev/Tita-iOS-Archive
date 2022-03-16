@@ -1,25 +1,19 @@
 //
-//  EndSignUpViewController.swift
+//  CheckPWViewController.swift
 //  Tita
 //
-//  Created by 혜인 on 2022/02/03.
+//  Created by 혜인 on 2022/03/15.
 //
 
 import UIKit
 import SnapKit
 import Then
 
-class EndSignUpViewController: UIViewController {
+class CheckPWViewController: UIViewController {
     //MARK: - Properties
     private let descriptionView = DescriptionView().then {
-        $0.dataSetting(description: "우리만의 공간에 들어갈\n준비가 모두 끝났어요!", additionalDescription: "Ti-Ta는 무분별한 욕설, 비방 등에 대해 제재를 가하고 있습니다.\n커뮤니티 가이드를 지키며 Ti-Ta 이용 부탁드립니다.")
+        $0.dataSetting(description: "비밀번호를 재설정했어요!\n이제 다시 로그인을 시도해 봐요!", additionalDescription: nil)
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
-    }
-    
-    private let mainLabel = UILabel().then {
-        $0.text = "지금 바로 들어가 볼까요?"
-        $0.dynamicFont(fontSize: 11, currentFontName: "AppleSDGothicNeo-Regular")
-        $0.textColor = .rgb(red: 57, green: 117, blue: 172)
     }
     
     private let mainButton = LoginButton().then {
@@ -40,7 +34,7 @@ class EndSignUpViewController: UIViewController {
     }
     
     @objc private func tapMainButton(_ sender: UIButton){
-        let nextVC = MainViewController()
+        let nextVC = LoginViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
        print("complete sign up")
     }
@@ -54,7 +48,7 @@ class EndSignUpViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView, mainLabel, mainButton].forEach { view.addSubview($0)}
+        [descriptionView, mainButton].forEach { view.addSubview($0)}
     }
     
     // MARK: - Location
@@ -63,11 +57,6 @@ class EndSignUpViewController: UIViewController {
             make.width.equalToSuperview()
             make.height.equalToSuperview().dividedBy(3.37)
             make.top.equalToSuperview().offset(self.view.frame.height/13.1)
-            make.centerX.equalToSuperview()
-        }
-        
-        mainLabel.snp.makeConstraints { make in
-            make.top.equalTo(descriptionView.snp.bottom).offset(self.view.frame.height/2.04)
             make.centerX.equalToSuperview()
         }
         

@@ -1,15 +1,15 @@
 //
-//  SignUpCertificationNumberViewController.swift
+//  FindIDCertificationNumberViewController.swift
 //  Tita
 //
-//  Created by 혜인 on 2022/02/03.
+//  Created by 혜인 on 2022/03/12.
 //
 
 import UIKit
 import SnapKit
 import Then
 
-class SignUpCertificationNumberViewController: UIViewController {
+class FindIDCertificationNumberViewController: UIViewController {
     //MARK: - Properties
     private let descriptionView = DescriptionView().then {
         $0.dataSetting(description: "이메일을 열어 Ti-Ta가 남긴\n인증번호를 확인해주세요!", additionalDescription: nil)
@@ -80,7 +80,7 @@ class SignUpCertificationNumberViewController: UIViewController {
             reSendButton.isHidden = true
         }
         print("next")
-        let nextVC = EndSignUpViewController()
+        let nextVC = CheckIDViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -165,5 +165,4 @@ class SignUpCertificationNumberViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
     }
-    
 }

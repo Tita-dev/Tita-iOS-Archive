@@ -1,38 +1,26 @@
 //
-//  SignUpCertificationNumberViewController.swift
+//  NewPWViewController.swift
 //  Tita
 //
-//  Created by 혜인 on 2022/02/03.
+//  Created by 혜인 on 2022/03/15.
 //
 
 import UIKit
 import SnapKit
 import Then
 
-class SignUpCertificationNumberViewController: UIViewController {
+class NewPWViewController: UIViewController {
     //MARK: - Properties
     private let descriptionView = DescriptionView().then {
-        $0.dataSetting(description: "이메일을 열어 Ti-Ta가 남긴\n인증번호를 확인해주세요!", additionalDescription: nil)
+        $0.dataSetting(description: "새롭게 비밀번호를 설정해 볼까요?", additionalDescription: "영문, 숫자, 특수문자를 섞어 8~16자 이내로 적어주세요.")
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
     private let textFieldView = TextFieldView().then {
-        $0.dataSetting(labelText: "인증번호")
-    }
-    
-    private let doNotReceiveButton = UIButton().then {
-        $0.setTitle("인증번호가 오지 않았나요?", for: .normal)
-        $0.setTitleColor(.rgb(red: 57, green: 117, blue: 172), for: .normal)
-        $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Regular")
-        $0.addTarget(self, action: #selector(tapDoNotReceive(_:)), for: .touchUpInside)
-    }
-    
-    private let reSendButton = UIButton().then {
-        $0.setTitle("인증번호 재전송", for: .normal)
-        $0.setTitleColor(.black, for: .normal)
-        $0.dynamicFont(fontSize: 10, currentFontName: "AppleSDGothicNeo-Regular")
-        $0.isHidden = true
-        $0.addTarget(self, action: #selector(tapResendButton(_:)), for: .touchUpInside)
+        $0.dataSetting(labelText: "비밀번호")
+        $0.visibilityButton.isHidden = false
+        $0.textField.isSecureTextEntry = true
+        $0.visibilityButton.addTarget(self, action: #selector(tapVisibilityButton(_:)), for: .touchUpInside)
     }
     
     private let nextButton = LoginButton().then {
@@ -52,36 +40,28 @@ class SignUpCertificationNumberViewController: UIViewController {
         print("previous")
     }
     
-    @objc private func tapDoNotReceive(_ sender: UIButton){
-        print("do not receive")
-        if reSendButton.isHidden == true {
-            doNotReceiveButton.snp.remakeConstraints { make in
-                make.width.equalToSuperview().dividedBy(3.4)
-                make.height.equalToSuperview().dividedBy(62.46)
-                make.top.equalTo(textFieldView.errorLabel)
-                make.left.equalToSuperview().offset(self.view.frame.width/2.21)
-            }
-            reSendButton.isHidden = false
+    @objc private func tapVisibilityButton(_ sender: UIButton){
+        if textFieldView.textField.isSecureTextEntry{
+            sender.setImage(UIImage(named: "Tita-Eye"), for: .normal)
+        }else{
+            sender.setImage(UIImage(named: "Tita-EyeSlash"), for: .normal)
         }
-    }
-    
-    @objc private func tapResendButton(_ sender: UIButton){
-        print("re-send")
+        textFieldView.textField.isSecureTextEntry.toggle()
     }
     
     @objc private func tapNextButton(_ sender: UIButton){
-        if reSendButton.isHidden == false{
-            doNotReceiveButton.snp.remakeConstraints { make in
-                make.width.equalToSuperview().dividedBy(3.4)
-                make.height.equalToSuperview().dividedBy(62.46)
-                make.top.equalTo(textFieldView.errorLabel)
-                make.right.equalTo(textFieldView.line)
-            }
-            reSendButton.isHidden = true
+        let passwordPattern = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,16}"
+        let passwordRegex = try? NSRegularExpression(pattern: passwordPattern)
+        
+        if let _ = passwordRegex?.firstMatch(in: textFieldView.textField.text!, options: [], range: NSRange(location: 0, length: textFieldView.textField.text!.count)) {
+            print("성공")
+            textFieldView.errorLabel.text = ""
+            let nextVC = CheckPWViewController()
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        }else{
+            print("실패")
+            textFieldView.errorLabel.text = "조건에 맞지 않는 비밀번호입니다."
         }
-        print("next")
-        let nextVC = EndSignUpViewController()
-        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     //MARK: - Keyboard Setting
@@ -125,7 +105,7 @@ class SignUpCertificationNumberViewController: UIViewController {
     
     // MARK: - Add View
     private func addView(){
-        [descriptionView, textFieldView, doNotReceiveButton, reSendButton, nextButton].forEach { view.addSubview($0)}
+        [descriptionView, textFieldView, nextButton].forEach { view.addSubview($0)}
     }
 
     // MARK: - Location
@@ -142,20 +122,6 @@ class SignUpCertificationNumberViewController: UIViewController {
             make.height.equalToSuperview().dividedBy(9.12)
             make.top.equalTo(descriptionView.snp.bottom).offset(self.view.frame.height/32.48)
             make.centerX.equalToSuperview()
-        }
-        
-        doNotReceiveButton.snp.makeConstraints { make in
-            make.width.equalToSuperview().dividedBy(3.4)
-            make.height.equalToSuperview().dividedBy(62.46)
-            make.top.equalTo(textFieldView.errorLabel)
-            make.right.equalTo(textFieldView.line)
-        }
-        
-        reSendButton.snp.makeConstraints { make in
-            make.width.equalToSuperview().dividedBy(5.65)
-            make.height.equalToSuperview().dividedBy(62.46)
-            make.top.equalTo(doNotReceiveButton)
-            make.right.equalTo(textFieldView.line)
         }
         
         nextButton.snp.makeConstraints { make in

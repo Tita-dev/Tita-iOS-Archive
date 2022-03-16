@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class SignUpDescriptionView: UIView {
+class DescriptionView: UIView {
     private let viewBounds = UIScreen.main.bounds
     
     let previousButton = UIButton().then {
