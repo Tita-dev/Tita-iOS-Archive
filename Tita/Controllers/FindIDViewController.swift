@@ -11,12 +11,12 @@ import Then
 
 class FindIDViewController: UIViewController {
     //MARK: - Properties
-    private let descriptionView = SignUpDescriptionView().then {
+    private let descriptionView = DescriptionView().then {
         $0.dataSetting(description: "아이디를 까먹으셨나요?", additionalDescription: "본인 인증을 위해 회원가입 시 사용했던 이메일이 필요해요.")
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
-    private let textFieldView = SignUpTextFieldView().then {
+    private let textFieldView = TextFieldView().then {
         $0.dataSetting(labelText: "이메일")
     }
     

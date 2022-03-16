@@ -11,12 +11,12 @@ import Then
 
 class SignUpIDViewController: UIViewController{
     //MARK: - Properties
-    private let descriptionView = SignUpDescriptionView().then {
+    private let descriptionView = DescriptionView().then {
         $0.dataSetting(description: "본격적으로 계정을 만들어봐요!", additionalDescription: "먼저, 아이디부터 입력할까요?")
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
-    private let textFieldView = SignUpTextFieldView().then {
+    private let textFieldView = TextFieldView().then {
         $0.dataSetting(labelText: "아이디")
     }
     

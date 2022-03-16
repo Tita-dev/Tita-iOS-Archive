@@ -11,7 +11,7 @@ import Then
 
 class EndSignUpViewController: UIViewController {
     //MARK: - Properties
-    private let descriptionView = SignUpDescriptionView().then {
+    private let descriptionView = DescriptionView().then {
         $0.dataSetting(description: "우리만의 공간에 들어갈\n준비가 모두 끝났어요!", additionalDescription: "Ti-Ta는 무분별한 욕설, 비방 등에 대해 제재를 가하고 있습니다.\n커뮤니티 가이드를 지키며 Ti-Ta 이용 부탁드립니다.")
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }

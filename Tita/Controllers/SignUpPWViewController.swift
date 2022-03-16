@@ -11,12 +11,12 @@ import Then
 
 class SignUpPWViewController: UIViewController {
     //MARK: - Properties
-    private let descriptionView = SignUpDescriptionView().then {
+    private let descriptionView = DescriptionView().then {
         $0.dataSetting(description: "본격적으로 계정을 만들어봐요!", additionalDescription: "영문, 숫자, 특수문자를 섞어 8~16자 이내로 적어주세요.")
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
-    private let textFieldView = SignUpTextFieldView().then {
+    private let textFieldView = TextFieldView().then {
         $0.dataSetting(labelText: "비밀번호")
         $0.visibilityButton.isHidden = false
         $0.textField.isSecureTextEntry = true

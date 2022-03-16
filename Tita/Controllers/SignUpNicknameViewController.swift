@@ -11,12 +11,12 @@ import Then
 
 class SignUpNicknameViewController: UIViewController {
     //MARK: - Properties
-    private let descriptionView = SignUpDescriptionView().then {
+    private let descriptionView = DescriptionView().then {
         $0.dataSetting(description: "나를 보여줄 닉네임을 정해요!", additionalDescription: "욕설이나 남을 비방하는 닉네임은 추후 제재될 수 있어요.")
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
     
-    private let textFieldView = SignUpTextFieldView().then {
+    private let textFieldView = TextFieldView().then {
         $0.dataSetting(labelText: "닉네임")
     }
     

@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-class SignUpTextFieldView: UIView{
+class TextFieldView: UIView{
     private let viewBounds = UIScreen.main.bounds
     
     let label = UILabel().then {

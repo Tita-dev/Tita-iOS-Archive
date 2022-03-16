@@ -34,10 +34,10 @@
 		C0CD8C6327E0A63B00347C61 /* NewPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD8C6227E0A63B00347C61 /* NewPWViewController.swift */; };
 		C0CD8C6527E0A7AB00347C61 /* CheckPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD8C6427E0A7AB00347C61 /* CheckPWViewController.swift */; };
 		C0D1328527A295E1003E4811 /* TermsAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1328427A295E1003E4811 /* TermsAgreementViewController.swift */; };
-		C0D1328727A29930003E4811 /* SignUpDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1328627A29930003E4811 /* SignUpDescriptionView.swift */; };
+		C0D1328727A29930003E4811 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1328627A29930003E4811 /* DescriptionView.swift */; };
 		C0D1328927A42916003E4811 /* BirthDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1328827A42916003E4811 /* BirthDateViewController.swift */; };
 		C0D1328B27A58B1D003E4811 /* SignUpIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1328A27A58B1D003E4811 /* SignUpIDViewController.swift */; };
-		C0D1328F27A59665003E4811 /* SignUpTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1328E27A59665003E4811 /* SignUpTextFieldView.swift */; };
+		C0D1328F27A59665003E4811 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1328E27A59665003E4811 /* TextFieldView.swift */; };
 		C0D1329127A965E3003E4811 /* SignUpPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1329027A965E3003E4811 /* SignUpPWViewController.swift */; };
 		C0D1329327A97CE1003E4811 /* SignUpSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1329227A97CE1003E4811 /* SignUpSchoolViewController.swift */; };
 		C0D1329527A9E390003E4811 /* SignUpNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1329427A9E390003E4811 /* SignUpNicknameViewController.swift */; };
@@ -85,10 +85,10 @@
 		C0CD8C6227E0A63B00347C61 /* NewPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPWViewController.swift; sourceTree = "<group>"; };
 		C0CD8C6427E0A7AB00347C61 /* CheckPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPWViewController.swift; sourceTree = "<group>"; };
 		C0D1328427A295E1003E4811 /* TermsAgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAgreementViewController.swift; sourceTree = "<group>"; };
-		C0D1328627A29930003E4811 /* SignUpDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDescriptionView.swift; sourceTree = "<group>"; };
+		C0D1328627A29930003E4811 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		C0D1328827A42916003E4811 /* BirthDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDateViewController.swift; sourceTree = "<group>"; };
 		C0D1328A27A58B1D003E4811 /* SignUpIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpIDViewController.swift; sourceTree = "<group>"; };
-		C0D1328E27A59665003E4811 /* SignUpTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextFieldView.swift; sourceTree = "<group>"; };
+		C0D1328E27A59665003E4811 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		C0D1329027A965E3003E4811 /* SignUpPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPWViewController.swift; sourceTree = "<group>"; };
 		C0D1329227A97CE1003E4811 /* SignUpSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSchoolViewController.swift; sourceTree = "<group>"; };
 		C0D1329427A9E390003E4811 /* SignUpNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameViewController.swift; sourceTree = "<group>"; };
@@ -153,9 +153,9 @@
 				C0525E6327947431004FD735 /* EmptyPostView.swift */,
 				C0DE36C327D0369000943D42 /* CafeteriaDateView.swift */,
 				C059093E2794E0A1002C9056 /* NoticeLabelView.swift */,
-				C0D1328627A29930003E4811 /* SignUpDescriptionView.swift */,
+				C0D1328627A29930003E4811 /* DescriptionView.swift */,
 				C0D132A027BB61CF003E4811 /* TermsAgreeView.swift */,
-				C0D1328E27A59665003E4811 /* SignUpTextFieldView.swift */,
+				C0D1328E27A59665003E4811 /* TextFieldView.swift */,
 				C0D132A227C4DB4E003E4811 /* LineView.swift */,
 				C0DE36C527D0478700943D42 /* CafeteriaMenuView.swift */,
 				C0FBE61227CF888300D37EC8 /* CafeteriaTopView.swift */,
@@ -401,7 +401,7 @@
 				C0FBE61127CF85B300D37EC8 /* CafeteriaViewController.swift in Sources */,
 				C0E76F1927DF8107006D3861 /* FindPWViewController.swift in Sources */,
 				C0B6241B27DB697100B173BA /* FindIDViewController.swift in Sources */,
-				C0D1328F27A59665003E4811 /* SignUpTextFieldView.swift in Sources */,
+				C0D1328F27A59665003E4811 /* TextFieldView.swift in Sources */,
 				C06F3268275E4F1500F4A97E /* AppDelegate.swift in Sources */,
 				C0D1329727AAB4E0003E4811 /* SignUpEmailViewController.swift in Sources */,
 				C0B6241D27DC5D3B00B173BA /* FindIDCertificationNumberViewController.swift in Sources */,
@@ -423,7 +423,7 @@
 				C0D1328B27A58B1D003E4811 /* SignUpIDViewController.swift in Sources */,
 				C0D132A127BB61CF003E4811 /* TermsAgreeView.swift in Sources */,
 				C0D1328927A42916003E4811 /* BirthDateViewController.swift in Sources */,
-				C0D1328727A29930003E4811 /* SignUpDescriptionView.swift in Sources */,
+				C0D1328727A29930003E4811 /* DescriptionView.swift in Sources */,
 				AAB6A964279809E700DE26C6 /* LoginTextField.swift in Sources */,
 				C0FBE61327CF888300D37EC8 /* CafeteriaTopView.swift in Sources */,
 				C0525E6427947431004FD735 /* EmptyPostView.swift in Sources */,

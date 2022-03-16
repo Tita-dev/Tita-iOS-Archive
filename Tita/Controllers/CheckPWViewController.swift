@@ -11,7 +11,7 @@ import Then
 
 class CheckPWViewController: UIViewController {
     //MARK: - Properties
-    private let descriptionView = SignUpDescriptionView().then {
+    private let descriptionView = DescriptionView().then {
         $0.dataSetting(description: "비밀번호를 재설정했어요!\n이제 다시 로그인을 시도해 봐요!", additionalDescription: nil)
         $0.previousButton.addTarget(self, action: #selector(tapPrevious(_:)), for: .touchUpInside)
     }
