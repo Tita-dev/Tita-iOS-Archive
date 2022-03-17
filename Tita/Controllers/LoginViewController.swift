@@ -8,8 +8,9 @@
 import UIKit
 import SnapKit
 import Then
+import Alamofire
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Properties
     private let logo = UIImageView().then {
         $0.image = UIImage(named: "Tita-Logo")
@@ -57,6 +58,9 @@ class LoginViewController: UIViewController {
         $0.addTarget(self, action: #selector(onTapSignUp(sender:)), for: .touchUpInside)
     }
     
+    private let errorAlert = UIAlertController(title: "로그인 오류", message: "입력한 아이디 혹은 비밀번호가 올바르지 않습니다.\n다시 시도하세요.", preferredStyle: .alert).then {
+        $0.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+    }
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,22 +70,31 @@ class LoginViewController: UIViewController {
     //MARK: - Selectors
     @objc private func onTapLogin(sender:UIButton){
         print("Login")
+        // 로그인 오류 시 Alert
+//        present(errorAlert, animated: true, completion: nil)
+        
+        // VC 이동
         let nextVC = MainViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     @objc private func onTapSignUp(sender:UIButton){
         print("SignUP")
+        let nextVC = TermsAgreementViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
 
     @objc private func onTapForgot(sender:UIButton){
         print("Forgot")
+        let nextVC = LoginViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     //MARK: - Helpers
     private func configureUI(){
         view.backgroundColor = .white
         keyboardTypeSetting()
+        textFieldDeleageSetting()
         addNotificationCenter()
         addView()
         location()
@@ -124,7 +137,7 @@ class LoginViewController: UIViewController {
         loginButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(forgotButton.snp.bottom).offset(self.view.frame.height/29)
-            make.width.equalToSuperview().dividedBy(3.18)
+            make.width.equalToSuperview().dividedBy(1.43)
             make.height.equalToSuperview().dividedBy(20.3)
         }
         signUpLabel.snp.makeConstraints { make in
@@ -143,6 +156,12 @@ class LoginViewController: UIViewController {
     private func keyboardTypeSetting(){
         idTextField.keyboardType = .asciiCapable
         pwTextField.keyboardType = .asciiCapable
+    }
+    
+    // MARK: - textField delegate Setting
+    private func textFieldDeleageSetting(){
+        idTextField.delegate = self
+        pwTextField.delegate = self
     }
 
     // MARK: - textField Point Set
@@ -164,5 +183,21 @@ class LoginViewController: UIViewController {
     //MARK: - KeyboardWillHide -> self.view Down
     @objc private func keyboardWillHide(_ sender: Notification) {
         self.view.frame.origin.y = 0
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == idTextField {
+            idTextField.layer.borderColor = UIColor.black.cgColor
+        } else if textField == pwTextField {
+            pwTextField.layer.borderColor = UIColor.black.cgColor
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == idTextField {
+            idTextField.layer.borderColor = UIColor.rgb(red: 205, green: 205, blue: 205).cgColor
+        } else if textField == pwTextField {
+            pwTextField.layer.borderColor = UIColor.rgb(red: 205, green: 205, blue: 205).cgColor
+        }
     }
 }

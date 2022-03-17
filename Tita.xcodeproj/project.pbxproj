@@ -13,6 +13,7 @@
 		AAB6A964279809E700DE26C6 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB6A963279809E700DE26C6 /* LoginTextField.swift */; };
 		B482FBB2A4C005038D809087 /* Pods_Tita.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251ABCF5232EE1ED1774C54C /* Pods_Tita.framework */; };
 		C00F5A7D27904747002B34DF /* MainTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F5A7C27904747002B34DF /* MainTopView.swift */; };
+		C03B884D27DEDF3200528F1A /* CheckIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B884C27DEDF3200528F1A /* CheckIDViewController.swift */; };
 		C0525E5E2792B6E2004FD735 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0525E5D2792B6E2004FD735 /* MenuCollectionViewCell.swift */; };
 		C0525E622793E99F004FD735 /* MainPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0525E612793E99F004FD735 /* MainPostTableViewCell.swift */; };
 		C0525E6427947431004FD735 /* EmptyPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0525E6327947431004FD735 /* EmptyPostView.swift */; };
@@ -25,7 +26,32 @@
 		C06F3281275E532400F4A97E /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C06F327F275E52B900F4A97E /* NotoSans-BoldItalic.ttf */; };
 		C06F3282275E532700F4A97E /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C06F327E275E52B900F4A97E /* NotoSans-Italic.ttf */; };
 		C06F3283275E532A00F4A97E /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C06F327D275E52B900F4A97E /* NotoSans-Regular.ttf */; };
+		C087D1BC27DA1836006B0AD4 /* FindAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C087D1BB27DA1836006B0AD4 /* FindAccountViewController.swift */; };
+		C087D1BE27DA1A92006B0AD4 /* FindAccountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C087D1BD27DA1A92006B0AD4 /* FindAccountButton.swift */; };
+		C0B6241B27DB697100B173BA /* FindIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6241A27DB697100B173BA /* FindIDViewController.swift */; };
+		C0B6241D27DC5D3B00B173BA /* FindIDCertificationNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6241C27DC5D3B00B173BA /* FindIDCertificationNumberViewController.swift */; };
+		C0CD8C6127E0A5A500347C61 /* FindPWCertificationNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD8C6027E0A5A500347C61 /* FindPWCertificationNumberViewController.swift */; };
+		C0CD8C6327E0A63B00347C61 /* NewPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD8C6227E0A63B00347C61 /* NewPWViewController.swift */; };
+		C0CD8C6527E0A7AB00347C61 /* CheckPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD8C6427E0A7AB00347C61 /* CheckPWViewController.swift */; };
+		C0D1328527A295E1003E4811 /* TermsAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1328427A295E1003E4811 /* TermsAgreementViewController.swift */; };
+		C0D1328727A29930003E4811 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1328627A29930003E4811 /* DescriptionView.swift */; };
+		C0D1328927A42916003E4811 /* BirthDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1328827A42916003E4811 /* BirthDateViewController.swift */; };
+		C0D1328B27A58B1D003E4811 /* SignUpIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1328A27A58B1D003E4811 /* SignUpIDViewController.swift */; };
+		C0D1328F27A59665003E4811 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1328E27A59665003E4811 /* TextFieldView.swift */; };
+		C0D1329127A965E3003E4811 /* SignUpPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1329027A965E3003E4811 /* SignUpPWViewController.swift */; };
+		C0D1329327A97CE1003E4811 /* SignUpSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1329227A97CE1003E4811 /* SignUpSchoolViewController.swift */; };
+		C0D1329527A9E390003E4811 /* SignUpNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1329427A9E390003E4811 /* SignUpNicknameViewController.swift */; };
+		C0D1329727AAB4E0003E4811 /* SignUpEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1329627AAB4E0003E4811 /* SignUpEmailViewController.swift */; };
+		C0D1329927AAE484003E4811 /* SignUpCertificationNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1329827AAE484003E4811 /* SignUpCertificationNumberViewController.swift */; };
+		C0D1329D27AB09A2003E4811 /* EndSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1329C27AB09A2003E4811 /* EndSignUpViewController.swift */; };
+		C0D132A127BB61CF003E4811 /* TermsAgreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D132A027BB61CF003E4811 /* TermsAgreeView.swift */; };
+		C0D132A327C4DB4E003E4811 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D132A227C4DB4E003E4811 /* LineView.swift */; };
 		C0DBC1E7278C4E0900E310D8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */; };
+		C0DE36C427D0369000943D42 /* CafeteriaDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE36C327D0369000943D42 /* CafeteriaDateView.swift */; };
+		C0DE36C627D0478700943D42 /* CafeteriaMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE36C527D0478700943D42 /* CafeteriaMenuView.swift */; };
+		C0E76F1927DF8107006D3861 /* FindPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E76F1827DF8107006D3861 /* FindPWViewController.swift */; };
+		C0FBE61127CF85B300D37EC8 /* CafeteriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FBE61027CF85B300D37EC8 /* CafeteriaViewController.swift */; };
+		C0FBE61327CF888300D37EC8 /* CafeteriaTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FBE61227CF888300D37EC8 /* CafeteriaTopView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +62,7 @@
 		AAB6A9612798066900DE26C6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AAB6A963279809E700DE26C6 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		C00F5A7C27904747002B34DF /* MainTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTopView.swift; path = Tita/MainTopView.swift; sourceTree = SOURCE_ROOT; };
+		C03B884C27DEDF3200528F1A /* CheckIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIDViewController.swift; sourceTree = "<group>"; };
 		C0525E5D2792B6E2004FD735 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuCollectionViewCell.swift; path = Tita/Views/Cells/MenuCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		C0525E612793E99F004FD735 /* MainPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainPostTableViewCell.swift; path = Tita/Views/MainPostTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		C0525E6327947431004FD735 /* EmptyPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPostView.swift; sourceTree = "<group>"; };
@@ -50,7 +77,32 @@
 		C06F327D275E52B900F4A97E /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		C06F327E275E52B900F4A97E /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
 		C06F327F275E52B900F4A97E /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C087D1BB27DA1836006B0AD4 /* FindAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAccountViewController.swift; sourceTree = "<group>"; };
+		C087D1BD27DA1A92006B0AD4 /* FindAccountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAccountButton.swift; sourceTree = "<group>"; };
+		C0B6241A27DB697100B173BA /* FindIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIDViewController.swift; sourceTree = "<group>"; };
+		C0B6241C27DC5D3B00B173BA /* FindIDCertificationNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIDCertificationNumberViewController.swift; sourceTree = "<group>"; };
+		C0CD8C6027E0A5A500347C61 /* FindPWCertificationNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPWCertificationNumberViewController.swift; sourceTree = "<group>"; };
+		C0CD8C6227E0A63B00347C61 /* NewPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPWViewController.swift; sourceTree = "<group>"; };
+		C0CD8C6427E0A7AB00347C61 /* CheckPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPWViewController.swift; sourceTree = "<group>"; };
+		C0D1328427A295E1003E4811 /* TermsAgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAgreementViewController.swift; sourceTree = "<group>"; };
+		C0D1328627A29930003E4811 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
+		C0D1328827A42916003E4811 /* BirthDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDateViewController.swift; sourceTree = "<group>"; };
+		C0D1328A27A58B1D003E4811 /* SignUpIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpIDViewController.swift; sourceTree = "<group>"; };
+		C0D1328E27A59665003E4811 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		C0D1329027A965E3003E4811 /* SignUpPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPWViewController.swift; sourceTree = "<group>"; };
+		C0D1329227A97CE1003E4811 /* SignUpSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSchoolViewController.swift; sourceTree = "<group>"; };
+		C0D1329427A9E390003E4811 /* SignUpNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameViewController.swift; sourceTree = "<group>"; };
+		C0D1329627AAB4E0003E4811 /* SignUpEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailViewController.swift; sourceTree = "<group>"; };
+		C0D1329827AAE484003E4811 /* SignUpCertificationNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCertificationNumberViewController.swift; sourceTree = "<group>"; };
+		C0D1329C27AB09A2003E4811 /* EndSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndSignUpViewController.swift; sourceTree = "<group>"; };
+		C0D132A027BB61CF003E4811 /* TermsAgreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAgreeView.swift; sourceTree = "<group>"; };
+		C0D132A227C4DB4E003E4811 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C0DE36C327D0369000943D42 /* CafeteriaDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeteriaDateView.swift; sourceTree = "<group>"; };
+		C0DE36C527D0478700943D42 /* CafeteriaMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeteriaMenuView.swift; sourceTree = "<group>"; };
+		C0E76F1827DF8107006D3861 /* FindPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPWViewController.swift; sourceTree = "<group>"; };
+		C0FBE61027CF85B300D37EC8 /* CafeteriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeteriaViewController.swift; sourceTree = "<group>"; };
+		C0FBE61227CF888300D37EC8 /* CafeteriaTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeteriaTopView.swift; sourceTree = "<group>"; };
 		CF5D6514FA08B636D80D0304 /* Pods-Tita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tita.release.xcconfig"; path = "Target Support Files/Pods-Tita/Pods-Tita.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,7 +151,14 @@
 				C0525E5C2792B459004FD735 /* Cells */,
 				C00F5A7C27904747002B34DF /* MainTopView.swift */,
 				C0525E6327947431004FD735 /* EmptyPostView.swift */,
+				C0DE36C327D0369000943D42 /* CafeteriaDateView.swift */,
 				C059093E2794E0A1002C9056 /* NoticeLabelView.swift */,
+				C0D1328627A29930003E4811 /* DescriptionView.swift */,
+				C0D132A027BB61CF003E4811 /* TermsAgreeView.swift */,
+				C0D1328E27A59665003E4811 /* TextFieldView.swift */,
+				C0D132A227C4DB4E003E4811 /* LineView.swift */,
+				C0DE36C527D0478700943D42 /* CafeteriaMenuView.swift */,
+				C0FBE61227CF888300D37EC8 /* CafeteriaTopView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -114,8 +173,26 @@
 		AA3837AF275E59D2005C0323 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */,
 				AAB6A9612798066900DE26C6 /* LoginViewController.swift */,
+				C087D1BB27DA1836006B0AD4 /* FindAccountViewController.swift */,
+				C0DBC1E6278C4E0900E310D8 /* MainViewController.swift */,
+				C03B884C27DEDF3200528F1A /* CheckIDViewController.swift */,
+				C0D1328427A295E1003E4811 /* TermsAgreementViewController.swift */,
+				C0D1328827A42916003E4811 /* BirthDateViewController.swift */,
+				C0D1328A27A58B1D003E4811 /* SignUpIDViewController.swift */,
+				C0D1329027A965E3003E4811 /* SignUpPWViewController.swift */,
+				C0B6241A27DB697100B173BA /* FindIDViewController.swift */,
+				C0CD8C6027E0A5A500347C61 /* FindPWCertificationNumberViewController.swift */,
+				C0E76F1827DF8107006D3861 /* FindPWViewController.swift */,
+				C0CD8C6227E0A63B00347C61 /* NewPWViewController.swift */,
+				C0CD8C6427E0A7AB00347C61 /* CheckPWViewController.swift */,
+				C0B6241C27DC5D3B00B173BA /* FindIDCertificationNumberViewController.swift */,
+				C0D1329227A97CE1003E4811 /* SignUpSchoolViewController.swift */,
+				C0D1329427A9E390003E4811 /* SignUpNicknameViewController.swift */,
+				C0D1329627AAB4E0003E4811 /* SignUpEmailViewController.swift */,
+				C0D1329827AAE484003E4811 /* SignUpCertificationNumberViewController.swift */,
+				C0D1329C27AB09A2003E4811 /* EndSignUpViewController.swift */,
+				C0FBE61027CF85B300D37EC8 /* CafeteriaViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -142,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				AAB6A95F2796D8A800DE26C6 /* LoginButton.swift */,
+				C087D1BD27DA1A92006B0AD4 /* FindAccountButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -317,18 +395,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C03B884D27DEDF3200528F1A /* CheckIDViewController.swift in Sources */,
 				AAB6A9602796D8A800DE26C6 /* LoginButton.swift in Sources */,
+				C0CD8C6327E0A63B00347C61 /* NewPWViewController.swift in Sources */,
+				C0FBE61127CF85B300D37EC8 /* CafeteriaViewController.swift in Sources */,
+				C0E76F1927DF8107006D3861 /* FindPWViewController.swift in Sources */,
+				C0B6241B27DB697100B173BA /* FindIDViewController.swift in Sources */,
+				C0D1328F27A59665003E4811 /* TextFieldView.swift in Sources */,
 				C06F3268275E4F1500F4A97E /* AppDelegate.swift in Sources */,
+				C0D1329727AAB4E0003E4811 /* SignUpEmailViewController.swift in Sources */,
+				C0B6241D27DC5D3B00B173BA /* FindIDCertificationNumberViewController.swift in Sources */,
 				C0525E5E2792B6E2004FD735 /* MenuCollectionViewCell.swift in Sources */,
+				C0D1329527A9E390003E4811 /* SignUpNicknameViewController.swift in Sources */,
+				C0D1329927AAE484003E4811 /* SignUpCertificationNumberViewController.swift in Sources */,
 				C06F326A275E4F1500F4A97E /* SceneDelegate.swift in Sources */,
+				C0D1329127A965E3003E4811 /* SignUpPWViewController.swift in Sources */,
 				C0525E622793E99F004FD735 /* MainPostTableViewCell.swift in Sources */,
 				C059093F2794E0A1002C9056 /* NoticeLabelView.swift in Sources */,
 				C00F5A7D27904747002B34DF /* MainTopView.swift in Sources */,
+				C087D1BE27DA1A92006B0AD4 /* FindAccountButton.swift in Sources */,
+				C0D1329327A97CE1003E4811 /* SignUpSchoolViewController.swift in Sources */,
+				C0D132A327C4DB4E003E4811 /* LineView.swift in Sources */,
 				AA3837AC275E5960005C0323 /* Extension.swift in Sources */,
 				C0DBC1E7278C4E0900E310D8 /* MainViewController.swift in Sources */,
+				C0D1329D27AB09A2003E4811 /* EndSignUpViewController.swift in Sources */,
+				C0DE36C627D0478700943D42 /* CafeteriaMenuView.swift in Sources */,
+				C0D1328B27A58B1D003E4811 /* SignUpIDViewController.swift in Sources */,
+				C0D132A127BB61CF003E4811 /* TermsAgreeView.swift in Sources */,
+				C0D1328927A42916003E4811 /* BirthDateViewController.swift in Sources */,
+				C0D1328727A29930003E4811 /* DescriptionView.swift in Sources */,
 				AAB6A964279809E700DE26C6 /* LoginTextField.swift in Sources */,
+				C0FBE61327CF888300D37EC8 /* CafeteriaTopView.swift in Sources */,
 				C0525E6427947431004FD735 /* EmptyPostView.swift in Sources */,
+				C0D1328527A295E1003E4811 /* TermsAgreementViewController.swift in Sources */,
+				C0CD8C6127E0A5A500347C61 /* FindPWCertificationNumberViewController.swift in Sources */,
+				C087D1BC27DA1836006B0AD4 /* FindAccountViewController.swift in Sources */,
 				AAB6A9622798066900DE26C6 /* LoginViewController.swift in Sources */,
+				C0CD8C6527E0A7AB00347C61 /* CheckPWViewController.swift in Sources */,
+				C0DE36C427D0369000943D42 /* CafeteriaDateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
