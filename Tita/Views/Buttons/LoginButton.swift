@@ -25,11 +25,11 @@ class LoginButton: UIButton {
     
     // MARK: - Helpers
     private func configureUI(){
-        self.backgroundColor = .rgb(red: 123, green: 176, blue: 222)
+        self.backgroundColor = .rgb(red: 255, green: 251, blue: 235)
         self.layer.cornerRadius = UIScreen.main.bounds.width/37.5
         self.layer.applySketchShadow(color: UIColor.black, alpha: 0.25, x: 2, y: 2, blur: 10, spread: 0)
-        self.dynamicFont(fontSize: 12, currentFontName: "AppleSDGothicNeo-Bold")
-        self.setTitleColor(.white, for: .normal)
+        self.dynamicFont(fontSize: 15, currentFontName: "AppleSDGothicNeo-Bold")
+        self.setTitleColor(.black, for: .normal)
     }
     
     func dataSetting(title: String?){

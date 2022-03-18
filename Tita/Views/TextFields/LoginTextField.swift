@@ -21,10 +21,8 @@ class LoginTextField: UITextField {
 
     // MARK: - Helpers
     private func configureUI(){
-        self.backgroundColor = .white
+        self.backgroundColor = .rgb(red: 243, green: 243, blue: 243)
         self.layer.cornerRadius = UIScreen.main.bounds.width/37.5
-        self.layer.borderColor = UIColor.rgb(red: 205, green: 205, blue: 205).cgColor
-        self.layer.borderWidth = 1
         self.dynamicFont(fontSize: 12, currentFontName: "AppleSDGothicNeo-Light")
         self.setPlaceholderColor(.rgb(red: 133, green: 133, blue: 133))
         self.textColor = .black
