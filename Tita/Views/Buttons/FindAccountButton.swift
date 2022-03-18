@@ -1,15 +1,14 @@
 //
-//  LoginTextField.swift
+//  FindAccountButton.swift
 //  Tita
 //
-//  Created by 노연주 on 2022/01/19.
+//  Created by 혜인 on 2022/03/10.
 //
 
 import UIKit
 
-class LoginTextField: UITextField {
+class FindAccountButton: UIButton {
     // MARK: - LifeCycles
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureUI()
@@ -18,20 +17,25 @@ class LoginTextField: UITextField {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        configureUI()
+    }
+    
     // MARK: - Helpers
     private func configureUI(){
         self.backgroundColor = .white
         self.layer.cornerRadius = UIScreen.main.bounds.width/37.5
+        self.layer.borderWidth = UIScreen.main.bounds.width/375
         self.layer.borderColor = UIColor.rgb(red: 205, green: 205, blue: 205).cgColor
-        self.layer.borderWidth = 1
+        self.contentHorizontalAlignment = .left
+        self.addLeftPadding(20)
         self.dynamicFont(fontSize: 12, currentFontName: "AppleSDGothicNeo-Light")
-        self.setPlaceholderColor(.rgb(red: 133, green: 133, blue: 133))
-        self.textColor = .black
-        self.setLeftPaddingPoints(UIScreen.main.bounds.width/20.83)
+        self.setTitleColor(.rgb(red: 133, green: 133, blue: 133), for: .normal)
     }
     
-    func dataSetting(placeholderText: String?){
-        self.placeholder = placeholderText
+    func dataSetting(title: String?){
+        self.setTitle(title, for: .normal)
     }
 }
