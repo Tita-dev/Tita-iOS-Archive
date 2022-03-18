@@ -136,15 +136,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return CGSize(width: view.frame.width/2.88, height: view.frame.height/6.25)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 0{
-            print("오늘의 급식")
-            let nextVC = CafeteriaViewController()
-            self.navigationController?.pushViewController(nextVC, animated: true)
-        }
-
-    }
-    
     //MARK: - TableViewSetting
     private func NoticeTableViewSetting(){
         noticePostTableView.dataSource = self
